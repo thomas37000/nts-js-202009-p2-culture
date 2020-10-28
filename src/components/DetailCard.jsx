@@ -3,6 +3,33 @@ import './DetailCard.css';
 
 const DetailCard = () => {
   return (
+<figure> 
+    <section className="Card">
+    <div className="horaire">
+      <span>9h - 18h</span>
+    </div>
+    <img
+      src="https://www.guide-tourisme-france.com/IMAGES/IMG2686.jpg"
+      alt="évènement"
+    />
+    <div className="information">
+      <h4 className="catégorie">
+        <span>Exposition : </span>
+        <span>Les dinosaures</span>
+      </h4>
+      <h4 className="lieu">
+        <span>Lieu : </span>
+        <span>Museum d'histoires naturelles - Nantes</span>
+      </h4>
+      <h4 className="description">
+        <span>Description : </span>
+        <span>Lorem ipsum...</span>
+      </h4>
+    </div>
+    <div className="price">
+      <span>8 euros</span>
+    </div>
+  </section>
 
     <section class="blocLocation">
         <iframe
@@ -26,7 +53,8 @@ const DetailCard = () => {
             <a class="contactLinks" href="mailto:contact@museum.com"
                 >contact@museum.com</a>
         </div>
-    </section>
+    </section>*
+    </figure>   
   );
 };
 
