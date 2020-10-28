@@ -11,12 +11,12 @@ const DetailCard = () => {
     <section className="EventName">
       <h1 className="catégorie">
         <span>Exposition : </span>
-        <span>Les dinosaures</span>
+        <span> Les dinosaures</span>
       </h1>
     </section>
     <section className="Card">
       <div className="information">
-        <h1>date</h1>
+        <h1 className="date">20/10/2020</h1>
         <h4 className="description">
           <span>Description : </span>
           <span>Lorem ipsum...</span>

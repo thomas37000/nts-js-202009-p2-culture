@@ -19,9 +19,15 @@
   }
 
   .catégorie{
-    display: flex;
-    text-align: center;
-    font-size: x-large;
+    display: flex; 
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 20px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0px 0px 10px #bbb;
+    background-color: #fff;
   }
   
   .Card {
@@ -39,13 +45,28 @@
   .information {
     display: flex;
     flex-direction: column;
-    margin: auto;
     flex: 1;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .information>h1{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 
   .eventLocation{
     display: flex;
     flex-direction: column;
+    flex: 1;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  iframe{
+    margin-top: 2rem;
+    width: 40rem;
+    margin-bottom: 2rem;
   }
 
 
