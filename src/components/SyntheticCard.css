@@ -1,7 +1,7 @@
 .Card {
     display: flex;
     text-align: left;
-    padding: 1.25em;
+    padding: 1em;
     width: 40rem;
     height: 7rem;
     border: 1px solid #1b1a1a;
@@ -12,7 +12,7 @@
   }
 
   .horaire {
-      margin-top: 3.5rem;
+      margin-top: 3rem;
       width: 3rem;
   }
   
