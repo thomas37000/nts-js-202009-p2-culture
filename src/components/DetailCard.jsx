@@ -3,8 +3,8 @@ import './DetailCard.css';
 
 const DetailCard = () => {
   return (
-<figure className="DetailCard"> 
-<img
+<figure className="detailCard"> 
+<img className="photo"
       src="https://www.guide-tourisme-france.com/IMAGES/IMG2686.jpg"
       alt="évènement"
     />
