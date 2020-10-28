@@ -1,5 +1,15 @@
-.EventName {
+.eventName {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  margin: 0;
+}
+
+.eventName h1 {
+  margin: 0.5rem;
+}
+.eventName h2 {
+  margin: 0.5rem;
 }
 
 .Card {
@@ -13,6 +23,10 @@
   border-radius: 2px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
   font-size: 0.75em;
+}
+
+a.{
+  padding:1rem;
 }
 
 iframe {
@@ -39,8 +53,10 @@ iframe {
   width: auto;
 }
 
-.map iframe {
+.location,
+.map {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   max-width: 100%;
 }
@@ -51,7 +67,7 @@ iframe {
   .Card {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     text-align: left;
     width: auto;
@@ -59,16 +75,18 @@ iframe {
     border: 1px solid #1b1a1a;
     background-color: rgb(245, 239, 239);
     border-radius: 2px;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
     font-size: 0.75em;
   }
 
+  .eventName {
+    display: flex;
+    justify-content: center;
+  }
   .information {
     margin: 2rem;
   }
 
   .price {
     width: auto;
-    margin-bottom: 10rem;
   }
 }

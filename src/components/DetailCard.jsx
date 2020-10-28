@@ -8,37 +8,25 @@ const DetailCard = () => {
       src="https://www.guide-tourisme-france.com/IMAGES/IMG2686.jpg"
       alt="évènement"
     />
-    <section className="EventName">
-      <h1>
-      <span className="catégorie">Exposition :</span>
-      <span> Les dinosaures</span>
-      </h1>
+    <section className="eventName">
+      <h1>Exposition :</h1>
+      <h2>Les dinosaures</h2>
     </section>
     <section className="Card">
       <div className="information">
         <h1 className="date">20/10/2020</h1>
-        <h4 className="description">
-          <span>Description : </span>
-          <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem vitae explicabo dolores eius reprehenderit asperiores molestiae, molestias deleniti eveniet sit? Iusto, nesciunt laboriosam! Quas iste similique fugit facere quis quaerat!</span>
-        </h4>
-        <div className="price">
-          <span>8 euros</span>
-        </div>
-        <h4 className="lieu">
-          <span>Lieu : </span>
-          <span>Museum d'histoires naturelles - Nantes</span>
-        </h4>
-        <div className="horaire">
-          <span>9h - 18h</span>
-        </div>
+        <h4 className="description">Description : <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem vitae explicabo dolores eius reprehenderit asperiores molestiae, molestias deleniti eveniet sit? Iusto, nesciunt laboriosam! Quas iste similique fugit facere quis quaerat!</span></h4>
+        <h4 className="price">Tarif : <span>8 euros</span></h4>
+        <h4 className="accessibilité">Accessiblité : <span>sourds et malentendants</span></h4>
+        <h4 className="accessibilité">Gratuité pour : <span>enfants et demandeurs d'emploi</span></h4>
+        <h4>Lieu : <span>Museum d'histoires naturelles - Nantes</span></h4>
+        <h4>Horaire : <span>9h - 18h</span></h4>
       </div>
       <div class="location">
         <div class="contact">
           <h3>Coordonnées :</h3>
           <p>12 Rue Voltaire, 44000 Nantes</p>
-          <div class="location">
               <a class="contactLinks" href="tel:+33240415500">02 40 41 55 00</a>
-          </div>
         </div>
         <div>
             <a class="contactLinks" href="mailto:contact@museum.com">contact@museum.com</a>
