@@ -32,14 +32,20 @@ class FilterCategory extends Component {
 
   render() {
     const { category } = this.state;
+
     return (
       <div>
         <button id="btn" type="button" onClick={this.getFilters}>
           select a new category
         </button>
         <div>
-          {/* {category.map((categori) => categori(category))} */}
-          {category ? <Category category={category} /> : <p>No data yet</p>}
+          {category &&
+            category.records.map((categorie) => (
+              <li>
+                {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+                <Category {...categorie.fields} />
+              </li>
+            ))}
         </div>
       </div>
     );

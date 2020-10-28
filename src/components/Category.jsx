@@ -1,18 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Category = ({ category }) => {
+const Category = (props) => {
+  const { heure_debut: heure, nom, description, media_1: media } = props;
   return (
     <>
       <div id="category">
-        <h1>{category.records[2].fields.nom}</h1>
+        <h1>{nom}</h1>
         <p>
-          <strong>{category.records[2].fields.description}</strong>
+          <strong>{description}</strong>
         </p>
-        <img
-          src={category.records[2].fields.media_1}
-          alt={category.records[2].fields.description}
-        />
+        <p>
+          <strong>{heure}</strong>
+        </p>
+        <img src={media} alt={description} />
       </div>
     </>
   );
@@ -25,6 +26,8 @@ Category.propTypes = {
   }).isRequired,
   nom: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-}
+  media_1: PropTypes.string.isRequired,
+  heure_debut: PropTypes.string.isRequired,
+};
 
 export default Category;
