@@ -12,8 +12,38 @@
     scroll-behavior: smooth;
   }
   
-  main {
-    margin: 4vh;
-    margin-top: 6vh;
+  .Card {
+    display: flex;
+    text-align: left;
+    padding: 1em;
+    width: 60rem;
+    height: 25rem;
+    border: 1px solid #1b1a1a;
+    background-color: rgb(245, 239, 239);
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+    font-size: 0.75em;
   }
+
+  .horaire {
+      margin-top: 3rem;
+      width: 3rem;
+  }
+  
+  .Card.information {
+    display: flex;
+    margin: auto;
+  }
+
+  .blocLocation{
+    display: flex;
+  }
+
+  .price{
+    display: flex;
+    width: 5rem;
+    text-align: right;
+    margin-left: 3rem;
+  }
+  
 

@@ -3,15 +3,15 @@ import './DetailCard.css';
 
 const DetailCard = () => {
   return (
-<figure> 
+<figure className="DetailCArd"> 
+<img
+      src="https://www.guide-tourisme-france.com/IMAGES/IMG2686.jpg"
+      alt="évènement"
+    />
     <section className="Card">
     <div className="horaire">
       <span>9h - 18h</span>
     </div>
-    <img
-      src="https://www.guide-tourisme-france.com/IMAGES/IMG2686.jpg"
-      alt="évènement"
-    />
     <div className="information">
       <h4 className="catégorie">
         <span>Exposition : </span>
@@ -29,9 +29,7 @@ const DetailCard = () => {
     <div className="price">
       <span>8 euros</span>
     </div>
-  </section>
-
-    <section class="blocLocation">
+    <div class="blocLocation">
         <iframe
           src="https://www.cityzeum.com/staticmaplite/staticmap.php?filefrmt=jpeg&center=47.212333,-1.5646297&zoom=13&size=600x280&maptype=mapnik&markers=47.212333,-1.5646297,ol-marker-green"
           allowfullscreen=""
@@ -53,8 +51,9 @@ const DetailCard = () => {
             <a class="contactLinks" href="mailto:contact@museum.com"
                 >contact@museum.com</a>
         </div>
-    </section>*
-    </figure>   
+    </div>
+    </section>
+</figure>   
   );
 };
 
