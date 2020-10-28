@@ -1,74 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+.EventName {
+  text-align: center;
+}
 
-* {
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    background-color: #e5e5e5;
-    font-family: 'Roboto', sans-serif;
-    scroll-behavior: smooth;
-  }
+.Card {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: auto;
+  height: auto;
+  border: 1px solid #1b1a1a;
+  background-color: rgb(245, 239, 239);
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  font-size: 0.75em;
+}
 
-  img{
-    width: 100%;
-    height: 70vh;
-    background-size: cover;
-  }
+iframe {
+  max-width: 90%;
+  max-height: 90%;
+  margin: 1rem;
+}
 
-  .catégorie{
-    display: flex; 
-    flex-flow: row wrap;
-    justify-content: center;
-    width: 100%;
-    padding-bottom: 20px;
-    margin: 20px auto;
-    padding: 20px;
-    box-shadow: 0px 0px 10px #bbb;
-    background-color: #fff;
-  }
-  
+.horaire {
+  width: 3rem;
+}
+
+.DetailCard img {
+  width: 100%;
+  height: auto;
+}
+
+.information,
+.location {
+  margin: 0.5rem;
+}
+
+.price span {
+  width: auto;
+}
+
+.map iframe {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+}
+
+
+@media screen and (min-width: 800px) {
+
   .Card {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     text-align: left;
-    padding: 1em;
-    width: 100%;
-    height: 25rem;
+    width: auto;
+    height: auto;
     border: 1px solid #1b1a1a;
     background-color: rgb(245, 239, 239);
     border-radius: 2px;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
     font-size: 0.75em;
   }
+
   .information {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    margin: 2rem;
   }
 
-  .information>h1{
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+  .price {
+    width: auto;
+    margin-bottom: 10rem;
   }
-
-  .eventLocation{
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-
-  iframe{
-    margin-top: 2rem;
-    width: 40rem;
-    margin-bottom: 2rem;
-  }
-
-
-  
-
+}

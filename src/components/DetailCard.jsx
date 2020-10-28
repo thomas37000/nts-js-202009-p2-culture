@@ -9,9 +9,9 @@ const DetailCard = () => {
       alt="évènement"
     />
     <section className="EventName">
-      <h1 className="catégorie">
-        <span>Exposition : </span>
-        <span> Les dinosaures</span>
+      <h1>
+      <span className="catégorie">Exposition :</span>
+      <span> Les dinosaures</span>
       </h1>
     </section>
     <section className="Card">
@@ -19,7 +19,7 @@ const DetailCard = () => {
         <h1 className="date">20/10/2020</h1>
         <h4 className="description">
           <span>Description : </span>
-          <span>Lorem ipsum...</span>
+          <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem vitae explicabo dolores eius reprehenderit asperiores molestiae, molestias deleniti eveniet sit? Iusto, nesciunt laboriosam! Quas iste similique fugit facere quis quaerat!</span>
         </h4>
         <div className="price">
           <span>8 euros</span>
@@ -32,26 +32,22 @@ const DetailCard = () => {
           <span>9h - 18h</span>
         </div>
       </div>
-      <div class="eventLocation">
-        <div class="locationContainer">
-          <h2>Coordonnées</h2>
+      <div class="location">
+        <div class="contact">
+          <h3>Coordonnées :</h3>
           <p>12 Rue Voltaire, 44000 Nantes</p>
           <div class="location">
-              <i class="fas fa-phone-alt"></i>
               <a class="contactLinks" href="tel:+33240415500">02 40 41 55 00</a>
           </div>
         </div>
         <div>
-            <i class="fas fa-envelope"></i>
-            <a class="contactLinks" href="mailto:contact@museum.com"
-                >contact@museum.com</a>
+            <a class="contactLinks" href="mailto:contact@museum.com">contact@museum.com</a>
         </div>
+        <div class="map">
         <iframe
-          src="https://www.cityzeum.com/staticmaplite/staticmap.php?filefrmt=jpeg&center=47.212333,-1.5646297&zoom=13&size=600x280&maptype=mapnik&markers=47.212333,-1.5646297,ol-marker-green"
-          allowfullscreen=""
-          aria-hidden="false"
-          tabindex="0"
+          src="https://goo.gl/maps/gfpwj2aMgwTsRtEy7"
         ></iframe>
+        </div>
       </div>
     </section>
 </figure>   
