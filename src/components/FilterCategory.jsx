@@ -6,7 +6,7 @@ class FilterCategory extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      category: ``,
+      category: null,
     };
     this.getFilters = this.getFilters.bind(this);
   }
@@ -25,7 +25,7 @@ class FilterCategory extends Component {
         // eslint-disable-next-line no-console
         console.log(data);
         this.setState({
-          category: data.results,
+          category: data,
         });
       });
   }

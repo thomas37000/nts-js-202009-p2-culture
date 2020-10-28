@@ -20,13 +20,6 @@
 }
 
 /*************** Grid ****************/
-.container {
-  display: grid;
-  grid-template-columns: repeat(2, 50%);
-  grid-template-rows: repeat(2, 50%);
-  column-gap: 10px;
-  max-width: max-content;
-}
 
 .headTitle {
   height: 25vh;
@@ -59,7 +52,7 @@
 
 .bg img {
   width: 100vw;
-  height: 50vh;
+  height: 40vh;
   margin-bottom: -15px;
   padding-bottom: 0.5em;
 }
@@ -114,6 +107,14 @@ img,
 /**************** supérieur ou égal à 768 px ************/
   /*********************** Desktop ********************/
 @media screen and (min-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 50%);
+    column-gap: 10px;
+    max-width: max-content;
+    padding: inherit;
+  }
 
   .headTitle {
     height: 30vh;

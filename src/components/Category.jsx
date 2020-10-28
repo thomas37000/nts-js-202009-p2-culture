@@ -5,13 +5,13 @@ const Category = ({ category }) => {
   return (
     <>
       <div id="category">
-        <h1>{category.records.fields.nom}</h1>
+        <h1>{category.records[2].fields.nom}</h1>
         <p>
-          <strong>{category.records.fields.description}</strong>
+          <strong>{category.records[2].fields.description}</strong>
         </p>
         <img
-          src={category.records.fields.media_2}
-          alt={category.records.fields.description}
+          src={category.records[2].fields.media_1}
+          alt={category.records[2].fields.description}
         />
       </div>
     </>

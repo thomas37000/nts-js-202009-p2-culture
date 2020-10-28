@@ -1,9 +1,7 @@
 import React from 'react';
-import { render } from 'react-dom';
-import Nav from 'react-bootstrap/Nav';
+import { Link } from 'react-router-dom';
 import './css/Acceuil.css';
 
-// import jazz from './img/jazz.jpg';
 import spectacle from './img/concert.jpg';
 import football from './img/fc-nantes.png';
 import expo from './img/expo.jpg';
@@ -12,28 +10,12 @@ import marionnettes from './img/marionnettes.jpeg';
 const Grid = () => {
   return (
     <>
-      <Nav className="justify-content-center">
-        <h1>Culture</h1>
-      </Nav>
-      <Nav className="justify-content-center" activeKey="/home">
-        {/* <img src={jazz} width="75" height="75" alt="logo" /> */}
-        <Nav.Item>
-          <Nav.Link href="/home">Calendrier / Agenda</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-1">Contact</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-2">Réservation</Nav.Link>
-        </Nav.Item>
-      </Nav>
-
       <section className="container">
         <div className="bg">
           <img src={spectacle} alt="Culture" />
           <div className="overlay">
             <h2>
-              <a href="culture.html">Spectacle</a>
+              <Link to="/evenement">Spectacle</Link>
             </h2>
             <p>Aller à un Concert sur l île de Nantes.</p>
           </div>
@@ -74,19 +56,6 @@ const Grid = () => {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <Nav className="justify-content-center" activeKey="/home">
-        <Nav.Item>
-          <Nav.Link href="/home">Mentions légales</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-1">Contact</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-2">Partenaires</Nav.Link>
-        </Nav.Item>
-      </Nav>
     </>
   );
 };
