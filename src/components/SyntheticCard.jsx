@@ -8,7 +8,7 @@ const SyntheticCard = () => {
         <span>9h - 18h</span>
       </div>
       <img
-        src="https://www.guide-tourisme-france.com/IMAGES/IMG2686.jpg"
+        src="https://www.college-penanroz-pont-aven.ac-rennes.fr/sites/college-penanroz-pont-aven.ac-rennes.fr/IMG/jpg/musee_d_histoires_naturelles.jpg"
         alt="évènement"
       />
       <div className="information">
@@ -22,7 +22,7 @@ const SyntheticCard = () => {
         </h4>
         <h4 className="description">
           <span>Description : </span>
-          <span>Lorem ipsum...</span>
+          <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi impedit tempora debitis voluptatibus beatae aspernatur non, itaque natus autem culpa nam, et saepe libero facere a, atque adipisci corporis modi.</span>
         </h4>
       </div>
       <div className="price">
