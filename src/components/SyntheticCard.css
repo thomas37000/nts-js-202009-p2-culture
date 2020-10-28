@@ -1,0 +1,38 @@
+.Card {
+    display: flex;
+    text-align: left;
+    padding: 1.25em;
+    width: 40rem;
+    height: 7rem;
+    border: 1px solid #1b1a1a;
+    background-color: rgb(245, 239, 239);
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+    font-size: 0.75em;
+  }
+
+  .horaire {
+      margin-top: 3.5rem;
+      width: 3rem;
+  }
+  
+  .Card img {
+    display: flex;
+    margin: auto;
+    max-height: 5rem;
+    margin: 1rem;
+  }
+  
+  .Card.information {
+    display: flex;
+    margin: auto;
+  }
+
+  .price{
+    width: 5rem;
+    text-align: right;
+    margin-left: 3rem;
+  }
+  
+  
+  
