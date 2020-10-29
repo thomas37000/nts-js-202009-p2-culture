@@ -6,6 +6,7 @@ import spectacle from './img/concert.jpg';
 import football from './img/fc-nantes.png';
 import expo from './img/expo.jpg';
 import marionnettes from './img/marionnettes.jpeg';
+// import SyntheticCard from './categories/SyntheticCard';
 
 const Grid = () => {
   return (
@@ -24,7 +25,7 @@ const Grid = () => {
           <img src={expo} alt="exposition" />
           <div className="overlay">
             <h2>
-              <Link to="/exposition">Exposition</Link>
+              <Link to="/expositions">Exposition</Link>
               {/* <a href="musiques.html" className="zic">Exposition</a> */}
             </h2>
             <p>quoi visiter sur l île de Nantes</p>

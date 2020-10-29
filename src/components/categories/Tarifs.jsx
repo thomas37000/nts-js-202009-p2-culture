@@ -19,7 +19,7 @@ class TarifCategory extends Component {
   getTarifs() {
     axios
       .get(
-        'https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_equipements-culturels-nantes-tarifs&q=&facet=nom_complet&facet=type_tarif'
+        'https://cors-anywhere.herokuapp.com/https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_equipements-culturels-nantes-tarifs&q=&facet=nom_complet&facet=type_tarif'
       )
       .then((response) => response.data)
       .then((data) => {
