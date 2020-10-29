@@ -1,21 +1,20 @@
-import react from 'react';
+import React from 'react';
 
-const footer = () => {
-    return <footer>
+const Footer = () => {
+  return (
+    <footer>
+      <article className="titlefooter">
+        <h3>Mention légales</h3>
+        <h3>Contact</h3>
+        <h3>Partenaires</h3>
+      </article>
 
-        <article className="titlefooter">
-            <h3>Mention légales</h3>
-            <h3>Contact</h3>
-            <h3>Partenaires</h3>
-        </article>
-
-        <div>
-        <i class="material-icons">facebook</i>
-        <i class="material-icons">Instagram</i>
-        <i class="material-icons">Twitter</i>
-        </div>
-
-
-    </footer>;
-}
-export default footer;
+      <div>
+        <i className="material-icons">facebook</i>
+        <i className="material-icons">Instagram</i>
+        <i className="material-icons">Twitter</i>
+      </div>
+    </footer>
+  );
+};
+export default Footer;
