@@ -8,6 +8,10 @@ const Ul = styled.ul`
 
   li {
     padding: 18px 10px;
+    background-color: #0d2538;
+    color: white;
+    padding: 20px;
+    padding-bottom: 10px;
   }
 
   @media (max-width: 768px) {

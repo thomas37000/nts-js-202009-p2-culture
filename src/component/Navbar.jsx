@@ -9,6 +9,7 @@ const Nav = styled.nav`
   border-bottom: 2px solid #f1f1f1;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   .imagenav {
     padding: 0;
