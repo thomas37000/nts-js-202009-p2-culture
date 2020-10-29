@@ -32,6 +32,11 @@ margin: auto;
 .Price {
 width: auto;
 text-align: right;
+color: red;
+}
+
+li {
+  list-style-type: none;
 }
 
 

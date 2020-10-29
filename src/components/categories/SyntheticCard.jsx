@@ -7,7 +7,7 @@ const SyntheticCard = (props) => {
   const {
     heure_debut: heure,
     nom,
-    description,
+    rubrique,
     media_1: media,
     gratuit,
     lieu,
@@ -22,7 +22,7 @@ const SyntheticCard = (props) => {
       <img src={media} alt="évènement" />
       <div className="Information">
         <div className="Catégorie">
-          <h4>{description}</h4>
+          <h4>{rubrique}</h4>
         </div>
         <div className="Name">
           <h4>{nom}</h4>
@@ -51,7 +51,7 @@ SyntheticCard.propTypes = {
     fields: PropTypes.string,
   }).isRequired,
   nom: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  rubrique: PropTypes.string.isRequired,
   media_1: PropTypes.string.isRequired,
   heure_debut: PropTypes.string.isRequired,
   gratuit: PropTypes.string.isRequired,
