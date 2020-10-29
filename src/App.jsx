@@ -47,24 +47,6 @@ function App() {
           </Nav.Item>
         </Nav>
 
-        {/* <Nav className="justify-content-center" activeKey="/home">
-          <Nav.Item componentclass="span">
-            <Nav.Link to="/">Home</Nav.Link>
-          </Nav.Item>
-          <Nav.Item componentclass="span">
-            <Nav.Link to="/expositions/">Expositions</Nav.Link>
-          </Nav.Item>
-          <Nav.Item componentclass="span">
-            <Nav.Link to="/tarifs/">Tarifs</Nav.Link>
-          </Nav.Item>
-          <Nav.Item componentclass="span">
-            <Nav.Link to="/enfants/">Enfants</Nav.Link>
-          </Nav.Item>
-          <Nav.Item componentClass="span">
-            <Nav.Link to="/contact/">Contact</Nav.Link>
-          </Nav.Item>
-        </Nav> */}
-
         <Switch>
           <Route exact path="/">
             <Grid />

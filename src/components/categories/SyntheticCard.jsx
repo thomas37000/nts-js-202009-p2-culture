@@ -15,38 +15,33 @@ const SyntheticCard = (props) => {
     lieu_quartier: quartier,
   } = props;
   return (
-    <figure className="Card">
-      <div className="horaire">
+    <div className="Card">
+      <div className="Horaire">
         <span>{heure}</span>
       </div>
-      <img src={media} alt={nom} />
-      <div className="information">
-        <h3 className="catégorie">
-          <span>Exposition : </span>
-          <span>{nom}</span>
-        </h3>
-        <h4 className="lieu">
-          <span>Lieu : </span>
-          <span>{lieu}</span>
-        </h4>
-        <p>
-          <span>quartier : </span>
-          {quartier}
-        </p>
-        <h4 className="description">
-          <span>Description : </span>
-          <span>{description}</span>
-        </h4>
-        <h6>{tel}</h6>
+      <img src={media} alt="évènement" />
+      <div className="Information">
+        <div className="Catégorie">
+          <h4>{description}</h4>
+        </div>
+        <div className="Name">
+          <h4>{nom}</h4>
+        </div>
+        <div className="Lieu">
+          <h4>
+            Lieu :<span>{lieu}</span>
+          </h4>
+        </div>
+        <div className="Ville">
+          <h4>{quartier}</h4>
+        </div>
       </div>
-      <div className="price">
+      <div className="Price">
         <span>8 euros</span>
+        <span>{gratuit}</span>
       </div>
-      <div className="price">
-        gratuit:
-        {gratuit}
-      </div>
-    </figure>
+      <div className="tel">tel : {tel}</div>
+    </div>
   );
 };
 
