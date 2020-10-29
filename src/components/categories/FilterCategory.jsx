@@ -23,7 +23,7 @@ class FilterCategory extends Component {
       .then((response) => response.data)
       .then((data) => {
         // eslint-disable-next-line no-console
-        console.log(data);
+        // console.log(data);
         this.setState({
           category: data,
         });
@@ -35,18 +35,13 @@ class FilterCategory extends Component {
 
     return (
       <div>
-        <button id="btn" type="button" onClick={this.getFilters}>
-          select a new category
-        </button>
-        <div>
-          {category &&
-            category.records.map((categorie) => (
-              <li>
-                {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-                <Category {...categorie.fields} />
-              </li>
-            ))}
-        </div>
+        {category &&
+          category.records.map((categorie) => (
+            <li key="id">
+              {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+              <Category {...categorie.fields} />
+            </li>
+          ))}
       </div>
     );
   }

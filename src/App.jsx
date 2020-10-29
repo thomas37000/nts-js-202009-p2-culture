@@ -4,7 +4,9 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 
 import Grid from './components/Grid';
-import FilterCategory from './components/FilterCategory';
+import FilterCategory from './components/categories/FilterCategory';
+import TarifCategory from './components/categories/Tarifs';
+// import Kids from './components/Kids';
 
 function App() {
   // return (
@@ -28,6 +30,16 @@ function App() {
               <Link to="/evenement/">Evenement</Link>
             </Nav.Link>
           </Nav.Item>
+          <Nav.Item>
+            <Nav.Link>
+              <Link to="/tarifs/">Tarifs</Link>
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link>
+              <Link to="/enfants/">Enfants / jeunesse</Link>
+            </Nav.Link>
+          </Nav.Item>
         </Nav>
 
         <Switch>
@@ -35,6 +47,8 @@ function App() {
             <Grid />
           </Route>
           <Route path="/evenement" component={FilterCategory} />
+          <Route path="/tarifs" component={TarifCategory} />
+          {/* <Route path="/enfants" component={Kids} /> */}
         </Switch>
       </div>
     </Router>

@@ -27,7 +27,7 @@ Category.propTypes = {
   nom: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   media_1: PropTypes.string.isRequired,
-  heure_debut: PropTypes.string.isRequired,
+  heure_debut: PropTypes.bool.isRequired,
 };
 
 export default Category;
