@@ -20,10 +20,9 @@
   text-align: left;
   width: auto;
   height: auto;
-  /*border: 1px solid #1b1a1a;*/
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.15);
   background-color: rgb(245, 239, 239);
   border-radius: 2px;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.15);
   font-size: 0.75em;
 }
 
@@ -73,6 +72,32 @@ iframe {
 
 @media screen and (min-width: 800px) {
 
+
+  .photo{
+  display:none;
+  }
+
+  .eventName {
+    display: flex;
+    justify-content: center;
+    background-image: url('https://www.guide-tourisme-france.com/IMAGES/IMG2686.jpg');
+    height: 60vh;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .eventName h1,
+  .eventName h2{
+    font-size: 5rem;
+    color: #f5f2f2;
+    text-align: center;
+    letter-spacing: 0.3rem;
+    text-shadow: 3px 4px 8px #0e0d0d;
+    width: 100%;
+  }
+
   .Card {
     display: flex;
     flex-direction: row;
@@ -84,11 +109,6 @@ iframe {
     background-color: rgb(245, 239, 239);
     border-radius: 2px;
     font-size: 0.75em;
-  }
-
-  .eventName {
-    display: flex;
-    justify-content: center;
   }
   
   .information {
