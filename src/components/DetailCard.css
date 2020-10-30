@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
+html{
+  margin: 0;
+}
+
 .eventName {
   display: flex;
   flex-direction: column;
