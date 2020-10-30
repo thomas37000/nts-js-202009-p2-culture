@@ -6,16 +6,8 @@ import Nav from 'react-bootstrap/Nav';
 import Grid from './components/Grid';
 import Expositions from './components/categories/Expositions';
 import TarifCategory from './components/categories/Tarifs';
-// import Kids from './components/categories/Kids';
 
 function App() {
-  // return (
-  //   <div className="App">
-  //     <Grid />
-  //     <FilterCategory />
-  //   </div>
-  // );
-
   return (
     <Router>
       <div>

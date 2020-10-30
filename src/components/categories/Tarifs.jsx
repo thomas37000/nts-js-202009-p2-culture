@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// eslint-disable-next-line import/no-named-as-default-member
 import Tarifs from './TarifCategory';
 
 class TarifCategory extends Component {

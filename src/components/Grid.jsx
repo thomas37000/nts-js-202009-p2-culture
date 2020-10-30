@@ -6,7 +6,6 @@ import spectacle from './img/concert.jpg';
 import football from './img/fc-nantes.png';
 import expo from './img/expo.jpg';
 import marionnettes from './img/marionnettes.jpeg';
-// import SyntheticCard from './categories/SyntheticCard';
 
 const Grid = () => {
   return (
@@ -26,7 +25,6 @@ const Grid = () => {
           <div className="overlay">
             <h2>
               <Link to="/expositions">Exposition</Link>
-              {/* <a href="musiques.html" className="zic">Exposition</a> */}
             </h2>
             <p>quoi visiter sur l île de Nantes</p>
           </div>
@@ -36,7 +34,6 @@ const Grid = () => {
           <div className="overlay">
             <h2>
               <Link to="/sport">Sport</Link>
-              {/* <a href="restaurants.html" className="resto">Sport</a> */}
             </h2>
             <p>Sport sur l île de Nantes.</p>
           </div>
@@ -50,7 +47,6 @@ const Grid = () => {
           <div className="overlay">
             <h2>
               <Link to="/enfants">Enfants</Link>
-              {/* <a href="histoire.html">Enfants</a> */}
             </h2>
             <p>Spectacles pour enfants.</p>
           </div>

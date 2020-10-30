@@ -1,7 +1,6 @@
 import React from 'react';
 import './SyntheticCard.css';
 import PropTypes from 'prop-types';
-// import Category from './Category';
 
 const SyntheticCard = (props) => {
   const {
