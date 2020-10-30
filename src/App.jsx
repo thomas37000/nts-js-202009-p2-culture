@@ -1,15 +1,13 @@
 import React from 'react';
+import Navbar from './component/Navbar';
 import './App.css';
 import DetailCard from './components/DetailCard';
-import SyntheticCard from './components/SyntheticCard';
-
 
 function App() {
   return (
     <div className="App">
-      <SyntheticCard />
+      <Navbar />
       <DetailCard />
-      
     </div>
   );
 }
