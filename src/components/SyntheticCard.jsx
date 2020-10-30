@@ -23,7 +23,7 @@ const DIV = styled.div`
   width: 3rem;
 }
 
-.Photo {
+.SyntheticPhoto {
   margin: auto;
   max-width: 15rem;
   height: auto;
@@ -59,7 +59,7 @@ const DIV = styled.div`
   .SyntheticHoraire {
     width: 5rem;
   }
-  .Photo {
+  .SyntheticPhoto {
     width: 9rem;
     height: auto;
   }
@@ -86,7 +86,7 @@ function SyntheticCard() {
           <span>9h - 18h</span>
         </div>
         <img
-          className="Photo"
+          className="SyntheticPhoto"
           src="https://www.college-penanroz-pont-aven.ac-rennes.fr/sites/college-penanroz-pont-aven.ac-rennes.fr/IMG/jpg/musee_d_histoires_naturelles.jpg"
           alt="évènement"
         />
