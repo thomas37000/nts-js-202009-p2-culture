@@ -1,0 +1,75 @@
+.Card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  padding: 1em;
+  width: auto;
+  height: auto;
+  border: 1px solid #1b1a1a;
+  background-color: rgb(245, 239, 239);
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  font-size: 0.75em;
+}
+
+.Horaire {
+  width: 3rem;
+}
+
+.Card img {
+  margin: auto;
+  max-width: 15rem;
+  height: auto;
+  margin: 1rem;
+}
+
+.Card.Information {
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.Price {
+  width: auto;
+  text-align: right;
+}
+
+
+@media screen and (min-width: 800px) {
+
+  .Card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 1em;
+    max-width: 35rem;
+    max-height: auto;
+    border: 1px solid #1b1a1a;
+    background-color: rgb(245, 239, 239);
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+    font-size: 0.75em;
+  }
+
+  .Horaire {
+    width: 5rem;
+  }
+
+  img {
+    width: 9rem;
+    height: auto;
+  }
+
+  .Information {
+    width: 20rem;
+    height: auto;
+  }
+
+  .Price {
+    width: 7rem;
+    text-align: right;
+    margin-bottom: 6rem;
+  }
+}
