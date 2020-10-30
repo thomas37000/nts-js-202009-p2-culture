@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Burger from './Burger';
 import ImageNav from './Image Navbar/NanteEvent(2).png';
 import Logo from './Image Navbar/logo.png';
-// import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 
 const Nav = styled.nav`
   width: 100%;
