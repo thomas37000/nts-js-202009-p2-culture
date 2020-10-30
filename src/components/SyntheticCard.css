@@ -1,4 +1,4 @@
-.Card {
+.SyntheticCard {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,23 +13,23 @@
   font-size: 0.75em;
 }
 
-.Horaire {
+.SyntheticHoraire {
   width: 3rem;
 }
 
-.Card img {
+.SyntheticCard img {
   margin: auto;
   max-width: 15rem;
   height: auto;
   margin: 1rem;
 }
 
-.Card.Information {
+.SyntheticCard.Information {
   flex-wrap: wrap;
   margin: auto;
 }
 
-.Price {
+.SyntheticPrice {
   width: auto;
   text-align: right;
 }
@@ -37,7 +37,7 @@
 
 @media screen and (min-width: 800px) {
 
-  .Card {
+  .SyntheticCard {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -53,21 +53,21 @@
     font-size: 0.75em;
   }
 
-  .Horaire {
+  .SyntheticHoraire {
     width: 5rem;
   }
 
-  img {
+  .SyntheticCard img {
     width: 9rem;
     height: auto;
   }
 
-  .Information {
+  .SyntheticInformation {
     width: 20rem;
     height: auto;
   }
 
-  .Price {
+  .SyntheticPrice {
     width: 7rem;
     text-align: right;
     margin-bottom: 6rem;
