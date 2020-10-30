@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const DIV = styled.div`
 
@@ -102,7 +102,7 @@ function SyntheticCard() {
           </div>
           <div className="note">
             <h4>
-              Note :{" "}
+              Note :{' '}
               <span className="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
             </h4>
             <div className="avis">
@@ -119,4 +119,3 @@ function SyntheticCard() {
 }
 
 export default SyntheticCard;
-
