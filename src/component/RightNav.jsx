@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Ul = styled.ul`
+const Slideburger = styled.ul`
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
@@ -35,12 +35,12 @@ const Ul = styled.ul`
 // eslint-disable-next-line react/prop-types
 const RightNav = ({ open }) => {
   return (
-    <Ul open={open}>
+    <Slideburger open={open}>
       <li>Accueil</li>
       <li>Calendrier</li>
       <li>Contact</li>
       <li>Reservation</li>
-    </Ul>
+    </Slideburger>
   );
 };
 
