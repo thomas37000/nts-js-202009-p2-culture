@@ -5,6 +5,7 @@ const Slideburger = styled.ul`
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
+  z-index: 19;
 
   li {
     padding: 18px 10px;

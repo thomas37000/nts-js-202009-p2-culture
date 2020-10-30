@@ -1,12 +1,14 @@
 import React from 'react';
-import Navbar from './component/Navbar';
-import './App.css';
+
+import Grid from './components/Grid';
 import DetailCard from './components/DetailCard';
+import Navbar from './component/Navbar';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Navbar />
+      <Grid />
       <DetailCard />
     </div>
   );
