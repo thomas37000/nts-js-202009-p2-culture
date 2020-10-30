@@ -14,27 +14,21 @@ const Grid = () => {
         <div className="bg">
           <img src={spectacle} alt="Culture" />
           <div className="overlay">
-            <h2>
-              <Link to="/evenement">Spectacle</Link>
-            </h2>
+            <h2></h2>
             <p>Aller à un Concert sur l île de Nantes.</p>
           </div>
         </div>
         <div className="bg">
           <img src={expo} alt="exposition" />
           <div className="overlay">
-            <h2>
-              <Link to="/expositions">Exposition</Link>
-            </h2>
+            <h2>a</h2>
             <p>quoi visiter sur l île de Nantes</p>
           </div>
         </div>
         <div className="bg">
           <img src={football} alt="Sport à Nantes" />
           <div className="overlay">
-            <h2>
-              <Link to="/sport">Sport</Link>
-            </h2>
+            <h2>a</h2>
             <p>Sport sur l île de Nantes.</p>
           </div>
         </div>
@@ -45,9 +39,7 @@ const Grid = () => {
             className="histoire"
           />
           <div className="overlay">
-            <h2>
-              <Link to="/enfants">Enfants</Link>
-            </h2>
+            <h2></h2>
             <p>Spectacles pour enfants.</p>
           </div>
         </div>
