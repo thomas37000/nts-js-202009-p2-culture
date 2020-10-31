@@ -2,7 +2,7 @@ import React from 'react';
 
 import Grid from './components/Grid';
 import DetailCard from './components/DetailCard';
-import Navbar from './component/Navbar';
+import Navbar from './components/navBar/Navbar';
 
 function App() {
   return (
