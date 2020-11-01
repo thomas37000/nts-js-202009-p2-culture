@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import Expos from './Expo';
+
 import SyntheticCard from './SyntheticCard';
 
 class Expositions extends Component {

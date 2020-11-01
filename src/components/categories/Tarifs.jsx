@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Tarifs from './TarifCategory';
+import Tarifs from './TarifCard';
 
 class TarifCategory extends Component {
   constructor(props) {
