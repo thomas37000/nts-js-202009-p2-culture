@@ -3,7 +3,7 @@ import './DetailCard.css';
 
 const DetailCard = () => {
   return (
-    <figure className="detailCard">
+    <figure className="DetailCard">
       <img
         className="photo"
         src="https://www.guide-tourisme-france.com/IMAGES/IMG2686.jpg"
@@ -32,12 +32,12 @@ const DetailCard = () => {
           <h4 className="accessibilité">
             Accessiblité : <i className="material-icons">accessible</i>
             <i className="material-icons">hearing_disabled</i>
-            <i class="material-icons">child_friendly</i>
+            <i className="material-icons">child_friendly</i>
           </h4>
           <h4 className="gratuité">
             Gratuité : <span>enfants et demandeurs d'emploi</span>
           </h4>
-          <h4>
+          <h4 className="lieu">
             Lieu : <span>Museum d'histoires naturelles - Nantes</span>
           </h4>
           <h4>
