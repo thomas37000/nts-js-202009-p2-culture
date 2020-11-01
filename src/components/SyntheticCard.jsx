@@ -7,6 +7,7 @@ const DIV = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: left;
+  margin: 2rem;
   padding: 1em;
   width: auto;
   height: auto;
@@ -38,7 +39,7 @@ const DIV = styled.div`
 .SyntheticPrice {
   width: auto;
   text-align: right;
-  margin: 1rem;
+  margin: 0.5rem;
 }
 
 @media screen and (min-width: 800px) {
@@ -47,7 +48,7 @@ const DIV = styled.div`
   justify-content: space-between;
   align-items: center;
   text-align: left;
-  padding: 1em;
+  padding: 1rem;
   max-width: 35rem;
   max-height: auto;
   border: 1px solid #1b1a1a;
@@ -68,9 +69,9 @@ const DIV = styled.div`
     height: auto;
   }
   .SyntheticPrice {
-    width: 7rem;
+    width: 10rem;
     text-align: right;
-    margin-bottom: 6rem;
+    margin-bottom: 7rem;
 
   .avis {
     text-align: right;
@@ -92,26 +93,35 @@ function SyntheticCard() {
         />
         <div className="SyntheticInformation">
           <div className="SyntheticCatégorie">
-            <h4>Exposition : Les dinosaures</h4>
+            <h4>
+              <span className="catégorie">Exposition </span>:{' '}
+              <span className="nom-évènement">Les dinosaures</span>
+            </h4>
           </div>
           <div className="SyntheticLieu">
-            <h4>Lieu : Museum d'histoires naturelles</h4>
+            <h4>
+              Lieu : <span className="lieu">Museum d'histoires naturelles</span>
+            </h4>
           </div>
           <div className="SyntheticVille">
-            <h4>Ville : Nantes</h4>
+            <h4>
+              Ville : <span className="ville">Nantes</span>
+            </h4>
           </div>
-          <div className="note">
+          <div className="Note">
             <h4>
               Note :{' '}
               <span className="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
             </h4>
-            <div className="avis">
+            <div className="Plus-de-détail">
               <a href="#">Voir plus</a>
             </div>
           </div>
         </div>
         <div className="SyntheticPrice">
-          <span>Tarif : 8 euros</span>
+          <h4>
+            Tarif : <span className="tarif">8 euros</span>
+          </h4>
         </div>
       </DIV>
     </div>
