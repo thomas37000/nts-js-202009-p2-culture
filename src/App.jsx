@@ -15,8 +15,8 @@ function App() {
       <Grid />
       <DetailCard />
       <Evenements />
-      <Tarifs />
-      <Kids />
+      {/* <Tarifs />
+      <Kids /> */}
     </div>
   );
 }

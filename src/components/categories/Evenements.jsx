@@ -19,12 +19,12 @@ class Expositions extends Component {
   getFilters() {
     axios
       .get(
-        'https://cors-anywhere.herokuapp.com/https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_agenda-evenements-nantes-nantes-metropole&q=&facet=emetteur&facet=rubrique&facet=lieu&facet=ville&facet=lieu_quartier'
+        'https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_agenda-evenements-nantes-nantes-metropole&q=&facet=emetteur&facet=rubrique&facet=lieu&facet=ville&facet=lieu_quartier&key=a2c65fe09812bd0c8a2628bdfe6f71bb1bd48facca5b74d63070e77f&rows=100'
       )
       .then((response) => response.data)
       .then((data) => {
         // eslint-disable-next-line no-console
-        console.log(data);
+        console.log(data.records);
         this.setState({
           category: data,
         });
