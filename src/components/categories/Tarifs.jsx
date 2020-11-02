@@ -22,7 +22,6 @@ class TarifCategory extends Component {
       )
       .then((response) => response.data)
       .then((data) => {
-        // eslint-disable-next-line no-console
         console.log(data);
         this.setState({
           tarifs: data,
@@ -38,7 +37,6 @@ class TarifCategory extends Component {
         {tarifs &&
           tarifs.records.map((tarif) => (
             <li>
-              {/* eslint-disable-next-line react/jsx-props-no-spreading */}
               <Tarifs {...tarif.fields} />
             </li>
           ))}

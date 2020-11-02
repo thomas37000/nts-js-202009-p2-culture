@@ -25,7 +25,6 @@ class Kids extends Component {
       )
       .then((response) => response.data)
       .then((data) => {
-        // eslint-disable-next-line no-console
         console.log(data);
         this.setState({
           kids: data,
@@ -41,7 +40,6 @@ class Kids extends Component {
         {kids &&
           kids.records.map((kid) => (
             <li>
-              {/* eslint-disable-next-line react/jsx-props-no-spreading */}
               <Expos {...kid.fields} />
             </li>
           ))}
