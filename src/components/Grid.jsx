@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import spectacle from './categories/img/concerts.jpg';
 import football from './categories/img/fc-nantes.jpg';
@@ -131,22 +132,34 @@ const Grid = () => {
           <div className="bg">
             <img src={spectacle} alt="Culture" />
             <div className="overlay">
-              <h2>Spectacles</h2>
-              <p>Aller à un Concert sur l'île de Nantes.</p>
+              <h2>
+                <Link to="/spectacles/">Spectacles</Link>
+              </h2>
+              <p>
+                <Link to="/spectacles/">
+                  Aller à un Concert sur l'île de Nantes.
+                </Link>
+              </p>
             </div>
           </div>
           <div className="bg">
             <img src={expo} alt="exposition" />
             <div className="overlay">
-              <h2>Exposition</h2>
-              <p>Quoi visiter sur l'île de Nantes.</p>
+              <h2>
+                <Link to="/expositions/">Expositions</Link>
+              </h2>
+
+              <p><Link to="/expositions/">Quoi visiter sur l'île de Nantes.</Link></p>
             </div>
           </div>
           <div className="bg">
             <img src={football} alt="Sport à Nantes" />
             <div className="overlay">
-              <h2>Sport</h2>
-              <p>Sport sur l'île de Nantes.</p>
+              <h2>
+                <Link to="/sport/">Sport</Link>
+              </h2>
+
+              <p><Link to="/sport/">Sport sur l'île de Nantes.</Link></p>
             </div>
           </div>
           <div className="bg">
@@ -156,8 +169,11 @@ const Grid = () => {
               className="histoire"
             />
             <div className="overlay">
-              <h2>Enfants</h2>
-              <p>Spectacles pour enfants.</p>
+              <h2>
+                <Link to="/enfants/">Enfants</Link>
+              </h2>
+              <p><Link to="/enfants/">Spectacles pour Enfants.</Link></p>
+              
             </div>
           </div>
         </section>

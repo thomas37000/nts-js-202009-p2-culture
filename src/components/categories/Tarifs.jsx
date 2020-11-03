@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 import Tarifs from './TarifCard';
 
 class TarifCategory extends Component {
@@ -17,14 +19,18 @@ class TarifCategory extends Component {
 
   getTarifs() {
     axios
-      .get(
-        'https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_equipements-culturels-nantes-tarifs&q=&facet=nom_complet&facet=type_tarif&key=a2c65fe09812bd0c8a2628bdfe6f71bb1bd48facca5b74d63070e77f&rows=100'
-      )
+      .get('https://data.nantesmetropole.fr/api/records/1.0/search/', {
+        params: {
+          dataset: '244400404_equipements-culturels-nantes-tarifs',
+          key: 'a2c65fe09812bd0c8a2628bdfe6f71bb1bd48facca5b74d63070e77f',
+          rows: 100,
+        },
+      })
       .then((response) => response.data)
       .then((data) => {
         console.log(data.records);
         this.setState({
-          tarifs: data,
+          tarifs: data.records,
         });
       });
   }
@@ -34,11 +40,12 @@ class TarifCategory extends Component {
 
     return (
       <div>
+        <Link to="/">Home</Link>
         {tarifs.map((tarif) => (
-            <li>
-              <Tarifs {...tarif.fields} />
-            </li>
-          ))}
+          <li>
+            <Tarifs {...tarif.fields} />
+          </li>
+        ))}
       </div>
     );
   }
