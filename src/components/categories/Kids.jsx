@@ -9,7 +9,7 @@ class Kids extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      kids: null,
+      kids: [],
     };
     this.getKids = this.getKids.bind(this);
   }
@@ -37,8 +37,7 @@ class Kids extends Component {
 
     return (
       <div>
-        {kids &&
-          kids.records.map((kid) => (
+        {kids.map((kid) => (
             <li>
               <Expos {...kid.fields} />
             </li>

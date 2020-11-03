@@ -7,7 +7,7 @@ class Expositions extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      category: null,
+      category: [],
     };
     this.getFilters = this.getFilters.bind(this);
   }
@@ -36,8 +36,7 @@ class Expositions extends Component {
 
     return (
       <div>
-        {category &&
-          category.records.map((categorie) => (
+        {category.map((categorie) => (
             <li key={category.id} className="liste">
               {/* eslint-disable-next-line react/jsx-props-no-spreading */}
               <SyntheticCard key={category.id} {...categorie.fields} />

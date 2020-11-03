@@ -6,7 +6,7 @@ class TarifCategory extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tarifs: null,
+      tarifs: [],
     };
     this.getTarifs = this.getTarifs.bind(this);
   }
@@ -34,8 +34,7 @@ class TarifCategory extends Component {
 
     return (
       <div>
-        {tarifs &&
-          tarifs.records.map((tarif) => (
+        {tarifs.map((tarif) => (
             <li>
               <Tarifs {...tarif.fields} />
             </li>
