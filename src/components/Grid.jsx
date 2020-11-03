@@ -132,21 +132,21 @@ const Grid = () => {
             <img src={spectacle} alt="Culture" />
             <div className="overlay">
               <h2>Spectacles</h2>
-              <p>Aller à un Concert sur l île de Nantes.</p>
+              <p>Aller à un Concert sur l'île de Nantes.</p>
             </div>
           </div>
           <div className="bg">
             <img src={expo} alt="exposition" />
             <div className="overlay">
               <h2>Exposition</h2>
-              <p>quoi visiter sur l île de Nantes</p>
+              <p>Quoi visiter sur l'île de Nantes.</p>
             </div>
           </div>
           <div className="bg">
             <img src={football} alt="Sport à Nantes" />
             <div className="overlay">
               <h2>Sport</h2>
-              <p>Sport sur l île de Nantes.</p>
+              <p>Sport sur l'île de Nantes.</p>
             </div>
           </div>
           <div className="bg">
