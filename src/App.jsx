@@ -1,13 +1,28 @@
 import React from 'react';
-import Navbar from './component/Navbar';
-import DetailCard from './components/DetailCard';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import Grid from './components/Grid';
+import Navbar from './components/navBar/Navbar';
+import Evenements from './components/categories/Evenements';
+import Tarifs from './components/categories/Tarifs';
+import Kids from './components/categories/Kids';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <DetailCard />
-    </div>
+    <>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Navbar />
+            <Grid />
+            <Evenements />
+          </Route>
+          <Route path="/spectacles/" component={Evenements} />
+          <Route path="/tarifs/" component={Tarifs} />
+          <Route path="/enfants/" component={Kids} />
+        </Switch>
+      </Router>
+
+    </>
   );
 }
 
