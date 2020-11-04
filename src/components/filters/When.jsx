@@ -27,9 +27,9 @@ const Section = styled.section`
   .today {
     border-left: 2px solid #000;
   }
-  `
+`
 
- class When extends React.Component {
+class When extends React.Component {
   render() {
     return (
       <Section className="When">
@@ -40,6 +40,6 @@ const Section = styled.section`
       </Section>
     )
   }
- }
+}
 
 export default When;

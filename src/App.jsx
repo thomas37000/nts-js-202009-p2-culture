@@ -22,8 +22,6 @@ function App() {
             <Navbar />
             <Grid />
             <Filters />
-            <DetailCard />
-            {/*<Evenements />*/}
           </Route>
           <Route path="/spectacles/" component={Evenements} />
           <Route path="/tarifs/" component={Tarifs} />

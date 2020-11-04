@@ -13,8 +13,7 @@ const Section = styled.section`
   align-items: center;
   box-shadow: 0px 5px 12px;
 
-
-
+  
   .label-slider-price {
     width: 80%;
     display: flex;
