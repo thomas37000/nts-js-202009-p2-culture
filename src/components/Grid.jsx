@@ -79,13 +79,13 @@ const Container = styled.div`
 
   @media screen and (min-width: 768px) {
     .container {
+      margin: auto;
       display: flex;
       column-gap: 3px;
-      max-width: max-content;
     }
     .bg {
-      height: 55vh;
-      
+      height: 40vh;
+      width: inherit;
     }
 
     .bg .overlay {
