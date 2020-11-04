@@ -91,6 +91,7 @@ class EventList extends Component {
           </button>
           <ul>
             {EventList.filter((event) => {
+              // eslint-disable-next-line no-console
               console.log(status);
               if (status === 'all') {
                 return true;
