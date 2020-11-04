@@ -10,7 +10,6 @@ import Evenements from './components/categories/Evenements';
 import Tarifs from './components/categories/Tarifs';
 import Kids from './components/categories/Kids';
 
-
 function App() {
   return (
     <>

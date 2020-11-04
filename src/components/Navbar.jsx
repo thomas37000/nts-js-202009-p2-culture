@@ -6,7 +6,7 @@ import Logo from './categories/img/NantEvent.png';
 const Nav = styled.nav`
   width: 100%;
   height: 100px;
-  border-bottom: 2px solid ##f5f5f5;
+  border-bottom: 2px solid #f5f5f5;
   display: flex;
   background-color: navy;
   justify-content: space-between;

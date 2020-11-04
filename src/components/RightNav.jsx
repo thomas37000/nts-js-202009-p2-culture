@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link, Switch, Router, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import Grid from './Grid';
 
 const Slideburger = styled.ul`
   list-style: none;
@@ -14,7 +13,10 @@ const Slideburger = styled.ul`
     background-color: #000080;
     color: #f5f5f5;
     padding: 20px;
-    padding-bottom: 30px;
+  }
+
+  a {
+    color: #f5f5f5;
   }
 
   @media (max-width: 768px) {
@@ -28,10 +30,14 @@ const Slideburger = styled.ul`
     width: 300px;
     padding-top: 5.5rem;
     transition: transform 0.3s ease-in-out;
+
     li {
-      color: f5f5f5;
+      color: #f5f5f5;
       text-align: center;
       border-bottom: 2px solid;
+    }
+    a {
+      color: #f5f5f5;
     }
   } ;
 `;
@@ -39,37 +45,23 @@ const Slideburger = styled.ul`
 // eslint-disable-next-line react/prop-types
 const RightNav = ({ open }) => {
   return (
-    <Router>
-      <Slideburger open={open}>
-        <li>
-          <Link to="/">Accueil</Link>
-        </li>
-        <li>
-          <Link to="/">Calendrier</Link>
-        </li>
-        <li>
-          <Link to="/">Contact</Link>
-        </li>
-        <li>
-          <Link to="/">Reservation</Link>
-        </li>
-      </Slideburger>
-
-      <Switch>
-        <Route exact path="/">
-          <Grid />
-        </Route>
-        <Route path="/">
-          <Grid />
-        </Route>
-        <Route path="/">
-          <Grid />
-        </Route>
-        <Route path="/">
-          <Grid />
-        </Route>
-      </Switch>
-    </Router>
+    <Slideburger open={open}>
+      <li>
+        <Link to="/">Accueil</Link>
+      </li>
+      <li>
+        <Link to="/evenements">Evènements</Link>
+      </li>
+      <li>
+        <Link to="/calendrier">Calendrier</Link>
+      </li>
+      <li>
+        <Link to="/contact">Contact</Link>
+      </li>
+      <li>
+        <Link to="/reservation">Reservation</Link>
+      </li>
+    </Slideburger>
   );
 };
 
