@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const KidsCategory = (props) => {
+const KidsCard = (props) => {
   const {
     libelle_tarif: libelleTarif,
     nom_complet: nom,
@@ -27,7 +27,7 @@ const KidsCategory = (props) => {
   );
 };
 
-KidsCategory.propTypes = {
+KidsCard.propTypes = {
   kids: PropTypes.shape({
     records: PropTypes.string,
     fields: PropTypes.string,
@@ -38,4 +38,4 @@ KidsCategory.propTypes = {
   date_debut: PropTypes.bool.isRequired,
 };
 
-export default KidsCategory;
+export default KidsCard;
