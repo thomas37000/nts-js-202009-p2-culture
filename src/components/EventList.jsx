@@ -58,13 +58,13 @@ class EventList extends Component {
 
   free() {
     this.setState({
-      status: 'gratuit',
+      status: 'free',
     });
   }
 
   paying() {
     this.setState({
-      status: 'payant',
+      status: 'paying',
     });
   }
 
@@ -96,7 +96,7 @@ class EventList extends Component {
               if (status === 'all') {
                 return true;
               }
-              if (status === 'payant') {
+              if (status === 'paying') {
                 return event.fields.gratuit === 'non';
               }
               return event.fields.gratuit === 'oui';
