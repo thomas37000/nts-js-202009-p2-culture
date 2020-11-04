@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Switch, Router, Route } from 'react-router-dom';
 import styled from 'styled-components';
-import Grid from '../Grid';
+import Grid from './Grid';
 
 const Slideburger = styled.ul`
   list-style: none;
