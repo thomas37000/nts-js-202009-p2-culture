@@ -31,7 +31,6 @@ class Kids extends Component {
       })
       .then((response) => response.data)
       .then((data) => {
-        console.log(data.records);
         this.setState({
           kids: data.records,
         });

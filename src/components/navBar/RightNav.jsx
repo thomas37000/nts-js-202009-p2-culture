@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link, Switch, Router, Route } from 'react-router-dom';
 import styled from 'styled-components';
+import Grid from '../Grid';
 
 const Slideburger = styled.ul`
   list-style: none;
@@ -37,12 +39,37 @@ const Slideburger = styled.ul`
 // eslint-disable-next-line react/prop-types
 const RightNav = ({ open }) => {
   return (
-    <Slideburger open={open}>
-      <li>Accueil</li>
-      <li>Calendrier</li>
-      <li>Contact</li>
-      <li>Reservation</li>
-    </Slideburger>
+    <Router>
+      <Slideburger open={open}>
+        <li>
+          <Link to="/">Accueil</Link>
+        </li>
+        <li>
+          <Link to="/">Calendrier</Link>
+        </li>
+        <li>
+          <Link to="/">Contact</Link>
+        </li>
+        <li>
+          <Link to="/">Reservation</Link>
+        </li>
+      </Slideburger>
+
+      <Switch>
+        <Route exact path="/">
+          <Grid />
+        </Route>
+        <Route path="/">
+          <Grid />
+        </Route>
+        <Route path="/">
+          <Grid />
+        </Route>
+        <Route path="/">
+          <Grid />
+        </Route>
+      </Switch>
+    </Router>
   );
 };
 
