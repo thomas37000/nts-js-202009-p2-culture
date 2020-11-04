@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import spectacle from './categories/img/concerts.jpg';
-import football from './categories/img/fc-nantes.jpg';
-import expo from './categories/img/expo.jpg';
-import marionnettes from './categories/img/marionnettes.jpeg';
+import spectacle from './imgGrid/concerts.jpg';
+import football from './imgGrid/fc-nantes.jpg';
+import expo from './imgGrid/expo.jpg';
+import marionnettes from './imgGrid/marionnettes.jpeg';
 
 const Container = styled.div`
   @import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i');
@@ -43,26 +43,21 @@ const Container = styled.div`
     margin-top: 50px;
     padding-top: 10%;
     cursor: default;
-    color: #000080;
   }
 
-  .resto {
-    pointer-events: none;
-  }
-
-  .bg .overlay h2 a {
+  .bg .overlay h2 a, .bg .overlay p>a:hover {
     color: #fff;
+    text-decoration: none;
   }
 
-  .bg .overlay p {
+  .bg .overlay p>a {
     font-family: 'Roboto', sans-serif;
-    color: #fff;
     font-size: 25px;
+    color: #000080;
   }
 
   .bg .overlay p:hover {
     font-family: 'Roboto', sans-serif;
-    color: #fff;
     font-size: 25px;
     background-color: #000080;
   }
@@ -82,19 +77,15 @@ const Container = styled.div`
     border-radius: 3px;
   }
 
-  .histoire {
-    height: 100vh;
-  }
-
   @media screen and (min-width: 768px) {
     .container {
-      display: grid;
-      grid-template-columns: repeat(2, 50%);
+      display: flex;
       column-gap: 3px;
       max-width: max-content;
     }
     .bg {
       height: 55vh;
+      
     }
 
     .bg .overlay {
@@ -103,7 +94,7 @@ const Container = styled.div`
     }
 
     .bg .overlay h2 {
-      padding-top: 22%;
+      padding-top: 35%;
       margin: auto;
     }
 
@@ -137,7 +128,7 @@ const Grid = () => {
               </h2>
               <p>
                 <Link to="/spectacles/">
-                  Aller à un Concert sur l'île de Nantes.
+                  Aller à un Concert à Nantes.
                 </Link>
               </p>
             </div>
@@ -148,8 +139,7 @@ const Grid = () => {
               <h2>
                 <Link to="/expositions/">Expositions</Link>
               </h2>
-
-              <p><Link to="/expositions/">Quoi visiter sur l'île de Nantes.</Link></p>
+              <p><Link to="/expositions/">Quoi visiter à Nantes.</Link></p>
             </div>
           </div>
           <div className="bg">
@@ -159,14 +149,13 @@ const Grid = () => {
                 <Link to="/sport/">Sport</Link>
               </h2>
 
-              <p><Link to="/sport/">Sport sur l'île de Nantes.</Link></p>
+              <p><Link to="/sport/">Sport à Nantes.</Link></p>
             </div>
           </div>
           <div className="bg">
             <img
               src={marionnettes}
               alt="marionnettes enfants"
-              className="histoire"
             />
             <div className="overlay">
               <h2>
