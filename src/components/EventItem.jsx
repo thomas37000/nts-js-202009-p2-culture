@@ -1,3 +1,7 @@
+/* eslint-disable react/no-unused-state */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/jsx-one-expression-per-line */
+/* eslint-disable react/no-unused-prop-types */
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React, { Component } from 'react';
 import styled from 'styled-components';
@@ -82,7 +86,6 @@ class EventItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // eslint-disable-next-line react/no-unused-state
       active: true,
     };
   }
@@ -91,7 +94,6 @@ class EventItem extends Component {
     const {
       nom: name,
       media_1: media,
-      // eslint-disable-next-line react/prop-types
       date: eventdate,
       heure_debut: beginning,
       heure_fin: end,
