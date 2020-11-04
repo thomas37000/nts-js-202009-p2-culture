@@ -23,13 +23,6 @@ function App() {
           <Route path="/enfants/" component={Kids} />
         </Switch>
       </Router>
-
-      {/* <Navbar />
-      <Grid />
-      <DetailCard />
-      <Evenements /> */}
-      {/* <Tarifs />
-      <Kids /> */}
     </>
   );
 }

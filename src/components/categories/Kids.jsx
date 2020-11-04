@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-// import KidsCard from './KidsCard';
-// import KidsCard from './testcard';
 import Expos from './EvenementCard';
 
 class Kids extends Component {
