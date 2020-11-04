@@ -12,8 +12,6 @@ const DIV = styled.div`
   width: auto;
   height: auto;
   font-family: Roboto, sans-serif;
-  border: 1px solid #1b1a1a;
-  border: 1px solid #1b1a1a;
   background-color: rgb(245, 239, 239);
   border-radius: 10px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
@@ -21,7 +19,9 @@ const DIV = styled.div`
 
 
 .SyntheticHoraire {
-  width: 3rem;
+  width: 5rem;
+  font-size: 1rem;
+  text-align: center;
 }
 
 .SyntheticPhoto {
@@ -49,16 +49,16 @@ const DIV = styled.div`
   align-items: center;
   text-align: left;
   padding: 1rem;
-  max-width: 35rem;
+  max-width: 37.5rem;
   max-height: auto;
-  border: 1px solid #1b1a1a;
   background-color: rgb(245, 239, 239);
   border-radius: 2px;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
   font-size: 0.75em;
 
   .SyntheticHoraire {
-    width: 5rem;
+    font-size: 1rem;
+    width: 7rem;
   }
   .SyntheticPhoto {
     width: 9rem;
@@ -108,14 +108,8 @@ function SyntheticCard() {
               Ville : <span className="ville">Nantes</span>
             </h4>
           </div>
-          <div className="Note">
-            <h4>
-              Note :{' '}
-              <span className="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-            </h4>
-            <div className="Plus-de-détail">
+          <div className="Plus-de-détail">
               <a href="#">Voir plus</a>
-            </div>
           </div>
         </div>
         <div className="SyntheticPrice">
