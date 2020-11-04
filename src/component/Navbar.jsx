@@ -1,30 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
 import Burger from './Burger';
-import ImageNav from './Image Navbar/NanteEvent(2).png';
-import Logo from './Image Navbar/logo.png';
+import Logo from './Image Navbar/NantEvent.png';
 
 const Nav = styled.nav`
   width: 100%;
-  height: 55px;
-  border-bottom: 2px solid #f1f1f1;
+  height: 100px;
+  border-bottom: 2px solid ##f5f5f5;
   display: flex;
+  background-color: navy;
   justify-content: space-between;
   align-items: center;
 
-  .imagenav {
-    padding: 0;
-    width: 360px;
-    margin: auto;
+  .logo {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    margin-left: 30px;
   }
 
-  .logo {
-    height: 100%;
-    width: 7vw;
-  }
   @media (max-width: 765px) {
     .logo {
-      display: none;
+      display: flex;
     }
   }
 `;
@@ -32,8 +29,7 @@ const Nav = styled.nav`
 const Navbar = () => {
   return (
     <Nav>
-      <img src={Logo} className="logo" alt="" />
-      <img src={ImageNav} className="imagenav" alt="" />
+      <img className="logo" src={Logo} alt="" />
       <Burger />
     </Nav>
   );

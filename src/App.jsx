@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from './component/Navbar';
-import './App.css';
 import DetailCard from './components/DetailCard';
 
 function App() {
