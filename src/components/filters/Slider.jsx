@@ -43,7 +43,7 @@ class Slider extends React.Component {
           <div>20 €</div>
           <div>30 €</div>
           <div>40 €</div>
-          <div>50 €</div>
+          <div>Tous</div>
         </div>
         <input type="range" min={0} max={5} value={this.state.value} className="slider" onChange={this.handleOnChange} />
         {/*<div className='value'>{this.state.value}</div>*/}
