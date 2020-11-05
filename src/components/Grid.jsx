@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import spectacle from './imgGrid/concerts.jpg';
-import football from './imgGrid/fc-nantes.jpg';
+import activité from './imgGrid/activité.jpg';
 import expo from './imgGrid/expo.jpg';
 import marionnettes from './imgGrid/marionnettes.jpeg';
 
@@ -24,6 +24,7 @@ const Container = styled.div`
 
   .bg {
     position: relative;
+    padding: 10px;
   }
 
   .bg img {
@@ -79,12 +80,14 @@ const Container = styled.div`
 
   @media screen and (min-width: 768px) {
     .container {
+      height: 40vh;
       margin: auto;
       display: flex;
-      column-gap: 3px;
+      column-gap: 13px;
+      width: 100vw;
     }
     .bg {
-      height: 40vh;
+      height: 100%;
       width: inherit;
     }
 
@@ -143,13 +146,13 @@ const Grid = () => {
             </div>
           </div>
           <div className="bg">
-            <img src={football} alt="Sport à Nantes" />
+            <img src={activité} alt="Sport à Nantes" />
             <div className="overlay">
               <h2>
-                <Link to="/sport/">Sport</Link>
+                <Link to="/activité/">Activité à Partager</Link>
               </h2>
 
-              <p><Link to="/sport/">Sport à Nantes.</Link></p>
+              <p><Link to="/sport/">Activité à partager à Nantes.</Link></p>
             </div>
           </div>
           <div className="bg">
