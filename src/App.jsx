@@ -4,6 +4,7 @@ import Grid from './components/Grid';
 import Navbar from './components/Navbar';
 import EventList from './components/EventList';
 import Footer from './components/Footer';
+import Filters from './components/filters/Filters';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route exact path="/">
             <Navbar />
             <Grid />
+            <Filters />
             <EventList />
             <Footer />
           </Route>
