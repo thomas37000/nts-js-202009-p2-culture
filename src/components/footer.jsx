@@ -1,18 +1,21 @@
 import React from 'react';
+import './footer.css';
+import twitter from './twitter.png';
+import instagram from './instagram.png';
+import facebook from './facebook.png';
 
 const Footer = () => {
   return (
-    <footer>
-      <article className="titlefooter">
-        <h3>Mention légales</h3>
-        <h3>Contact</h3>
-        <h3>Partenaires</h3>
-      </article>
-
-      <div>
-        <i className="material-icons">facebook</i>
-        <i className="material-icons">Instagram</i>
-        <i className="material-icons">Twitter</i>
+    <footer className="Footer">
+      <div className="footer-link">
+        <span>Contact</span>
+        <span>Mention légales</span>
+        <span>Twitter</span>
+      </div>
+      <div className="footer-logo">
+        <img src={facebook} alt="facebook" />
+        <img src={instagram} alt="instagram" />
+        <img src={twitter} alt="twitter" />
       </div>
     </footer>
   );
