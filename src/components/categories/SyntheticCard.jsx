@@ -27,7 +27,7 @@ const SyntheticCard = (props) => {
           <h4>{nom}</h4>
         </div>
         <div className="Lieu">
-          <h4>Lieu :
+          <h4>
             <span>{lieu}</span>
           </h4>
         </div>
