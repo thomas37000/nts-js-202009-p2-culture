@@ -49,7 +49,7 @@ const Container = styled.div`
 
   .bg .overlay h2 a,
   .bg .overlay p > a:hover {
-    color: #fff;
+    color: #000080;
     text-decoration: none;
   }
 
@@ -101,6 +101,11 @@ const Container = styled.div`
     .bg .overlay h2 {
       padding-top: 35%;
       margin: auto;
+    }
+
+    .bg .overlay h2 a,
+    .bg .overlay p > a:hover {
+      color: #fff;
     }
 
     .bg:hover .overlay {
