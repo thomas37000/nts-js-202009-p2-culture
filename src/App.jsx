@@ -2,8 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Grid from './components/Grid';
 import Navbar from './components/Navbar';
-
-import Filters from './components/filters/Filters';
+import EventList from './components/EventList';
 
 function App() {
   return (
@@ -13,7 +12,7 @@ function App() {
           <Route exact path="/">
             <Navbar />
             <Grid />
-            <Filters />
+            <EventList />
           </Route>
         </Switch>
       </Router>
