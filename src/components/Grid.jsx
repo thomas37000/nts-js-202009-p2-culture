@@ -122,55 +122,54 @@ const Container = styled.div`
 
 const Grid = () => {
   return (
-    <div>
-      <Container>
-        <section className="container">
-          <div className="bg">
-            <img src={spectacle} alt="Culture" />
-            <div className="overlay">
-              <h2>
-                <Link to="/spectacles/">Spectacles</Link>
-              </h2>
-              <p>
-                <Link to="/spectacles/">Aller à un Concert à Nantes.</Link>
-              </p>
-            </div>
+    <Container>
+      <section className="container">
+        <div className="bg">
+          <img src={spectacle} alt="Culture" />
+          <div className="overlay">
+            <h2>
+              <Link to="/spectacles/">Spectacles</Link>
+            </h2>
+            <p>
+              <Link to="/spectacles/">Aller à un concert à Nantes.</Link>
+            </p>
           </div>
-          <div className="bg">
-            <img src={expo} alt="exposition" />
-            <div className="overlay">
-              <h2>
-                <Link to="/expositions/">Expositions</Link>
-              </h2>
-              <p>
-                <Link to="/expositions/">
-                  Quoi visiter sur l'île de Nantes.
-                </Link>
-              </p>
-            </div>
+        </div>
+        <div className="bg">
+          <img src={expo} alt="exposition" />
+          <div className="overlay">
+            <h2>
+              <Link to="/expositions/">Expositions</Link>
+            </h2>
+            <p>
+              <Link to="/expositions/">Visites à Nantes.</Link>
+            </p>
           </div>
-          <div className="bg">
-            <img src={activité} alt="Sport à Nantes" />
-            <div className="overlay">
-              <h2>
-                <Link to="/activité/">Activité à Partager</Link>
-              </h2>
-            </div>
+        </div>
+        <div className="bg">
+          <img src={activité} alt="Sport à Nantes" />
+          <div className="overlay">
+            <h2>
+              <Link to="/activité/">Activité à partager</Link>
+            </h2>
+            <p>
+              <Link to="/activité/">A faire en groupe.</Link>
+            </p>
           </div>
-          <div className="bg">
-            <img src={marionnettes} alt="marionnettes enfants" />
-            <div className="overlay">
-              <h2>
-                <Link to="/enfants/">Enfants</Link>
-              </h2>
-              <p>
-                <Link to="/enfants/">Spectacles pour Enfants.</Link>
-              </p>
-            </div>
+        </div>
+        <div className="bg">
+          <img src={marionnettes} alt="marionnettes enfants" />
+          <div className="overlay">
+            <h2>
+              <Link to="/enfants/">Enfants</Link>
+            </h2>
+            <p>
+              <Link to="/enfants/">Spectacles pour enfants.</Link>
+            </p>
           </div>
-        </section>
-      </Container>
-    </div>
+        </div>
+      </section>
+    </Container>
   );
 };
 
