@@ -40,6 +40,9 @@ const Section = styled.section`
       width: 95vw;
       font-size: 1rem;
     }
+    .right-filters {
+      display: block;
+    }
   }
 `;
 class Filters extends React.Component {
