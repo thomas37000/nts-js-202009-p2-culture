@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
@@ -46,12 +47,13 @@ const Container = styled.div`
     cursor: default;
   }
 
-  .bg .overlay h2 a, .bg .overlay p>a:hover {
+  .bg .overlay h2 a,
+  .bg .overlay p > a:hover {
     color: #fff;
     text-decoration: none;
   }
 
-  .bg .overlay p>a {
+  .bg .overlay p > a {
     font-family: 'Roboto', sans-serif;
     font-size: 25px;
     color: #000080;
@@ -120,7 +122,7 @@ const Container = styled.div`
 
 const Grid = () => {
   return (
-    <>
+    <div>
       <Container>
         <section className="container">
           <div className="bg">
@@ -130,9 +132,7 @@ const Grid = () => {
                 <Link to="/spectacles/">Spectacles</Link>
               </h2>
               <p>
-                <Link to="/spectacles/">
-                  Aller à un Concert à Nantes.
-                </Link>
+                <Link to="/spectacles/">Aller à un Concert à Nantes.</Link>
               </p>
             </div>
           </div>
@@ -142,7 +142,11 @@ const Grid = () => {
               <h2>
                 <Link to="/expositions/">Expositions</Link>
               </h2>
-              <p><Link to="/expositions/">Quoi visiter à Nantes.</Link></p>
+              <p>
+                <Link to="/expositions/">
+                  Quoi visiter sur l'île de Nantes.
+                </Link>
+              </p>
             </div>
           </div>
           <div className="bg">
@@ -151,26 +155,22 @@ const Grid = () => {
               <h2>
                 <Link to="/activité/">Activité à Partager</Link>
               </h2>
-
-              <p><Link to="/sport/">Activité à partager à Nantes.</Link></p>
             </div>
           </div>
           <div className="bg">
-            <img
-              src={marionnettes}
-              alt="marionnettes enfants"
-            />
+            <img src={marionnettes} alt="marionnettes enfants" />
             <div className="overlay">
               <h2>
                 <Link to="/enfants/">Enfants</Link>
               </h2>
-              <p><Link to="/enfants/">Spectacles pour Enfants.</Link></p>
-              
+              <p>
+                <Link to="/enfants/">Spectacles pour Enfants.</Link>
+              </p>
             </div>
           </div>
         </section>
       </Container>
-    </>
+    </div>
   );
 };
 
