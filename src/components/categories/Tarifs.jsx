@@ -28,7 +28,6 @@ class TarifCategory extends Component {
       })
       .then((response) => response.data)
       .then((data) => {
-        console.log(data.records);
         this.setState({
           tarifs: data.records,
         });

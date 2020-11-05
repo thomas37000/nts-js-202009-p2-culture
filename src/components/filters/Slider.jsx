@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Section = styled.section`
-  background-color: #F2F2F2;
-  border: 2px solid #000;
+  border: 1px solid #C4C4C4;
+  border-radius: 5px;
   padding: 1 rem;
   width: 100%;
   height: 50%; 
@@ -11,7 +11,6 @@ const Section = styled.section`
   flex-direction column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 5px 12px;
 
   
   .label-slider-price {
@@ -28,11 +27,11 @@ const Section = styled.section`
 
 class Slider extends React.Component {
   state = {
-    value: 0
-  }
+    value: 0,
+  };
 
-  handleOnChange = (e) => this.setState({ value: e.target.value })
-  
+  handleOnChange = (e) => this.setState({ value: e.target.value });
+
   render() {
     return (
       <Section>
@@ -44,11 +43,18 @@ class Slider extends React.Component {
           <div>40 €</div>
           <div>Tous</div>
         </div>
-        <input type="range" min={0} max={5} value={this.state.value} className="slider" onChange={this.handleOnChange} />
+        <input
+          type="range"
+          min={0}
+          max={5}
+          value={this.state.value}
+          className="slider"
+          onChange={this.handleOnChange}
+        />
         {/*<div className='value'>{this.state.value}</div>*/}
       </Section>
-    )
-  };
+    );
+  }
 }
 
 export default Slider;

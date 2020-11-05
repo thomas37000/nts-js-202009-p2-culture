@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import Slider from './Slider';
 import When from './When';
-import Calendar from 'react-calendar';
+import HomeCalendar from './HomeCalendar';
 
 const Section = styled.section`
   width: 90vw;
-  height: 30vh;
+  height: 43.5vh;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -15,18 +15,15 @@ const Section = styled.section`
   .left-filters {
     width: 45%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
   }
 
   .right-filters {
     width: 45%;
     height: 100%;
-    diplay: flex;
-    justify-content: center;
-    align-items: center;
+  }
+
+  .react-calendar {
+    width: 100%;
   }
 `;
 class Filers extends React.Component {
@@ -38,7 +35,7 @@ class Filers extends React.Component {
           <When />
         </div>
         <div className="right-filters">
-          <p>UN CALENDRIER SERA ICI, BIENTÔT </p>
+          <HomeCalendar />
         </div>
       </Section>
     );
