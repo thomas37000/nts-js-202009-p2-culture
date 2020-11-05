@@ -15,7 +15,7 @@ const Nav = styled.nav`
   .logo {
     display: flex;
     width: 100px;
-    height: 100px;
+    height: 95px;
     margin-left: 30px;
   }
 
