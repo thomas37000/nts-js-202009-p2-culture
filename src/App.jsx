@@ -16,11 +16,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <Navbar />
-            <Grid />
             <Filters />
-            <Evenements />
-            <DetailCard />
           </Route>
           <Route path="/spectacles/" component={Evenements} />
           <Route path="/tarifs/" component={Tarifs} />

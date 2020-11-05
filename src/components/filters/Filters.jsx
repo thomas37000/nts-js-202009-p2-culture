@@ -6,24 +6,40 @@ import HomeCalendar from './HomeCalendar';
 
 const Section = styled.section`
   width: 90vw;
-  height: 43.5vh;
+  height: 43.6vh;
   margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  .left-filters {
-    width: 45%;
-    height: 100%;
-  }
-
   .right-filters {
-    width: 45%;
+    display: none;
+  }
+  .left-filters {
+    width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
-  .react-calendar {
-    width: 100%;
+  @media screen and (min-width: 768px) {
+    .left-filters {
+      width: 45%;
+      height: 100%;
+    }
+    .right-filters {
+      width: 45%;
+      height: 100%;
+    }
+    .react-calendar {
+      display: block;
+      width: 100%;
+    }
+    .Filters {
+      width: 95vw;
+      font-size: 1rem;
+    }
   }
 `;
 class Filers extends React.Component {
