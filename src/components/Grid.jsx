@@ -91,6 +91,8 @@ const Container = styled.div`
     .bg {
       height: 100%;
       width: inherit;
+      box-shadow: gray 3px 3px 5px;
+      padding: 0;
     }
 
     .bg .overlay {
