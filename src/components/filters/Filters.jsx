@@ -20,7 +20,7 @@ const Section = styled.section`
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   @media screen and (min-width: 768px) {

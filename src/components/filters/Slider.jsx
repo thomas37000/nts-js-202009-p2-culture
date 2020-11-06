@@ -6,7 +6,7 @@ const Section = styled.section`
   border-radius: 5px;
   padding: 1 rem;
   width: 100%;
-  height: 50%; 
+  height: 25%;
   display: flex;
   flex-direction column;
   justify-content: center;
