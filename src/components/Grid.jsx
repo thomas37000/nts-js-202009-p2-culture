@@ -22,7 +22,7 @@ const Container = styled.div`
   .container {
     margin-bottom: 10px;
   }
- 
+
   .bg {
     position: relative;
   }
