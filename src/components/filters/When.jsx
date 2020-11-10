@@ -13,7 +13,7 @@ const Section = styled.section`
     border-radius: 5px;
     width: 20%;
     height: 50%;
-    text-align: cneter;
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,10 +22,23 @@ const Section = styled.section`
 `;
 
 class When extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleToday = this.handleToday.bind(this);
+  }
+
+  handleToday() {
+    // eslint-disable-next-line react/prop-types
+    const { handleWhen } = this.props;
+    handleWhen(new Date());
+  }
+
   render() {
     return (
       <Section className="When">
-        <span className="today">Aujourd'hui</span>
+        <button onClick={this.handleToday} type="button" className="today">
+          Aujourd&apos;hui
+        </button>
         <span className="in-day">Journée</span>
         <span className="in-evening">Soirée</span>
         <span className="w-e">Wee-end</span>

@@ -46,12 +46,22 @@ const Section = styled.section`
   }
 `;
 class Filters extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleWhen = this.handleWhen.bind(this);
+  }
+
+  handleWhen(date) {
+    // TODO : remonter l'info à App
+    console.log(date);
+  }
+
   render() {
     return (
       <Section className="Filters">
         <div className="left-filters">
           <Slider />
-          <When />
+          <When handleWhen={this.handleWhen} />
         </div>
         <div className="right-filters">
           <HomeCalendar />

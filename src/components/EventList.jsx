@@ -34,6 +34,8 @@ class EventList extends Component {
     this.free = this.free.bind(this);
     this.paying = this.paying.bind(this);
     this.showAll = this.showAll.bind(this);
+    // aujourd'hui, en journée, en soirée, weekend
+    // date
   }
 
   componentDidMount() {
@@ -76,7 +78,7 @@ class EventList extends Component {
 
   render() {
     // eslint-disable-next-line no-shadow
-    const { EventList, status } = this.state;
+    const { EventList } = this.state;
     return (
       <div className="EventList">
         <EVENTLIST>
@@ -90,20 +92,9 @@ class EventList extends Component {
             Tous
           </button>
           <ul>
-            {EventList.filter((event) => {
-              // eslint-disable-next-line no-console
-              console.log(status);
-              if (status === 'all') {
-                return true;
-              }
-              if (status === 'paying') {
-                return event.fields.gratuit === 'non';
-              }
-              return event.fields.gratuit === 'oui';
-            }).map((event) => {
+            {EventList.map((event) => {
               return (
                 <li key={event.fields.recordid}>
-                  {/* eslint-disable-next-line react/jsx-props-no-spreading */}
                   <EventItem {...event.fields} />
                 </li>
               );
