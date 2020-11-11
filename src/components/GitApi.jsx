@@ -30,10 +30,10 @@ class GitApi extends Component {
     const { profile } = this.state;
     return (
       <div>
+        {profile != null && <GithubProfil {...profile} />}
         <button type="button" onClick={this.fetchDatas}>
           Profil GitHub
         </button>
-        {profile != null && <GithubProfil {...profile} />}
       </div>
     );
   }
