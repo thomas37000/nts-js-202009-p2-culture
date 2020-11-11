@@ -8,10 +8,16 @@ import BiblioItem from './BiblioItem';
 import Clock from './Clock';
 
 const BIBLIOLIST = styled.div`
+  h1 {
+    font-size: 1.2rem;
+    margin: 2rem;
+  }
+
   .category {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
     margin: 1rem;
   }
 
@@ -28,9 +34,12 @@ const BIBLIOLIST = styled.div`
   button {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
-    margin: 1rem;
+    font-size: 0.8rem;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    margin: 0.5rem;
     width: 8rem;
   }
 `;
@@ -41,7 +50,7 @@ class BiblioList extends Component {
     this.state = {
       BiblioList: [],
       // eslint-disable-next-line react/no-unused-state
-      status: null,
+      status: 'film',
     };
     this.children = this.children.bind(this);
     this.reading = this.reading.bind(this);
@@ -156,10 +165,13 @@ class BiblioList extends Component {
     return (
       <div className="EventList">
         <BIBLIOLIST>
-        <div className="title">
-            <h1>Agenda des animations culturelles de la Bibliothèque Municipale de la ville de Nantes</h1>
+          <div className="title">
+            <h1>
+              Agenda des animations culturelles de la Bibliothèque Municipale de
+              la ville de Nantes
+            </h1>
             <Clock />
-        </div>
+          </div>
           <div className="category">
             <button type="button" onClick={this.children}>
               Enfant
