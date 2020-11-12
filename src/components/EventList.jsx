@@ -94,7 +94,7 @@ class EventList extends Component {
             Gratuit
           </button>
           <button type="button" onClick={this.paying}>
-            Payant
+            moins de 50€
           </button>
           <button type="button" onClick={this.showAll}>
             Tous

@@ -5,43 +5,31 @@ import When from './When';
 import HomeCalendar from './HomeCalendar';
 
 const Section = styled.section`
-  width: 90vw;
-  height: 43.6vh;
-  margin: auto;
+  margin: 2rem auto;
+  height: 50vh;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 
-  .right-filters {
-    display: none;
+  .react-calendar {
+    width: 80%;
+    margin: auto;
+    border-radius: 5px;
+    border: solid #006edc 2px;
   }
-  .left-filters {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  .react-calendar__navigation {
+    background: #006edc;
   }
 
   @media screen and (min-width: 768px) {
-    .left-filters {
-      width: 45%;
-      height: 100%;
-    }
-    .right-filters {
-      width: 45%;
-      height: 100%;
-    }
+    margin: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
     .react-calendar {
-      display: block;
-      width: 100%;
-    }
-    .Filters {
-      width: 95vw;
-      font-size: 1rem;
-    }
-    .right-filters {
-      display: block;
+      width: 40vw;
     }
   }
 `;
@@ -59,12 +47,11 @@ class Filters extends React.Component {
 
   render() {
     return (
-      <Section className="Filters">
-        <div className="left-filters">
+      <Section>
+        <div className="price">
           <Slider />
-          <When />
         </div>
-        <div className="right-filters">
+        <div className="calendar">
           <HomeCalendar changeDate={this.changeDate} />
         </div>
       </Section>

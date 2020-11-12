@@ -19,11 +19,7 @@ class HomeCalendar extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <Calendar onChange={this.onChange} value={this.state.date} />
-      </div>
-    );
+    return <Calendar onChange={this.onChange} value={this.state.date} />;
   }
 }
 
