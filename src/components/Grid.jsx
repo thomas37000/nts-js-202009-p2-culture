@@ -25,7 +25,6 @@ const Container = styled.div`
 
   .bg {
     position: relative;
-    padding: 10px;
   }
 
   .bg img {
@@ -43,26 +42,23 @@ const Container = styled.div`
     font-family: 'Roboto', serif;
     font-size: 3em;
     margin-top: 50px;
-    padding-top: 10%;
-    cursor: default;
+    padding-top: 25%;
+    padding-bottom: 10px;
   }
 
   .bg .overlay h2 a,
-  .bg .overlay p > a:hover {
-    color: #000080;
+  .bg .overlay p > a {
     text-decoration: none;
+    color: #fff;
+    background: #000080;
+    padding: 10px;
+    box-shadow: #000 5px 5px 0px;
   }
 
   .bg .overlay p > a {
     font-family: 'Roboto', sans-serif;
+    box-shadow: red 5px 3px 0px;
     font-size: 25px;
-    color: #000080;
-  }
-
-  .bg .overlay p:hover {
-    font-family: 'Roboto', sans-serif;
-    font-size: 25px;
-    background-color: #000080;
   }
 
   .bg .overlay {
@@ -91,6 +87,7 @@ const Container = styled.div`
     .bg {
       height: 100%;
       width: inherit;
+      box-shadow: gray 3px 3px 5px;
     }
 
     .bg .overlay {
@@ -99,13 +96,14 @@ const Container = styled.div`
     }
 
     .bg .overlay h2 {
-      padding-top: 35%;
+      padding-top: 30%;
       margin: auto;
+      color: #000080;
     }
 
-    .bg .overlay h2 a,
-    .bg .overlay p > a:hover {
+    .bg .overlay p > a {
       color: #fff;
+      background: #000080;
     }
 
     .bg:hover .overlay {
