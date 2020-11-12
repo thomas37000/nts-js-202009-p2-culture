@@ -28,6 +28,7 @@ class EventList extends Component {
     super(props);
     this.state = {
       EventList: [],
+      date: this.props.date,
       // eslint-disable-next-line react/no-unused-state
       status: 'all',
     };
@@ -39,6 +40,14 @@ class EventList extends Component {
   componentDidMount() {
     this.fetchDatas();
   }
+
+  /*
+  componentDidUpdate() {
+    const { date } = this.props;
+    this.setState({ date: date });
+    console.log('eventliste : ', date);
+  }
+*/
 
   fetchDatas() {
     axios
@@ -77,6 +86,7 @@ class EventList extends Component {
   render() {
     // eslint-disable-next-line no-shadow
     const { EventList, status } = this.state;
+
     return (
       <div className="EventList">
         <EVENTLIST>

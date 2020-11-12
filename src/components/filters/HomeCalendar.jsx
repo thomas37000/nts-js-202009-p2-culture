@@ -3,11 +3,20 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
 class HomeCalendar extends Component {
-  state = {
-    date: new Date(),
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      date: new Date(),
+    };
+    this.onChange = this.onChange.bind(this);
+  }
 
-  onChange = (date) => this.setState({ date });
+  onChange(date) {
+    const { changeDate } = this.props;
+    this.setState({ date });
+    console.log('homeCalendar :', date);
+    changeDate(date);
+  }
 
   render() {
     return (

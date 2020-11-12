@@ -46,6 +46,17 @@ const Section = styled.section`
   }
 `;
 class Filters extends React.Component {
+  constructor(props) {
+    super(props);
+    this.changeDate = this.changeDate.bind(this);
+  }
+
+  changeDate(date) {
+    const { dateUpdate } = this.props;
+    console.log('filters :', date);
+    dateUpdate(date);
+  }
+
   render() {
     return (
       <Section className="Filters">
@@ -54,7 +65,7 @@ class Filters extends React.Component {
           <When />
         </div>
         <div className="right-filters">
-          <HomeCalendar />
+          <HomeCalendar changeDate={this.changeDate} />
         </div>
       </Section>
     );
