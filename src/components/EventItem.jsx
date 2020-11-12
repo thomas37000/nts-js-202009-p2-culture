@@ -6,6 +6,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+// import { Link } from 'react-router-dom';
 
 const DIV = styled.div`
 
@@ -111,18 +112,28 @@ class EventItem extends Component {
       lieu: location,
       ville: city,
       precisions_tarifs: price,
+      description,
+      free,
+      // handleChangeEvent,
     } = this.props;
+
     return (
       <div>
         <DIV>
           <div className="SyntheticTimetable">
             <h3>{eventdate}</h3>
             <span>
+              Date:
               {beginning} - {end}
             </span>
           </div>
           <img className="SyntheticPhoto" src={media} alt={name} />
           <div className="SyntheticInformation">
+            <div className="Description">
+              <h4>
+                Description : <span className="desc">{description}</span>
+              </h4>
+            </div>
             <div className="SyntheticCategory">
               <h3>
                 <span className="name">{name}</span>
@@ -144,6 +155,18 @@ class EventItem extends Component {
               Tarif : <span className="price">{price}</span>
             </h4>
           </div>
+          <div className="Gratuit">
+            <h4>
+              Gratuit : <span className="free">{free}</span>
+            </h4>
+          </div>
+          <div className="Map">{location}</div>
+
+          {/* {details.map((detail) => (
+            <button type="button" onClick={handleChangeEvent} key={detail.id}>
+              <Link to={`/event-detail/${detail.id}`}>TEST</Link>
+            </button>
+          ))} */}
         </DIV>
       </div>
     );
@@ -160,6 +183,8 @@ EventItem.propTypes = {
   lieu: PropTypes.string.isRequired,
   ville: PropTypes.string.isRequired,
   precisions_tarifs: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  free: PropTypes.string.isRequired,
 };
 
 export default EventItem;
