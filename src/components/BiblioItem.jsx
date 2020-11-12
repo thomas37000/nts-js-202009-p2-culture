@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unused-state */
+/* eslint-disable react/no-unused-prop-types */
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import styled from 'styled-components';
@@ -148,7 +150,7 @@ class BiblioItem extends Component {
           <div className="SyntheticPrice">
             <h4>Tarif : {price}</h4>
             <span className="free">
-              {free === 1 ? <strong>Gratuit</strong> : <em></em>}
+              {free === 1 ? <strong>Gratuit</strong> : ''}
             </span>
           </div>
         </BIBLIOITEM>
@@ -158,6 +160,7 @@ class BiblioItem extends Component {
 }
 
 BiblioItem.propTypes = {
+  active: PropTypes.bool.isRequired,
   id_manif: PropTypes.string.isRequired,
   categorie_1: PropTypes.string.isRequired,
   nom: PropTypes.string.isRequired,
@@ -170,6 +173,7 @@ BiblioItem.propTypes = {
   ville: PropTypes.string.isRequired,
   adresse: PropTypes.string.isRequired,
   precisions_tarifs: PropTypes.string.isRequired,
+  gratuit: PropTypes.string.isRequired,
 };
 
 export default BiblioItem;
