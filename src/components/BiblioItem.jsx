@@ -27,16 +27,26 @@ const BIBLIOITEM = styled.div`
   text-align: center;
 }
 
-h3 {
+.SyntheticTimetable h3 {
   font-size: 14px;
+  margin: 0.5rem;
 }
 
-h4 {
+.SyntheticCategory h4,
+.SyntheticLocation h4,
+.SyntheticAddress h4{
+  font-size: 12px;
+  margin: 0.25rem;
+}
+
+.SyntheticName h4 {
+  color: red;
   font-size: 14px;
+  margin: 0.25rem;
 }
 
 span.free {
-  margin: 0.5rem 0;
+  margin: 0.5 0 rem;
   color : red;
 }
 
@@ -45,7 +55,8 @@ span.free {
 }
 
 .SyntheticPrice h4 {
-  font-size: 14px;
+  font-size: 12px;
+  margin: 0.25rem;
 }
 
 .SyntheticPhoto {
@@ -55,14 +66,9 @@ span.free {
   margin: 1rem;
 }
 
-.SyntheticName {
-  color: red;
-}
-
 .SyntheticPrice {
   width: auto;
-  text-align: left;
-  /*margin-bottom: 7rem;*/
+  text-align: center;
 }
 
 @media screen and (min-width: 800px) {
@@ -95,8 +101,7 @@ span.free {
   .SyntheticPrice {
     width: 7rem;
     margin: 1rem;
-    text-align: left;
-    /*margin-bottom: 7rem;*/
+    text-align: center;
 }
 `;
 

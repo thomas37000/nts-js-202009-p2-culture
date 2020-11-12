@@ -77,7 +77,7 @@ class BiblioList extends Component {
           dataset:
             '244400404_agenda-animations-culturelles-bibliotheque-municipale-nantes',
           apikey: '9c8592e7df939aca9533c5abc85d0600cb3eafa8e8e40a73e9114648',
-          rows: 500,
+          rows: 300,
         },
       })
       .then((response) => {
