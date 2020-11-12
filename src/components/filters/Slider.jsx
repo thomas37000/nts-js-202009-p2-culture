@@ -49,7 +49,6 @@ class Slider extends React.Component {
           className="slider"
           onChange={this.handleOnChange}
         />
-        {/*<div className='value'>{this.state.value}</div>*/}
       </Section>
     );
   }
