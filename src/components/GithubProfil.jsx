@@ -1,22 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import logo1 from './linkedin.png';
 
 const DIV = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  div {
-    text-align: center;
-  }
-  .groupe1 {
-    display: flex;
-    justify-content: space-around;
-  }
-  .groupe2 {
-    display: flex;
-    justify-content: space-around;
-  }
   .gitavatar1 {
     width: 100px;
     clip-path: circle(50% at 50% 50%);
@@ -37,6 +24,10 @@ const DIV = styled.div`
     width: 100px;
     clip-path: circle(50% at 50% 50%);
   }
+  .linkedin {
+    width: 2rem;
+    height: 2rem;
+  }
 `;
 
 class GithubProfil extends Component {
@@ -45,24 +36,40 @@ class GithubProfil extends Component {
 
     return (
       <DIV>
-        <div className="Profils1">
-          <div className="groupe1">
-            <img className="gitavatar1" src={avatar} alt="" />
-            <img className="gitavatar2" src={avatar} alt="" />
-          </div>
+        <div className="profils1">
+          <img className="gitavatar1" src={avatar} alt="" />
+          <span>{name}</span>
+          <a href="https://www.linkedin.com/in/delourme-francois-25367452">
+            <img className="linkedin" src={logo1} alt="" />
+          </a>
         </div>
         <div className="Profils2">
+          <img className="gitavatar2" src={avatar} alt="" />
           <span>{name}</span>
-          <div>
-            <img className="gitavatar3" src={avatar} alt="" />
-          </div>
+          <a href="https://www.linkedin.com/in/delourme-francois-25367452">
+            <img className="linkedin" src={logo1} alt="" />
+          </a>
+        </div>
+        <div className="Profils3">
+          <img className="gitavatar3" src={avatar} alt="" />
+          <span>{name}</span>
+          <a href="https://www.linkedin.com/in/delourme-francois-25367452">
+            <img className="linkedin" src={logo1} alt="" />
+          </a>
         </div>
         <div className="Profils4">
+          <img className="gitavatar4" src={avatar} alt="" />
           <span>{name}</span>
-          <div className="groupe2">
-            <img className="gitavatar4" src={avatar} alt="" />
-            <img className="gitavatar5" src={avatar} alt="" />
-          </div>
+          <a href="https://www.linkedin.com/in/delourme-francois-25367452">
+            <img className="linkedin" src={logo1} alt="" />
+          </a>
+        </div>
+        <div className="Profils5">
+          <img className="gitavatar5" src={avatar} alt="" />
+          <span>{name}</span>
+          <a href="https://www.linkedin.com/in/delourme-francois-25367452">
+            <img className="linkedin" src={logo1} alt="" />
+          </a>
         </div>
       </DIV>
     );

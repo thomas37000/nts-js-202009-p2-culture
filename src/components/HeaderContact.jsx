@@ -24,7 +24,6 @@ const HeaderContact = () => {
     <DIV>
       <div className="title">
         <img className="logo" src={Logo} alt="" />
-        <h1>Contact</h1>
       </div>
     </DIV>
   );
