@@ -56,7 +56,7 @@ const RightNav = ({ open }) => {
         <Link to="/calendrier">Calendrier</Link>
       </li>
       <li>
-        <Link to="/Contact">Contact</Link>
+        <Link to="/contact">Contact</Link>
       </li>
       <li>
         <Link to="/reservation">Reservation</Link>
