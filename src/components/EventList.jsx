@@ -32,7 +32,7 @@ class EventList extends Component {
     super(props);
     this.state = {
       EventList: [],
-      // eslint-disable-next-line react/no-unused-state
+      date: this.props.date,
       status: 'all',
       activeId: '',
     };
@@ -45,6 +45,14 @@ class EventList extends Component {
   componentDidMount() {
     this.fetchDatas();
   }
+
+  /*
+  componentDidUpdate() {
+    const { date } = this.props;
+    this.setState({ date: date });
+    console.log('eventliste : ', date);
+  }
+*/
 
   fetchDatas() {
     axios
@@ -92,7 +100,7 @@ class EventList extends Component {
             Gratuit
           </button>
           <button type="button" onClick={this.paying}>
-            Payant
+            moins de 50€
           </button>
           <button type="button" onClick={this.showAll}>
             Tous
@@ -119,7 +127,7 @@ class EventList extends Component {
                     {...event.fields}
                   />
                   <button type="button">
-                    <Link to={`/event-detail/${event.fields.id_manif  }`}>
+                    <Link to={`/event-detail/${event.fields.id_manif}`}>
                       TEST
                     </Link>
                   </button>
