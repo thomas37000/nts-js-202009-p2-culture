@@ -1,6 +1,6 @@
 import React from 'react';
-import Logo from './categories/img/NantEvent.png';
 import styled from 'styled-components';
+import Logo from './categories/img/NantEvent.png';
 
 const DIV = styled.div`
   background-color: navy;
