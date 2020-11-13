@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import styled from 'styled-components';
 
@@ -98,8 +99,8 @@ function Formulaire() {
           name="objet"
           value={form.objet}
         />
-        <label>Text : </label>
-        <input type="textarea" name="textValue" onChange={handleChange}/>
+        <label>Text :</label>
+        <input type="textarea" name="textValue" onChange={handleChange} />
         <button type="button" onClick={handleSubmit}>
           Submit
         </button>
