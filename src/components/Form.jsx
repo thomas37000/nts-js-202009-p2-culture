@@ -10,51 +10,84 @@ const DIV = styled.div`
     width: 50%;
     height: 40%;
     margin: auto;
+    font-weight: bold;
+    color: navy;
   }
-  form input {
-    height: 30px;
+  .textesize {
+    height: 100px;
+    width: 300px;
+    border: 2px solid navy;
+    margin-bottom: 20px;
+  }
+  input {
+    height: 40px;
+    width: 300px;
+    border: 2px solid navy;
   }
   button {
-    -moz-box-shadow:inset 0px 1px 0px 0px #97c4fe;
-    -webkit-box-shadow:inset 0px 1px 0px 0px #97c4fe;
-    box-shadow:inset 0px 1px 0px 0px #97c4fe;
-    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #000080), color-stop(1, #1e62d0) );
-    background:-moz-linear-gradient( center top, #000080 5%, #1e62d0 100% );
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#000080', endColorstr='#1e62d0');
-    background-color:#000080;
-    -webkit-border-top-left-radius:5px;
-    -moz-border-radius-topleft:5px;
-    border-top-left-radius:5px;
-    -webkit-border-top-right-radius:5px;
-    -moz-border-radius-topright:5px;
-    border-top-right-radius:5px;
-    -webkit-border-bottom-right-radius:5px;
-    -moz-border-radius-bottomright:5px;
-    border-bottom-right-radius:5px;
-    -webkit-border-bottom-left-radius:5px;
-    -moz-border-radius-bottomleft:5px;
-    border-bottom-left-radius:5px;
-  text-indent:0;
-    display:inline-block;
-    color:#ffffff;
-    font-family:arial;
-    font-size:15px;
-    font-weight:bold;
-    font-style:normal;
-  height:40px;
-    line-height:40px;
-  width:140px;
-    text-decoration:none;
-    text-align:center;
-    text-shadow:0px 1px 0px #1570cd;
-  }.classname:hover {
-    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1e62d0), color-stop(1, #000080) );
-    background:-moz-linear-gradient( center top, #1e62d0 5%, #000080 100% );
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#000080');
-    background-color:#1e62d0;
-  }.classname:active {
-    position:relative;
-    top:1px;
+    -moz-box-shadow: inset 0px 1px 0px 0px #97c4fe;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #97c4fe;
+    box-shadow: inset 0px 1px 0px 0px #97c4fe;
+    background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(0.05, #000080),
+      color-stop(1, #1e62d0)
+    );
+    background: -moz-linear-gradient(center top, #000080 5%, #1e62d0 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000080', endColorstr='#1e62d0');
+    background-color: #000080;
+    -webkit-border-top-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-left-radius: 5px;
+    text-indent: 0;
+    display: inline-block;
+    color: #ffffff;
+    font-family: arial;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    height: 40px;
+    line-height: 40px;
+    width: 140px;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 0px 1px 0px #1570cd;
+  }
+  .classname:hover {
+    background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(0.05, #1e62d0),
+      color-stop(1, #000080)
+    );
+    background: -moz-linear-gradient(center top, #1e62d0 5%, #000080 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#000080');
+    background-color: #1e62d0;
+  }
+  .classname:active {
+    position: relative;
+    top: 1px;
+
+    @media screen and (min-width: 1224px) {
+      form {
+        display: flex;
+        flex-direction: row;
+        width: 100px;
+      }
+    }
+  }
 `;
 
 function Formulaire() {
@@ -65,7 +98,6 @@ function Formulaire() {
   });
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(form.name, form.email);
   };
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -74,7 +106,7 @@ function Formulaire() {
   return (
     <DIV className="formContact">
       <form onSubmit={(e) => handleSubmit(e)}>
-        <label>Name</label>
+        <label>Name:</label>
         <input
           type="text"
           name="name"
@@ -82,7 +114,7 @@ function Formulaire() {
           value={form.name}
           onChange={(e) => handleChange(e)}
         />
-        <label>Email</label>
+        <label>Email:</label>
         <br />
         <input
           type="text"
@@ -91,7 +123,7 @@ function Formulaire() {
           name="email"
           value={form.mail}
         />
-        <label>Objet</label>
+        <label>Objet:</label>
         <input
           type="text"
           placeholder="your object"
@@ -99,8 +131,13 @@ function Formulaire() {
           name="objet"
           value={form.objet}
         />
-        <label>Text :</label>
-        <input type="textarea" name="textValue" onChange={handleChange} />
+        <label>Texte:</label>
+        <input
+          className="textesize"
+          type="textarea"
+          name="textValue"
+          onChange={handleChange}
+        />
         <button type="button" onClick={handleSubmit}>
           Submit
         </button>

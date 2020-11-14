@@ -64,13 +64,6 @@ class GithubProfil extends Component {
             <img className="linkedin" src={logo1} alt="" />
           </a>
         </div>
-        <div className="Profils5">
-          <img className="gitavatar5" src={avatar} alt="" />
-          <span>{name}</span>
-          <a href="https://www.linkedin.com/in/delourme-francois-25367452">
-            <img className="linkedin" src={logo1} alt="" />
-          </a>
-        </div>
       </DIV>
     );
   }
