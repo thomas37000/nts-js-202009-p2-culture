@@ -152,7 +152,7 @@ const Grid = () => {
           <img src={chateau} alt="Chateau_des_Ducs" />
           <div className="overlay">
             <h2>
-              <Link to="/patrimoine/">Journée du patrimoine</Link>
+              <Link to="/patrimoine/">Journées du patrimoine</Link>
             </h2>
             <p>
               <Link to="/patrimoine/">Les monuments nantais...</Link>
