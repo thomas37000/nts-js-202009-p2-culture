@@ -30,15 +30,19 @@ const DIV = styled.div`
 }
 
 h3 {
-  font-size: 16px;
+  font-size: 12px;
+}
+
+.category {
+  color: red;
 }
 
 h4 {
-  font-size: 16px;
+  font-size: 12px;
 }
 
 .SyntheticPrice h4 {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .SyntheticPhoto {
@@ -103,6 +107,7 @@ class EventItem extends Component {
 
   render() {
     const {
+      libelle_festival: category,
       nom: name,
       media_1: media,
       date: eventdate,
@@ -124,6 +129,7 @@ class EventItem extends Component {
           <img className="SyntheticPhoto" src={media} alt={name} />
           <div className="SyntheticInformation">
             <div className="SyntheticCategory">
+              <h3 className="category">{category}</h3>
               <h3>
                 <span className="name">{name}</span>
               </h3>
@@ -152,6 +158,7 @@ class EventItem extends Component {
 
 EventItem.propTypes = {
   id_manif: PropTypes.string.isRequired,
+  libelle_festival: PropTypes.string.isRequired,
   nom: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   media_1: PropTypes.string.isRequired,
