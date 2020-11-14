@@ -25,12 +25,15 @@ const DIV = styled.div`
 
 .SyntheticTimetable {
   width: 7.5rem;
-  font-size: 1rem;
   text-align: center;
 }
 
 h3 {
   font-size: 12px;
+}
+
+span{
+  12px;
 }
 
 .category {
@@ -77,7 +80,7 @@ h4 {
   font-size: 0.75em;
 
   .SyntheticTimetable {
-    font-size: 1rem;
+    font-size: 12px;
     width: 7rem;
   }
   .SyntheticPhoto {

@@ -55,7 +55,7 @@ class EventList extends Component {
         params: {
           dataset: '244400404_agenda-evenements-nantes-nantes-metropole',
           apikey: 'a2c65fe09812bd0c8a2628bdfe6f71bb1bd48facca5b74d63070e77f',
-          rows: 600,
+          rows: 500,
         },
       })
       .then((response) => {

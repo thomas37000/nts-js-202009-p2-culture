@@ -163,10 +163,10 @@ const Grid = () => {
           <img src={marionnettes} alt="marionnettes enfants" />
           <div className="overlay">
             <h2>
-              <Link to="/enfants/">Autres évènements</Link>
+              <Link to="/diversité/">Autres évènements</Link>
             </h2>
             <p>
-              <Link to="/enfants/">Diversité culturelle...</Link>
+              <Link to="/diversité/">Diversité culturelle...</Link>
             </p>
           </div>
         </div>
