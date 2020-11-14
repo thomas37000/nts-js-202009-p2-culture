@@ -167,8 +167,7 @@ class BiblioList extends Component {
         <BIBLIOLIST>
           <div className="title">
             <h1>
-              Agenda des animations culturelles de la Bibliothèque Municipale de
-              la ville de Nantes
+              Agenda des animations culturelles des bibliothèques et médiathèques de la ville de Nantes
             </h1>
             <Clock />
           </div>
