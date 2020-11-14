@@ -132,7 +132,9 @@ class EventItem extends Component {
           <img className="SyntheticPhoto" src={media} alt={name} />
           <div className="SyntheticInformation">
             <div className="SyntheticCategory">
-              <h3 className="category">{category}</h3>
+              <h3 className="category">
+                {category !== undefined ? category : 'Autres évènements'}
+              </h3>
               <h3>
                 <span className="name">{name}</span>
               </h3>
