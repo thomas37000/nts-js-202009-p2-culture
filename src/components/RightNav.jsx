@@ -50,16 +50,13 @@ const RightNav = ({ open }) => {
         <Link to="/">Accueil</Link>
       </li>
       <li>
-        <Link to="/evenements">Evènements</Link>
-      </li>
-      <li>
-        <Link to="/calendrier">Calendrier</Link>
+        <Link to="/bibliotheques">Bibliotèques / Médiathèques</Link>
       </li>
       <li>
         <Link to="/contact">Contact</Link>
       </li>
       <li>
-        <Link to="/reservation">Reservation</Link>
+        <Link to="/reservation">Réservation</Link>
       </li>
     </Slideburger>
   );

@@ -9,7 +9,12 @@ function App() {
     <>
       <Router>
         <Switch>
-          <Route exact path="/">
+        <Route exact path="/bibliotheques">
+            <Navbar />
+            <BiblioList />
+            <Footer />
+          </Route>
+          <Route exact path="/bibliotheques">
             <Navbar />
             <BiblioList />
             <Footer />
