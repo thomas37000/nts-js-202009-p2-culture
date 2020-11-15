@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable react/no-unused-state */
 /* eslint-disable react/jsx-indent */
 /* eslint-disable no-undef */
 /* eslint-disable react/prefer-stateless-function */
@@ -13,6 +15,7 @@ const BIBLIOLIST = styled.div`
     margin: 2rem;
   }
 
+  .today,
   .category {
     display: flex;
     flex-direction: row;
@@ -51,7 +54,9 @@ class BiblioList extends Component {
       BiblioList: [],
       // eslint-disable-next-line react/no-unused-state
       status: 'film',
+      date: 'all',
     };
+    this.todayDate = this.todayDate.bind(this);
     this.children = this.children.bind(this);
     this.reading = this.reading.bind(this);
     this.workshop = this.workshop.bind(this);
@@ -85,6 +90,12 @@ class BiblioList extends Component {
           BiblioList: response.data.records,
         });
       });
+  }
+
+  todayDate() {
+    this.setState({
+      date: new Date().toISOString().split('T')[0],
+    });
   }
 
   children() {
@@ -161,15 +172,23 @@ class BiblioList extends Component {
 
   render() {
     // eslint-disable-next-line no-shadow
-    const { BiblioList, status } = this.state;
+    // eslint-disable-next-line no-unused-vars
+    // eslint-disable-next-line no-shadow
+    const { BiblioList, status, date } = this.state;
     return (
       <div className="EventList">
         <BIBLIOLIST>
           <div className="title">
             <h1>
-              Agenda des animations culturelles des bibliothèques et médiathèques de la ville de Nantes
+              Agenda des animations culturelles des bibliothèques et
+              médiathèques de la ville de Nantes
             </h1>
             <Clock />
+          </div>
+          <div className="today">
+            <button type="button" onClick={this.todayDate}>
+              Aujourd'hui
+            </button>
           </div>
           <div className="category">
             <button type="button" onClick={this.children}>
@@ -212,7 +231,7 @@ class BiblioList extends Component {
           <ul>
             {BiblioList.filter((event) => {
               // eslint-disable-next-line no-console
-              console.log(status);
+              console.log(status, date);
               if (status === 'all') {
                 return true;
               }
@@ -248,6 +267,9 @@ class BiblioList extends Component {
               }
               if (status === 'meeting') {
                 return event.fields.categorie_1 === 'Rencontre';
+              }
+              if (date === new Date().toISOString().split('T')[0]) {
+                return event.fields.date === this.todayDate;
               }
               return event.fields.categorie_1 === 'oui';
             }).map((event) => {
