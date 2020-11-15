@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { TinyButton as ScrollUpButton } from 'react-scroll-up-button';
 import Grid from './components/Grid';
 import Navbar from './components/Navbar';
 import EventList from './components/EventList';
@@ -37,6 +38,15 @@ class App extends Component {
             <Route path="/map" component={Maps} />
             <Route path="/contact" component={Contact} />
           </Switch>
+          <ScrollUpButton
+            style={{
+              width: '50px',
+              height: '50px',
+              borderRadius: '50%',
+              // eslint-disable-next-line no-useless-concat
+              backgroundColor: 'none',
+            }}
+          />
         </Router>
       </>
     );
