@@ -50,6 +50,9 @@ const RightNav = ({ open }) => {
         <Link to="/">Accueil</Link>
       </li>
       <li>
+        <Link to="/map">Map</Link>
+      </li>
+      <li>
         <Link to="/evenements">Evènements</Link>
       </li>
       <li>

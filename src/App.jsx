@@ -6,6 +6,7 @@ import EventList from './components/EventList';
 import Footer from './components/Footer';
 import Filters from './components/filters/Filters';
 import Contact from './components/Contact';
+import Maps from './components/Maps';
 
 class App extends Component {
   constructor(props) {
@@ -17,12 +18,11 @@ class App extends Component {
   }
 
   dateUpdate(date) {
-    this.setState({ date });
+    this.setState({ date: date });
     console.log('app : ', date);
   }
 
   render() {
-    const { date } = this.state;
     return (
       <>
         <Router>
@@ -31,9 +31,10 @@ class App extends Component {
               <Navbar />
               <Grid />
               <Filters dateUpdate={this.dateUpdate} />
-              <EventList date={date} />
+              <EventList date={this.state.date} />
               <Footer />
             </Route>
+            <Route path="/map" component={Maps} />
             <Route path="/contact" component={Contact} />
           </Switch>
         </Router>
@@ -41,5 +42,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;

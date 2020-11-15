@@ -106,6 +106,7 @@ const FIGURE = styled.figure`
     }
   }
 `;
+
 const DetailEvent = () => {
   return (
     <div>
