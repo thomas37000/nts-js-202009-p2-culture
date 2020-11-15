@@ -19,16 +19,16 @@ const EVENTLIST = styled.div`
     flex-direction: column;
     align-items: center;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
-    margin: 1rem;
+    margin: 2rem;
     width: 10rem;
   }
 `;
 
-class EventList extends Component {
+class EventListVoyageNantes extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      EventList: [],
+      EventListVoyageNantes: [],
       date: this.props.date,
       // eslint-disable-next-line react/no-unused-state
       status: 'all',
@@ -61,7 +61,7 @@ class EventList extends Component {
       })
       .then((response) => {
         this.setState({
-          EventList: response.data.records,
+          EventListVoyageNantes: response.data.records,
         });
       });
   }
@@ -86,7 +86,7 @@ class EventList extends Component {
 
   render() {
     // eslint-disable-next-line no-shadow
-    const { EventList, status } = this.state;
+    const { EventListVoyageNantes, status } = this.state;
 
     return (
       <div className="EventList">
@@ -95,22 +95,28 @@ class EventList extends Component {
             Gratuit
           </button>
           <button type="button" onClick={this.paying}>
-            moins de 50€
+            Payant
           </button>
           <button type="button" onClick={this.showAll}>
             Tous
           </button>
           <ul>
-            {EventList.filter((event) => {
+            {EventListVoyageNantes.filter((event) => {
               // eslint-disable-next-line no-console
               console.log(status);
               if (status === 'all') {
-                return true;
+                return event.fields.libelle_festival === 'Voyage à Nantes';
               }
               if (status === 'paying') {
-                return event.fields.gratuit === 'non';
+                return (
+                  event.fields.gratuit === 'non' &&
+                  event.fields.libelle_festival === 'Voyage à Nantes'
+                );
               }
-              return event.fields.gratuit === 'oui';
+              return (
+                event.fields.gratuit === 'oui' &&
+                event.fields.libelle_festival === 'Voyage à Nantes'
+              );
             }).map((event) => {
               return (
                 <li key={event.fields.recordid}>
@@ -126,4 +132,4 @@ class EventList extends Component {
   }
 }
 
-export default EventList;
+export default EventListVoyageNantes;
