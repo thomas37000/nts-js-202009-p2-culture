@@ -72,7 +72,7 @@ class App extends Component {
               <Navbar />
               <CATEGORY>
                 <Link to="/animations">
-                  <SPAN>Animations</SPAN>
+                  <SPAN>Animations estivales</SPAN>
                 </Link>
                 <Link to="/patrimoine">
                   <SPAN>Journées du patrimoine</SPAN>
