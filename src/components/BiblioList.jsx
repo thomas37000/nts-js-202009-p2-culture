@@ -54,7 +54,7 @@ class BiblioList extends Component {
       BiblioList: [],
       // eslint-disable-next-line react/no-unused-state
       status: 'film',
-      date: 'all',
+      choiceOfDate: 'all',
     };
     this.todayDate = this.todayDate.bind(this);
     this.children = this.children.bind(this);
@@ -94,7 +94,7 @@ class BiblioList extends Component {
 
   todayDate() {
     this.setState({
-      date: new Date().toISOString().split('T')[0],
+      choiceOfDate: new Date().toISOString().split('T')[0],
     });
   }
 
@@ -171,7 +171,7 @@ class BiblioList extends Component {
   }
 
   render() {
-    const { BiblioList, status, date } = this.state;
+    const { BiblioList, status, choiceOfDate } = this.state;
     return (
       <div className="EventList">
         <BIBLIOLIST>
@@ -228,7 +228,7 @@ class BiblioList extends Component {
           <ul>
             {BiblioList.filter((event) => {
               // eslint-disable-next-line no-console
-              console.log(status, date);
+              console.log(status, choiceOfDate);
               if (status === 'all') {
                 return true;
               }
@@ -265,7 +265,7 @@ class BiblioList extends Component {
               if (status === 'meeting') {
                 return event.fields.categorie_1 === 'Rencontre';
               }
-              if (date === new Date().toISOString().split('T')[0]) {
+              if (choiceOfDate === this.todayDate) {
                 return event.fields.date === this.todayDate;
               }
               return event.fields.categorie_1 === '';
