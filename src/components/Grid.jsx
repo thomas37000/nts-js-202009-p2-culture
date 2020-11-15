@@ -39,7 +39,7 @@ const Container = styled.div`
 
   .bg .overlay h2 {
     font-family: 'Roboto', serif;
-    font-size: 3em;
+    font-size: 1.5rem;
     margin-top: 50px;
     padding-top: 25%;
     padding-bottom: 10px;
@@ -57,7 +57,7 @@ const Container = styled.div`
   .bg .overlay p > a {
     font-family: 'Roboto', sans-serif;
     box-shadow: red 5px 3px 0px;
-    font-size: 25px;
+    font-size: 1rem;
   }
 
   .bg .overlay {
@@ -96,6 +96,7 @@ const Container = styled.div`
 
     .bg .overlay h2 {
       padding-top: 30%;
+      font-size: 2rem;
       margin: auto;
       color: #000080;
     }
@@ -103,6 +104,9 @@ const Container = styled.div`
     .bg .overlay p > a {
       color: #fff;
       background: #000080;
+      display: flex 80%;
+      font-size: 1.25rem;
+      justify-content: center;
     }
 
     .bg:hover .overlay {
