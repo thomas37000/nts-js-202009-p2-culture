@@ -19,7 +19,7 @@ const EVENTLIST = styled.div`
     flex-direction: column;
     align-items: center;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
-    margin: 1rem;
+    margin: 2rem;
     width: 10rem;
   }
 `;
