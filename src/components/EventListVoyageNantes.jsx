@@ -30,7 +30,6 @@ class EventListVoyageNantes extends Component {
     this.state = {
       EventListVoyageNantes: [],
       date: this.props.date,
-      category: 'Voyage à Nantes',
       // eslint-disable-next-line react/no-unused-state
       status: 'all',
     };
@@ -96,7 +95,7 @@ class EventListVoyageNantes extends Component {
             Gratuit
           </button>
           <button type="button" onClick={this.paying}>
-            moins de 50€
+            Payant
           </button>
           <button type="button" onClick={this.showAll}>
             Tous
@@ -106,20 +105,23 @@ class EventListVoyageNantes extends Component {
               // eslint-disable-next-line no-console
               console.log(status);
               if (status === 'all') {
-                return true;
+                return event.fields.libelle_festival === 'Voyage à Nantes';
               }
               if (status === 'paying') {
-                return event.fields.gratuit === 'non';
+                return (
+                  event.fields.gratuit === 'non' &&
+                  event.fields.libelle_festival === 'Voyage à Nantes'
+                );
               }
-              return event.fields.gratuit === 'oui';
+              return (
+                event.fields.gratuit === 'oui' &&
+                event.fields.libelle_festival === 'Voyage à Nantes'
+              );
             }).map((event) => {
               return (
                 <li key={event.fields.recordid}>
                   {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-                  <EventItem
-                    {...event.fields}
-                    libelle_festival="Voyage à Nantes"
-                  />
+                  <EventItem {...event.fields} />
                 </li>
               );
             })}
