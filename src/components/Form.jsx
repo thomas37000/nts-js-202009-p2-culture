@@ -63,6 +63,7 @@ const DIV = styled.div`
     text-decoration: none;
     text-align: center;
     text-shadow: 0px 1px 0px #1570cd;
+    margin-bottom: 10%;
   }
   .classname:hover {
     background: -webkit-gradient(
@@ -79,13 +80,16 @@ const DIV = styled.div`
   .classname:active {
     position: relative;
     top: 1px;
-
-    @media screen and (min-width: 1224px) {
-      form {
-        display: flex;
-        flex-direction: row;
-        width: 100px;
-      }
+  }
+  @media (min-width: 1224px) {
+    input {
+      width: 800px;
+    }
+    .textesize {
+      width: 800px;
+    }
+    button {
+      margin-bottom: 10%;
     }
   }
 `;
@@ -95,6 +99,7 @@ function Formulaire() {
     name: '',
     email: '',
     objet: '',
+    texte: '',
   });
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -106,7 +111,7 @@ function Formulaire() {
   return (
     <DIV className="formContact">
       <form onSubmit={(e) => handleSubmit(e)}>
-        <label>Name:</label>
+        <label htmlFor="name">Name:</label>
         <input
           type="text"
           name="name"
@@ -114,8 +119,7 @@ function Formulaire() {
           value={form.name}
           onChange={(e) => handleChange(e)}
         />
-        <label>Email:</label>
-        <br />
+        <label htmlFor="Email">Email:</label>
         <input
           type="text"
           placeholder="exemple@wcs.com"
@@ -123,7 +127,7 @@ function Formulaire() {
           name="email"
           value={form.mail}
         />
-        <label>Objet:</label>
+        <label htmlFor="objet">Objet:</label>
         <input
           type="text"
           placeholder="your object"
@@ -131,12 +135,14 @@ function Formulaire() {
           name="objet"
           value={form.objet}
         />
-        <label>Texte:</label>
-        <input
+        <label htmlFor="texte">Texte:</label>
+        <textarea
           className="textesize"
           type="textarea"
           name="textValue"
           onChange={handleChange}
+          rows="10"
+          cols="30"
         />
         <button type="button" onClick={handleSubmit}>
           Submit
