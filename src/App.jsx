@@ -3,6 +3,7 @@
 /* eslint-disable object-shorthand */
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import styled from 'styled-components';
 import Navbar from './components/Navbar';
 import Grid from './components/Grid';
 import Filters from './components/filters/Filters';
@@ -10,6 +11,11 @@ import EventList from './components/EventList';
 import BiblioList from './components/BiblioList';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
+
+const H1 = styled.h1`
+  font-size: 1rem;
+  margin: 2rem;
+`;
 
 class App extends Component {
   constructor(props) {
@@ -45,6 +51,13 @@ class App extends Component {
             <Route exact path="/contact">
               <Navbar />
               <Contact />
+              <Footer />
+            </Route>
+            <Route exact path="/voyage">
+              <Navbar />
+              <H1>Evènements du Voyage à Nantes</H1>
+              <Filters dateUpdate={this.dateUpdate} />
+              <EventList date={this.state.date} />
               <Footer />
             </Route>
           </Switch>
