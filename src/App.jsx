@@ -7,7 +7,7 @@ import EventList from './components/EventList';
 import Footer from './components/Footer';
 import Filters from './components/filters/Filters';
 import Contact from './components/Contact';
-import Maps from './components/Maps';
+import DetailEvent from './components/DetailEvent';
 
 class App extends Component {
   constructor(props) {
@@ -35,8 +35,8 @@ class App extends Component {
               <EventList date={this.state.date} />
               <Footer />
             </Route>
-            <Route path="/map" component={Maps} />
             <Route path="/contact" component={Contact} />
+            <Route path="/detail-event/:id" component={DetailEvent} />
           </Switch>
           <ScrollUpButton
             style={{

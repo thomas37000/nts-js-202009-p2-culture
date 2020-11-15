@@ -43,17 +43,14 @@ const Slideburger = styled.ul`
 `;
 
 // eslint-disable-next-line react/prop-types
-const RightNav = ({ open }) => {
+const RightNav = ({ open, id }) => {
   return (
     <Slideburger open={open}>
       <li>
         <Link to="/">Accueil</Link>
       </li>
       <li>
-        <Link to="/map">Map</Link>
-      </li>
-      <li>
-        <Link to="/evenements">Evènements</Link>
+        <Link to={`/detail-event/${id}`}>Evènements</Link>
       </li>
       <li>
         <Link to="/calendrier">Calendrier</Link>

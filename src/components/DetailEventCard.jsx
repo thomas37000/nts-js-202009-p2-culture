@@ -1,9 +1,7 @@
-/* eslint-disable react/require-default-props */
 import React, { Component } from 'react';
-import axios from 'axios';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import DetailEventCard from './DetailEventCard';
+import Maps from './Maps';
 
 const FIGURE = styled.figure`
   @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
@@ -46,6 +44,7 @@ const FIGURE = styled.figure`
     width: 100%;
     height: auto;
     position: relative;
+    background-image: url('');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -109,67 +108,96 @@ const FIGURE = styled.figure`
     }
   }
 `;
-
-class DetailEvent extends Component {
+class DetailEventCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
       Detail: [],
-      error: null,
-      loading: true,
-      id: null,
     };
   }
 
-  async componentDidMount() {
-    const {
-      match: {
-        params: { id },
-      },
-    } = this.props;
-    try {
-      const res = await axios.get(
-        'https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_agenda-evenements-nantes-nantes-metropole&q=&facet=emetteur&facet=rubrique&facet=lieu&facet=ville&facet=lieu_quartier'
-      );
-      const Detail = res.data.find((event) => event.id === id).records;
-      this.setState({ Detail });
-    } catch (error) {
-      this.setState({ error });
-    } finally {
-      this.setState({ loading: false });
-    }
-  }
-
   render() {
-    const { error, loading, Detail, id } = this.state;
-   // const { id_manif: id } = this.props;
-
-    if (loading) return <div>Loading...</div>;
-    if (error) return <div>Error...</div>;
+    const {
+      nom: name,
+      media_1: media,
+      // date: eventdate,
+      heure_debut: beginning,
+      // heure_fin: end,
+      lieu: location,
+      // ville: city,
+      precisions_tarifs: price,
+      lieu_tel: tel,
+      lieu_siteweb: internet,
+      description,
+      gratuit,
+    } = this.props;
 
     return (
       <div>
         <FIGURE className="DetailCard">
-          {Detail.map((event) => {
-            console.log(Detail);
-            return <DetailEventCard key= {event.fields.id} {...event.fields} />;
-          })}
+          <img className="photo" src={media} alt={name} />
+          <section className="eventName">
+            <h1>Exposition :{name}</h1>
+            <h2>{name}</h2>
+          </section>
+          <section className="Card">
+            <div className="information">
+              <h1 className="date">20/10/2020</h1>
+              <h4 className="description">
+                Description :{description}
+                <span>{description}</span>
+              </h4>
+              <h4 className="price">
+                Tarif : <span>{price}</span>
+              </h4>
+              <h4 className="accessibilité">
+                Accessiblité : <i className="material-icons">accessible</i>
+                <i className="material-icons">hearing_disabled</i>
+                <i className="material-icons">child_friendly</i>
+              </h4>
+              <h4 className="gratuité">
+                Gratuité : <span>{gratuit}</span>
+              </h4>
+              <h4 className="lieu">
+                Lieu : <span>{location}</span>
+              </h4>
+              <h4>
+                Horaire : <span>{beginning}</span>
+              </h4>
+            </div>
+            <div className="location">
+              <div className="contact">
+                <h3>Coordonnées :</h3>
+                <p>{internet}</p>
+                <p>
+                  <i className="material-icons">perm_phone_msg</i>
+                  <a className="contactLinks" href="tel:+33240415500">
+                    {tel}
+                  </a>
+                </p>
+                <p>
+                  <i className="material-icons">email </i>
+                  <a className="contactLinks" href="mailto:contact@museum.com">
+                    contact@museum.com
+                  </a>
+                </p>
+              </div>
+              <div className="map">
+                {/* <Maps {...location} /> */}
+              </div>
+            </div>
+          </section>
         </FIGURE>
       </div>
     );
   }
 }
-DetailEvent.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      id: PropTypes.number.isRequired,
-    }),
-  }),
+DetailEventCard.propTypes = {
   description: PropTypes.string.isRequired,
   gratuit: PropTypes.string.isRequired,
   lieu_siteweb: PropTypes.string.isRequired,
   lieu_tel: PropTypes.bool.isRequired,
-  id_manif: PropTypes.string.isRequired,
+  id_manif: PropTypes.number.isRequired,
   nom: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   media_1: PropTypes.string.isRequired,
@@ -180,4 +208,4 @@ DetailEvent.propTypes = {
   precisions_tarifs: PropTypes.string.isRequired,
 };
 
-export default DetailEvent;
+export default DetailEventCard;
