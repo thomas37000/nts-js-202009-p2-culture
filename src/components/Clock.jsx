@@ -16,18 +16,13 @@ class Clock extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: new Date().toLocaleDateString(),
+      date: new Date().toISOString().split('T')[0],
     };
   }
-  componentDidMount() {
-    this.intervalID = setInterval(() => this.tick(), 1000);
-  }
-  componentWillUnmount() {
-    clearInterval(this.intervalID);
-  }
+
   tick() {
     this.setState({
-      date: new Date().toLocaleString(),
+      date: new Date().toISOString().split('T')[0],
     });
   }
   render() {
