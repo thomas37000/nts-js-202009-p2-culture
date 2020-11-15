@@ -171,9 +171,6 @@ class BiblioList extends Component {
   }
 
   render() {
-    // eslint-disable-next-line no-shadow
-    // eslint-disable-next-line no-unused-vars
-    // eslint-disable-next-line no-shadow
     const { BiblioList, status, date } = this.state;
     return (
       <div className="EventList">
@@ -271,7 +268,7 @@ class BiblioList extends Component {
               if (date === new Date().toISOString().split('T')[0]) {
                 return event.fields.date === this.todayDate;
               }
-              return event.fields.categorie_1 === 'oui';
+              return event.fields.categorie_1 === '';
             }).map((event) => {
               return (
                 <li key={event.fields.recordid}>
