@@ -24,12 +24,13 @@ const EVENTLIST = styled.div`
   }
 `;
 
-class EventList extends Component {
+class EventListVoyageNantes extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      EventList: [],
+      EventListVoyageNantes: [],
       date: this.props.date,
+      category: 'Voyage à Nantes',
       // eslint-disable-next-line react/no-unused-state
       status: 'all',
     };
@@ -61,7 +62,7 @@ class EventList extends Component {
       })
       .then((response) => {
         this.setState({
-          EventList: response.data.records,
+          EventListVoyageNantes: response.data.records,
         });
       });
   }
@@ -86,7 +87,7 @@ class EventList extends Component {
 
   render() {
     // eslint-disable-next-line no-shadow
-    const { EventList, status } = this.state;
+    const { EventListVoyageNantes, status } = this.state;
 
     return (
       <div className="EventList">
@@ -101,7 +102,7 @@ class EventList extends Component {
             Tous
           </button>
           <ul>
-            {EventList.filter((event) => {
+            {EventListVoyageNantes.filter((event) => {
               // eslint-disable-next-line no-console
               console.log(status);
               if (status === 'all') {
@@ -115,7 +116,10 @@ class EventList extends Component {
               return (
                 <li key={event.fields.recordid}>
                   {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-                  <EventItem {...event.fields} />
+                  <EventItem
+                    {...event.fields}
+                    libelle_festival="Voyage à Nantes"
+                  />
                 </li>
               );
             })}
@@ -126,4 +130,4 @@ class EventList extends Component {
   }
 }
 
-export default EventList;
+export default EventListVoyageNantes;
