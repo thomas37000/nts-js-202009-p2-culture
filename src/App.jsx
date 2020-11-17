@@ -12,6 +12,7 @@ import EventListVoyageNantes from './components/EventListVoyageNantes';
 import BiblioList from './components/BiblioList';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
+import DetailEvent from './components/DetailEvent';
 
 const H1 = styled.h1`
   font-size: 1rem;
@@ -85,6 +86,7 @@ class App extends Component {
               <EventListVoyageNantes />
               <Footer />
             </Route>
+            <Route exact path="/event/:id_manif" component={DetailEvent} />
           </Switch>
         </Router>
       </>

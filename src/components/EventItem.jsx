@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-one-expression-per-line */
@@ -6,6 +7,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const DIV = styled.div`
 
@@ -111,6 +113,7 @@ class EventItem extends Component {
   render() {
     const {
       libelle_festival: category,
+      id_manif: id,
       nom: name,
       media_1: media,
       date: eventdate,
@@ -148,6 +151,7 @@ class EventItem extends Component {
               <h4>
                 Ville : <span className="city">{city}</span>
               </h4>
+              <Link to={`/event/${id}`}>More details</Link>
             </div>
           </div>
           <div className="SyntheticPrice">
