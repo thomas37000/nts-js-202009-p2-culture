@@ -6,8 +6,7 @@ class GitApi extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // eslint-disable-next-line react/no-unused-state
-      profile: null,
+      profile: [],
     };
     this.fetchDatas = this.fetchDatas.bind(this);
   }
@@ -17,10 +16,10 @@ class GitApi extends Component {
   }
 
   fetchDatas() {
-    axios.get(`https://api.github.com/users/Francois2344`).then((response) => {
+    console.log("hello")
+    axios.get(`https://raw.githubusercontent.com/Francois2344/demo/master/db.json`).then((response) => {
       console.log(response);
       this.setState({
-        // eslint-disable-next-line react/no-unused-state
         profile: response.data,
       });
     });
@@ -30,7 +29,7 @@ class GitApi extends Component {
     const { profile } = this.state;
     return (
       <div>
-        {profile != null && <GithubProfil {...profile} />}
+        {profile.map((profil) => (<GithubProfil key={profil.id} {...profil} />))}
         <button type="button" onClick={this.fetchDatas}>
           Profil GitHub
         </button>

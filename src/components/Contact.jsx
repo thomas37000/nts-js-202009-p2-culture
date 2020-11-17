@@ -9,6 +9,8 @@ function Contact() {
   return (
     <div>
       <Navbar />
+      <GitApi />
+      <GithubProfil />
       <Form />
       <Footer />
     </div>
