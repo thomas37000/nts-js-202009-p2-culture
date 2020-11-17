@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import Maps from './Maps';
+import axios from 'axios';
+// import Maps from './Maps';
 
 const FIGURE = styled.figure`
   @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
@@ -112,43 +113,44 @@ class DetailEventCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Detail: [],
+      detailCard: {},
     };
+    this.getEvent = this.getEvent.bind(this);
+  }
+
+  getEvent() {
+    const {
+      match: {
+        params: { id },
+      },
+    } = this.props;
+    axios
+      .get(
+        `https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_agenda-animations-culturelles-bibliotheque-municipale-nantes&q=&facet=precisions_public&facet=accueil_enfant&facet=date&facet=complet&facet=annule&facet=reporte&facet=lieu&facet=gratuit${id}`
+      )
+      .then((res) => this.setState({ detailCard: res.data.records }));
   }
 
   render() {
-    const {
-      nom: name,
-      media_1: media,
-      // date: eventdate,
-      heure_debut: beginning,
-      // heure_fin: end,
-      lieu: location,
-      // ville: city,
-      precisions_tarifs: price,
-      lieu_tel: tel,
-      lieu_siteweb: internet,
-      description,
-      gratuit,
-    } = this.props;
+    const { detailCard } = this.state;
 
     return (
       <div>
         <FIGURE className="DetailCard">
-          <img className="photo" src={media} alt={name} />
+          <img className="photo" src={detailCard.media} alt={detailCard.name} />
           <section className="eventName">
-            <h1>Exposition :{name}</h1>
-            <h2>{name}</h2>
+            <h1>Exposition :{detailCard.name}</h1>
+            <h2>{detailCard.name}</h2>
           </section>
           <section className="Card">
             <div className="information">
-              <h1 className="date">20/10/2020</h1>
+              <h1 className="date">{detailCard.date}</h1>
               <h4 className="description">
-                Description :{description}
-                <span>{description}</span>
+                Description :{detailCard.description}
+                <span>{detailCard.description}</span>
               </h4>
               <h4 className="price">
-                Tarif : <span>{price}</span>
+                Tarif : <span>{detailCard.price}</span>
               </h4>
               <h4 className="accessibilité">
                 Accessiblité : <i className="material-icons">accessible</i>
@@ -156,23 +158,23 @@ class DetailEventCard extends Component {
                 <i className="material-icons">child_friendly</i>
               </h4>
               <h4 className="gratuité">
-                Gratuité : <span>{gratuit}</span>
+                Gratuité : <span>{detailCard.gratuit}</span>
               </h4>
               <h4 className="lieu">
-                Lieu : <span>{location}</span>
+                Lieu : <span>{detailCard.location}</span>
               </h4>
               <h4>
-                Horaire : <span>{beginning}</span>
+                Horaire : <span>{detailCard.beginning}</span>
               </h4>
             </div>
             <div className="location">
               <div className="contact">
                 <h3>Coordonnées :</h3>
-                <p>{internet}</p>
+                <p>{detailCard.internet}</p>
                 <p>
                   <i className="material-icons">perm_phone_msg</i>
                   <a className="contactLinks" href="tel:+33240415500">
-                    {tel}
+                    {detailCard.tel}
                   </a>
                 </p>
                 <p>
@@ -182,9 +184,7 @@ class DetailEventCard extends Component {
                   </a>
                 </p>
               </div>
-              <div className="map">
-                {/* <Maps {...location} /> */}
-              </div>
+              <div className="map">{/* <Maps {...location} /> */}</div>
             </div>
           </section>
         </FIGURE>
@@ -193,6 +193,11 @@ class DetailEventCard extends Component {
   }
 }
 DetailEventCard.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    }),
+  }),
   description: PropTypes.string.isRequired,
   gratuit: PropTypes.string.isRequired,
   lieu_siteweb: PropTypes.string.isRequired,

@@ -36,7 +36,7 @@ class App extends Component {
               <Footer />
             </Route>
             <Route path="/contact" component={Contact} />
-            <Route path="/detail-event/:id" component={DetailEvent} />
+            <Route path="/detail-event/:id_manif" component={DetailEvent} />
           </Switch>
           <ScrollUpButton
             style={{

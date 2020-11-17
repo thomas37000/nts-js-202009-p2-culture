@@ -115,45 +115,30 @@ class DetailEvent extends Component {
     super(props);
     this.state = {
       Detail: [],
-      error: null,
-      loading: true,
-      id: null,
     };
+    // this.getEventAnimation = this.getEventAnimation.bind(this);
   }
 
-  async componentDidMount() {
-    const {
-      match: {
-        params: { id },
-      },
-    } = this.props;
-    try {
-      const res = await axios.get(
-        'https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_agenda-evenements-nantes-nantes-metropole&q=&facet=emetteur&facet=rubrique&facet=lieu&facet=ville&facet=lieu_quartier'
-      );
-      const Detail = res.data.find((event) => event.id === id).records;
-      this.setState({ Detail });
-    } catch (error) {
-      this.setState({ error });
-    } finally {
-      this.setState({ loading: false });
-    }
-  }
+  // componentDidMount() {
+  //   this.getEventAnimation();
+  // }
+
+  // getEventAnimation() {
+  //   const { id } = this.props.match.params;
+  //   axios
+  //     .get(
+  //       `https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_agenda-animations-culturelles-bibliotheque-municipale-nantes&q=&facet=precisions_public&facet=accueil_enfant&facet=date&facet=complet&facet=annule&facet=reporte&facet=lieu&facet=gratuit${id}`
+  //     )
+  //     .then((res) => this.setState({ Detail: res.data }));
+  // }
 
   render() {
-    const { error, loading, Detail, id } = this.state;
-   // const { id_manif: id } = this.props;
-
-    if (loading) return <div>Loading...</div>;
-    if (error) return <div>Error...</div>;
+    const { Detail } = this.state;
 
     return (
       <div>
         <FIGURE className="DetailCard">
-          {Detail.map((event) => {
-            console.log(Detail);
-            return <DetailEventCard key= {event.fields.id} {...event.fields} />;
-          })}
+          <DetailEventCard />;
         </FIGURE>
       </div>
     );

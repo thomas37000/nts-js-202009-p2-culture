@@ -92,6 +92,7 @@ class EventList extends Component {
   render() {
     // eslint-disable-next-line no-shadow
     const { EventList, status, activeId } = this.state;
+    const { id } = this.props;
 
     return (
       <div className="EventList">
@@ -117,7 +118,6 @@ class EventList extends Component {
               }
               return event.fields.gratuit === 'oui';
             }).map((event) => {
-              console.log(event.fields);
               return (
                 <li key={event.fields.id_manif}>
                   {/* eslint-disable-next-line react/jsx-props-no-spreading */}
@@ -127,9 +127,7 @@ class EventList extends Component {
                     {...event.fields}
                   />
                   <button type="button">
-                    <Link to={`/event-detail/${event.fields.id_manif}`}>
-                      TEST
-                    </Link>
+                    <Link to="/detail-event/:id_manif">TEST</Link>
                   </button>
                 </li>
               );
