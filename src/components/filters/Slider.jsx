@@ -38,7 +38,7 @@ class Slider extends React.Component {
       <Section>
         <div className="label-slider">
           <div>Gratuit</div>
-          <div>{'< 50 €'}</div>
+          <div>Payant</div>
           <div>Tous</div>
         </div>
         <input
