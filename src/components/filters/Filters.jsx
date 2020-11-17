@@ -15,7 +15,7 @@ const Section = styled.section`
   .react-calendar {
     width: 80%;
     margin: auto;
-    border-radius: 5px;
+    border-radius: 0px;
     border: solid #006edc 2px;
   }
   .react-calendar__navigation {
