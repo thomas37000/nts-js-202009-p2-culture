@@ -140,7 +140,7 @@ class DetailEvent extends Component {
     // eslint-disable-next-line react/prop-types
     const id = this.props.match.params.id_manif;
     axios
-      .get('https://data.nantesmetropole.fr/api/records/1.0/search/${id}', {
+      .get('https://data.nantesmetropole.fr/api/records/${id}', {
         params: {
           dataset: '244400404_agenda-evenements-nantes-nantes-metropole',
           apikey: 'a2c65fe09812bd0c8a2628bdfe6f71bb1bd48facca5b74d63070e77f',

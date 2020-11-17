@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable react/jsx-indent */
@@ -53,7 +54,7 @@ class BiblioList extends Component {
     this.state = {
       BiblioList: [],
       // eslint-disable-next-line react/no-unused-state
-      status: 'film',
+      category: 'all',
       choiceOfDate: 'all',
     };
     this.todayDate = this.todayDate.bind(this);
@@ -100,78 +101,78 @@ class BiblioList extends Component {
 
   children() {
     this.setState({
-      status: 'children',
+      category: 'Enfant',
     });
   }
 
   reading() {
     this.setState({
-      status: 'reading',
+      category: 'Lecture',
     });
   }
 
   workshop() {
     this.setState({
-      status: 'workshop',
+      category: 'Atelier',
     });
   }
 
   activitytoshare() {
     this.setState({
-      status: 'activitytoshare',
+      category: 'Activité à partager',
     });
   }
 
   exhibition() {
     this.setState({
-      status: 'exhibition',
+      category: 'Expositions',
     });
   }
 
   theater() {
     this.setState({
-      status: 'theater',
+      category: 'Théatre',
     });
   }
 
   game() {
     this.setState({
-      status: 'game',
+      category: 'Jeu',
     });
   }
 
   visit() {
     this.setState({
-      status: 'visit',
+      category: 'Visite',
     });
   }
 
   film() {
     this.setState({
-      status: 'film',
+      category: 'Film / Projection',
     });
   }
 
   conference() {
     this.setState({
-      status: 'conference',
+      category: 'Conférence',
     });
   }
 
   meeting() {
     this.setState({
-      status: 'meeting',
+      category: 'Rencontre',
     });
   }
 
   showAll() {
     this.setState({
-      status: 'all',
+      category: '',
     });
   }
 
   render() {
-    const { BiblioList, status, choiceOfDate } = this.state;
+    const { BiblioList, category, choiceOfDate } = this.state;
     return (
       <div className="EventList">
         <BIBLIOLIST>
@@ -227,48 +228,12 @@ class BiblioList extends Component {
           </div>
           <ul>
             {BiblioList.filter((event) => {
-              // eslint-disable-next-line no-console
-              console.log(status, choiceOfDate);
-              if (status === 'all') {
-                return true;
-              }
-              if (status === 'children') {
-                return event.fields.categorie_1 === 'Enfant';
-              }
-              if (status === 'reading') {
-                return event.fields.categorie_1 === 'Lecture';
-              }
-              if (status === 'workshop') {
-                return event.fields.categorie_1 === 'Atelier';
-              }
-              if (status === 'activitytoshare') {
-                return event.fields.categorie_1 === 'Activité à partager';
-              }
-              if (status === 'exhibition') {
-                return event.fields.categorie_1 === 'Expositions';
-              }
-              if (status === 'theater') {
-                return event.fields.categorie_1 === 'Théatre';
-              }
-              if (status === 'game') {
-                return event.fields.categorie_1 === 'Jeu';
-              }
-              if (status === 'visit') {
-                return event.fields.categorie_1 === 'Visite';
-              }
-              if (status === 'film') {
-                return event.fields.categorie_1 === 'Film / Projection';
-              }
-              if (status === 'conference') {
-                return event.fields.categorie_1 === 'Conférence';
-              }
-              if (status === 'meeting') {
-                return event.fields.categorie_1 === 'Rencontre';
-              }
-              if (choiceOfDate === this.todayDate) {
-                return event.fields.date === this.todayDate;
-              }
-              return event.fields.categorie_1 === '';
+              console.log(event, category);
+              // eslint-disable-next-line react/destructuring-assignment
+              return (
+                event.fields.categorie_1 === this.state.category &&
+                event.fields.date === this.state.choiceOfDate
+              );
             }).map((event) => {
               return (
                 <li key={event.fields.recordid}>
