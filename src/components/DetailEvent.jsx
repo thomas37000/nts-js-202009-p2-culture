@@ -130,7 +130,6 @@ const FIGURE = styled.figure`
 class DetailEvent extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       eventDetails: [],
     };
@@ -139,23 +138,21 @@ class DetailEvent extends Component {
   componentDidMount() {
     // eslint-disable-next-line react/prop-types
     const id = this.props.match.params.id_manif;
+    console.log(id);
     axios
-      .get('https://data.nantesmetropole.fr/api/records/${id}', {
-        params: {
-          dataset: '244400404_agenda-evenements-nantes-nantes-metropole',
-          apikey: 'a2c65fe09812bd0c8a2628bdfe6f71bb1bd48facca5b74d63070e77f',
-          rows: 500,
-        },
-      })
+      .get(
+        `https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_agenda-evenements-nantes-nantes-metropole&q=&facet=emetteur&facet=rubrique&facet=lieu&facet=ville&facet=lieu_quartier/${id}`
+      )
       .then((response) => {
         this.setState({
-          eventDetails: response.data.records,
+          eventDetails: response.data,
         });
       });
   }
 
   render() {
     const { eventDetails } = this.state;
+    console.log(eventDetails);
     return (
       <div>
         <FIGURE className="DetailCard">

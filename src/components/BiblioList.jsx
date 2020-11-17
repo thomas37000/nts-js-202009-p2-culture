@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/no-unused-state */
@@ -172,7 +173,7 @@ class BiblioList extends Component {
   }
 
   render() {
-    const { BiblioList, category, choiceOfDate } = this.state;
+    const { BiblioList, category } = this.state;
     return (
       <div className="EventList">
         <BIBLIOLIST>
