@@ -16,9 +16,11 @@ const FIGURE = styled.figure`
 
   .eventName h1 {
     margin: 0.5rem;
+    color: #000080;
   }
   .eventName h2 {
     margin: 0.5rem;
+    color: #000080;
   }
 
   p,
@@ -97,7 +99,7 @@ const FIGURE = styled.figure`
 
     .eventName h1,
     .eventName h2 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       color: #000080;
       text-align: center;
       letter-spacing: 0.3rem;
