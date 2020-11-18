@@ -7,8 +7,6 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const FIGURE = styled.figure`
-  @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-
   .eventName {
     display: flex;
     flex-direction: column;
@@ -60,7 +58,7 @@ const FIGURE = styled.figure`
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.15);
-    margin: 0.5rem;
+    margin: 0rem;
   }
 
   .information,
@@ -182,11 +180,11 @@ class DetailEvent extends Component {
               <h4 className="accessibilité">
                 Public : {eventDetails.precisions_public}
               </h4>
-              <h4 className="gratuité">Gratuité : {eventDetails.gratuit}</h4>
               <h4 className="lieu">Lieu : {eventDetails.lieu}</h4>
               <h4>
                 Horaire : {eventDetails.heure_debut} - {eventDetails.heure_fin}
               </h4>
+              <h4 className="gratuité">Gratuité : {eventDetails.gratuit}</h4>
               <h4 className="price">
                 Tarif : {eventDetails.precisions_tarifs}
               </h4>

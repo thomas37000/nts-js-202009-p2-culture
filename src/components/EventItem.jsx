@@ -28,20 +28,15 @@ const DIV = styled.div`
   width: 7.5rem;
 }
 
-h3 {
-  font-size: 12px;
-}
-
-span{
-  12px;
-}
-
 .category {
   color: red;
 }
 
+span,
+h3,
 h4 {
   font-size: 12px;
+  margin: 0.5rem;
 }
 
 .SyntheticPrice h4 {
@@ -63,13 +58,12 @@ h4 {
 .SyntheticPrice {
   width: auto;
   text-align: left;
-  /*margin-bottom: 7rem;*/
 }
 
 .SyntheticDetail {
   width: 10rem;
   font-size: 1rem;
-  text-align: center;
+  text-align: left;
   margin-top: 0.5rem;
 }
 
@@ -80,9 +74,10 @@ h4 {
   align-items: center;
   text-align: left;
   padding: 1rem;
-  max-width: 60rem;
+  max-width: 65rem;
+  height: auto;
   background-color: #c4c4c4;
-  border-radius: 2px;
+  border-radius: 5px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
   font-size: 0.75em;
 
@@ -95,20 +90,22 @@ h4 {
     height: auto;
   }
   .SyntheticInformation {
-    width: 18rem;
+    width: 22.5rem;
     height: auto;
     margin: 1rem;
   }
   .SyntheticPrice {
-    width: 15rem;
+    width: 20rem;
     margin: 1rem;
     text-align: left;
     /*margin-bottom: 7rem;*/
-}
-.SyntheticDetail {
-  font-size: 1rem;
-  text-align: right;
-  margin-top: 0.75rem;
+
+  .SyntheticDetail {
+    width: 3rem;
+    font-size: 1rem;
+    text-align: right;
+    margin-top: 0.75rem;
+  }
 }
 `;
 
