@@ -4,6 +4,12 @@ import GithubProfil from './GithubProfil';
 import styled from 'styled-components';
 
 const DIV = styled.div`
+h1 {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+  color: #000080;
+}
   @media (min-width: 1224px) {
     .Team {
       display: flex;
@@ -51,7 +57,7 @@ class GitApi extends Component {
     const { profile } = this.state;
     return (
       <DIV>
-        <h1>Event Team ! </h1>
+        <h1> Event Team ! </h1>
         <div className="Team">
           {profile.map((profil) => (
             <GithubProfil key={profil.id} {...profil} />
