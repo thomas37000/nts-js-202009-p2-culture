@@ -27,17 +27,17 @@ class App extends Component {
     return (
       <>
         <Router>
+          <Navbar />
           <Switch>
             <Route exact path="/">
-              <Navbar />
               <Grid />
               <Filters dateUpdate={this.dateUpdate} />
               <EventList date={this.state.date} />
-              <Footer />
             </Route>
             <Route path="/contact" component={Contact} />
-            <Route path="/detail-event/:id_manif" component={DetailEvent} />
+            <Route exact path="/event/:id" component={DetailEvent} />
           </Switch>
+          <Footer />
           <ScrollUpButton
             style={{
               width: '50px',

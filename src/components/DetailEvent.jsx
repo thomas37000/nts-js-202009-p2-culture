@@ -1,12 +1,12 @@
-/* eslint-disable react/require-default-props */
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable no-template-curly-in-string */
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import DetailEventCard from './DetailEventCard';
 
 const FIGURE = styled.figure`
-  @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
   .eventName {
     display: flex;
     flex-direction: column;
@@ -19,6 +19,12 @@ const FIGURE = styled.figure`
   .eventName h2 {
     margin: 0.5rem;
   }
+  p,
+  h2,
+  h3,
+  h4 {
+    margin: 0.75rem;
+  }
   .Card {
     display: flex;
     flex-direction: column;
@@ -26,13 +32,9 @@ const FIGURE = styled.figure`
     width: auto;
     height: auto;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.15);
-    background-color: rgb(245, 239, 239);
+    background-color: #c4c4c4;
     border-radius: 2px;
     font-size: 0.75em;
-  }
-  .material-icons {
-    font-family: 'Material Icons';
-    font-size: 16px;
   }
   iframe {
     max-width: 90%;
@@ -50,11 +52,11 @@ const FIGURE = styled.figure`
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.15);
-    margin-bottom: var(--section-margin);
+    margin: 0rem;
   }
   .information,
   .location {
-    margin: 0.5rem;
+    padding: 1rem;
   }
   .price span {
     width: auto;
@@ -68,12 +70,16 @@ const FIGURE = styled.figure`
   }
   @media screen and (min-width: 800px) {
     .photo {
-      display: none;
+      width: 20%;
+      height: auto;
+      position: relative;
+      box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.15);
+      margin: 1rem;
     }
     .eventName {
       display: flex;
       justify-content: center;
-      height: 60vh;
+      height: 20vh;
       position: relative;
       background-position: center;
       background-repeat: no-repeat;
@@ -81,11 +87,11 @@ const FIGURE = styled.figure`
     }
     .eventName h1,
     .eventName h2 {
-      font-size: 5rem;
-      color: #f5f2f2;
+      font-size: 2.5rem;
+      color: #000080;
       text-align: center;
       letter-spacing: 0.3rem;
-      text-shadow: 3px 4px 8px #0e0d0d;
+      text-shadow: 1px 1px 2px #0e0d0d;
       width: 100%;
     }
     .Card {
@@ -94,18 +100,21 @@ const FIGURE = styled.figure`
       justify-content: space-around;
       align-items: center;
       text-align: left;
-      width: auto;
+      width: 100%;
       height: auto;
-      background-color: rgb(245, 239, 239);
+      background-color: #c4c4c4;
       box-shadow: none;
       border-radius: none;
       font-size: 0.75em;
+    }
+    .description {
+      width: 60rem;
     }
     .information {
       margin: 2rem;
     }
     .price {
-      width: auto;
+      width: 60rem;
     }
   }
 `;
@@ -114,55 +123,77 @@ class DetailEvent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Detail: [],
+      eventDetails: [],
     };
-    // this.getEventAnimation = this.getEventAnimation.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.getEventAnimation();
-  // }
-
-  // getEventAnimation() {
-  //   const { id } = this.props.match.params;
-  //   axios
-  //     .get(
-  //       `https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_agenda-animations-culturelles-bibliotheque-municipale-nantes&q=&facet=precisions_public&facet=accueil_enfant&facet=date&facet=complet&facet=annule&facet=reporte&facet=lieu&facet=gratuit${id}`
-  //     )
-  //     .then((res) => this.setState({ Detail: res.data }));
-  // }
+  componentDidMount() {
+    // eslint-disable-next-line react/prop-types
+    const { id } = this.props.match.params;
+    axios
+      .get(
+        `https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_agenda-evenements-nantes-nantes-metropole&refine.recordid=${id}`
+      )
+      .then((response) => {
+        console.log(response);
+        this.setState({
+          eventDetails: response.data.records[0].fields,
+        });
+      });
+  }
 
   render() {
-    const { Detail } = this.state;
-
+    const { eventDetails } = this.state;
     return (
       <div>
         <FIGURE className="DetailCard">
-          <DetailEventCard />;
+          <section className="eventName">
+            <h1>{eventDetails.libelle_festival}</h1>
+            <h2>{eventDetails.nom}</h2>
+          </section>
+          <section className="Card">
+            <img
+              className="photo"
+              src={eventDetails.media_1}
+              alt={eventDetails.nom}
+            />
+            <div className="information">
+              <h1 className="date">{eventDetails.date}</h1>
+              <h4 className="description">
+                Description : {eventDetails.description}
+              </h4>
+              <h4 className="accessibilité">
+                Public : {eventDetails.precisions_public}
+              </h4>
+              <h4 className="lieu">Lieu : {eventDetails.lieu}</h4>
+              <h4>
+                Horaire : {eventDetails.heure_debut} - {eventDetails.heure_fin}
+              </h4>
+              <h4 className="gratuité">Gratuité : {eventDetails.gratuit}</h4>
+              <h4 className="price">
+                Tarif : {eventDetails.precisions_tarifs}
+              </h4>
+            </div>
+            <div className="location">
+              <div className="contact">
+                <h3>Coordonnées :</h3>
+                <p>Adresse : {eventDetails.adresse}</p>
+                <p>Ville : {eventDetails.ville}</p>
+                <p>Tél. : {eventDetails.lieu_tel}</p>
+                <p>site web : {eventDetails.lieu_siteweb}</p>
+              </div>
+              <div className="map">
+                <iframe
+                  title="map"
+                  src="https://google/maps/gfpwj2aMgwTsRtEy7"
+                />
+              </div>
+            </div>
+          </section>
         </FIGURE>
       </div>
     );
   }
 }
-DetailEvent.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      id: PropTypes.number.isRequired,
-    }),
-  }),
-  description: PropTypes.string.isRequired,
-  gratuit: PropTypes.string.isRequired,
-  lieu_siteweb: PropTypes.string.isRequired,
-  lieu_tel: PropTypes.bool.isRequired,
-  id_manif: PropTypes.string.isRequired,
-  nom: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  media_1: PropTypes.string.isRequired,
-  heure_debut: PropTypes.string.isRequired,
-  heure_fin: PropTypes.string.isRequired,
-  lieu: PropTypes.string.isRequired,
-  ville: PropTypes.string.isRequired,
-  precisions_tarifs: PropTypes.string.isRequired,
-};
 
 export default DetailEvent;

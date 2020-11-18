@@ -1,22 +1,17 @@
-/* eslint-disable import/no-named-as-default-member */
+/* eslint-disable react/no-unused-state */
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-
-// eslint-disable-next-line import/no-named-as-default
 import EventItem from './EventItem';
 
 const EVENTLIST = styled.div`
   ul {
     padding: 0;
   }
-
   li {
     list-style: none;
   }
-
   button {
     display: flex;
     flex-direction: column;
@@ -33,13 +28,12 @@ class EventList extends Component {
     this.state = {
       EventList: [],
       date: this.props.date,
+      // eslint-disable-next-line react/no-unused-state
       status: 'all',
-      activeId: '',
     };
     this.free = this.free.bind(this);
     this.paying = this.paying.bind(this);
     this.showAll = this.showAll.bind(this);
-    this.handleChangeEvent = this.handleChangeEvent.bind(this);
   }
 
   componentDidMount() {
@@ -56,9 +50,13 @@ class EventList extends Component {
 
   fetchDatas() {
     axios
-      .get(
-        'https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_agenda-animations-culturelles-bibliotheque-municipale-nantes&q=&facet=precisions_public&facet=accueil_enfant&facet=date&facet=complet&facet=annule&facet=reporte&facet=lieu&facet=gratuit'
-      )
+      .get('https://data.nantesmetropole.fr/api/records/1.0/search/', {
+        params: {
+          dataset: '244400404_agenda-evenements-nantes-nantes-metropole',
+          apikey: 'a2c65fe09812bd0c8a2628bdfe6f71bb1bd48facca5b74d63070e77f',
+          rows: 500,
+        },
+      })
       .then((response) => {
         this.setState({
           EventList: response.data.records,
@@ -84,15 +82,9 @@ class EventList extends Component {
     });
   }
 
-  handleChangeEvent(event) {
-    const buttonId = event.target.id;
-    this.setState({ activeId: buttonId });
-  }
-
   render() {
     // eslint-disable-next-line no-shadow
-    const { EventList, status, activeId } = this.state;
-    const { id } = this.props;
+    const { EventList, status } = this.state;
 
     return (
       <div className="EventList">
@@ -119,16 +111,9 @@ class EventList extends Component {
               return event.fields.gratuit === 'oui';
             }).map((event) => {
               return (
-                <li key={event.fields.id_manif}>
+                <li key={event.recordid}>
                   {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-                  <EventItem
-                    activeId={activeId}
-                    handleChangeEvent={this.handleChangeEvent}
-                    {...event.fields}
-                  />
-                  <button type="button">
-                    <Link to="/detail-event/:id_manif">TEST</Link>
-                  </button>
+                  <EventItem {...event.fields} recordid={event.recordid} />
                 </li>
               );
             })}

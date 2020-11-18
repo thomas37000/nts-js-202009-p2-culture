@@ -53,8 +53,8 @@ contributors'
             url="https://{s}.tile.openstreetmap.org/
 {z}/{x}/{y}.png"
           />
-          <Marker position={fields.location} icon={myIcon}>
-            <Popup>{fields.emmeteur}</Popup>
+          <Marker position={leaflet.location} icon={myIcon}>
+            <Popup>{leaflet.emmeteur}</Popup>
           </Marker>
         </MapContainer>
       </div>
