@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import EventList from './components/EventList';
 import Footer from './components/Footer';
 import Filters from './components/filters/Filters';
+import Contact from './components/Contact';
 
 class App extends Component {
   constructor(props) {
@@ -31,6 +32,7 @@ class App extends Component {
               <EventList date={this.state.date} />
               <Footer />
             </Route>
+            <Route path="/contact" component={Contact} />
           </Switch>
         </Router>
       </>
