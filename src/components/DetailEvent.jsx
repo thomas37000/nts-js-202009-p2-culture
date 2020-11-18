@@ -35,11 +35,6 @@ const FIGURE = styled.figure`
     font-size: 0.75em;
   }
 
-  .material-icons {
-    font-family: 'Material Icons';
-    font-size: 16px;
-  }
-
   iframe {
     max-width: 90%;
     max-height: 90%;
@@ -58,12 +53,12 @@ const FIGURE = styled.figure`
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.15);
-    margin-bottom: var(--section-margin);
+    margin: 0.5rem;
   }
 
   .information,
   .location {
-    margin: 0.5rem;
+    padding: 1rem;
   }
 
   .price span {
@@ -80,13 +75,17 @@ const FIGURE = styled.figure`
 
   @media screen and (min-width: 800px) {
     .photo {
-      display: none;
+      width: 20%;
+      height: auto;
+      position: relative;
+      box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.15);
+      margin: 1rem;
     }
 
     .eventName {
       display: flex;
       justify-content: center;
-      height: 60vh;
+      height: 20vh;
       position: relative;
       background-position: center;
       background-repeat: no-repeat;
@@ -95,11 +94,11 @@ const FIGURE = styled.figure`
 
     .eventName h1,
     .eventName h2 {
-      font-size: 5rem;
-      color: #f5f2f2;
+      font-size: 2.5rem;
+      color: #000080;
       text-align: center;
       letter-spacing: 0.3rem;
-      text-shadow: 3px 4px 8px #0e0d0d;
+      text-shadow: 1px 1px 2px #0e0d0d;
       width: 100%;
     }
 
@@ -158,39 +157,38 @@ class DetailEvent extends Component {
     return (
       <div>
         <FIGURE className="DetailCard">
-          <img
-            className="photo"
-            src={eventDetails.media_1}
-            alt={eventDetails.nom}
-          />
           <section className="eventName">
             <h1>{eventDetails.libelle_festival}</h1>
             <h2>{eventDetails.nom}</h2>
           </section>
           <section className="Card">
+            <img
+              className="photo"
+              src={eventDetails.media_1}
+              alt={eventDetails.nom}
+            />
             <div className="information">
               <h1 className="date">{eventDetails.date}</h1>
               <h4 className="description">
                 Description : {eventDetails.description}
               </h4>
-              <h4 className="price">
-                Tarif : <span>{eventDetails.precisions_tarifs}</span>
+              <h4 className="accessibilité">
+                Public : {eventDetails.precisions_public}
               </h4>
-              <h4 className="accessibilité">Accessiblité :</h4>
-              <h4 className="gratuité">Gratuité : </h4>
-              <h4 className="lieu">Lieu : {eventDetails.lieu} </h4>
-              <h4 className="adresse">Adresse : {eventDetails.adresse} </h4>
+              <h4 className="gratuité">Gratuité : {eventDetails.gratuit}</h4>
+              <h4 className="lieu">Lieu : {eventDetails.lieu}</h4>
               <h4>
-                Horaire :{' '}
-                <span>
-                  {eventDetails.heure_debut} - {eventDetails.heure_fin}
-                </span>
+                Horaire : {eventDetails.heure_debut} - {eventDetails.heure_fin}
+              </h4>
+              <h4 className="price">
+                Tarif : {eventDetails.precisions_tarifs}
               </h4>
             </div>
             <div className="location">
               <div className="contact">
                 <h3>Coordonnées :</h3>
-                <p>{eventDetails.city}</p>
+                <p>Adresse : {eventDetails.adresse}</p>
+                <p>Ville : {eventDetails.ville}</p>
                 <p>Tél. : {eventDetails.lieu_tel}</p>
                 <p>site web : {eventDetails.lieu_siteweb}</p>
               </div>
@@ -199,9 +197,6 @@ class DetailEvent extends Component {
               </div>
             </div>
           </section>
-          <div>
-            <Link to="/">retour à l'accueil</Link>
-          </div>
         </FIGURE>
       </div>
     );
