@@ -26,6 +26,7 @@ const DIV = styled.div`
 
 .SyntheticTimetable {
   width: 7.5rem;
+  margin-bottom: 1rem;
 }
 
 .category {
@@ -47,7 +48,6 @@ h4 {
   margin: auto;
   max-width: 15rem;
   height: auto;
-  margin: 1rem;
 }
 
 .SyntheticCard.Information {
@@ -63,11 +63,11 @@ h4 {
 .SyntheticDetail {
   width: 10rem;
   font-size: 1rem;
-  text-align: left;
+  text-align: center;
   margin-top: 0.5rem;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px) {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -98,13 +98,12 @@ h4 {
     width: 20rem;
     margin: 1rem;
     text-align: left;
-    /*margin-bottom: 7rem;*/
 
   .SyntheticDetail {
-    width: 3rem;
+    width: 2rem;
     font-size: 1rem;
-    text-align: right;
-    margin-top: 0.75rem;
+    text-align: center;
+    margin-top: 0.5rem;
   }
 }
 `;
