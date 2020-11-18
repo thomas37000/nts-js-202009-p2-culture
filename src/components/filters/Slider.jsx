@@ -28,7 +28,7 @@ const Section = styled.section`
 
 class Slider extends React.Component {
   state = {
-    value: 0,
+    value: 2,
   };
 
   handleOnChange = (e) => this.setState({ value: e.target.value });

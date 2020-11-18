@@ -41,7 +41,6 @@ class Filters extends React.Component {
 
   changeDate(date) {
     const { dateUpdate } = this.props;
-    console.log('filters :', date);
     dateUpdate(date);
   }
 
