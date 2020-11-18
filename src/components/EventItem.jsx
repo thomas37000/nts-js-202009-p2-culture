@@ -13,21 +13,19 @@ const DIV = styled.div`
 
   display: flex;
   flex-direction: column;
-  align-items: center;
   text-align: left;
   margin: 2rem;
   padding: 1em;
   width: auto;
   height: auto;
   font-family: Roboto, sans-serif;
-  background-color: rgb(245, 239, 239);
+  background-color: #c4c4c4;
   border-radius: 10px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
   font-size: 0.75em;
 
 .SyntheticTimetable {
   width: 7.5rem;
-  text-align: center;
 }
 
 h3 {
@@ -68,6 +66,13 @@ h4 {
   /*margin-bottom: 7rem;*/
 }
 
+.SyntheticDetail {
+  width: 10rem;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
 @media screen and (min-width: 800px) {
   display: flex;
   flex-direction: row;
@@ -75,8 +80,8 @@ h4 {
   align-items: center;
   text-align: left;
   padding: 1rem;
-  max-width: 50rem;
-  background-color: rgb(245, 239, 239);
+  max-width: 60rem;
+  background-color: #c4c4c4;
   border-radius: 2px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
   font-size: 0.75em;
@@ -99,6 +104,11 @@ h4 {
     margin: 1rem;
     text-align: left;
     /*margin-bottom: 7rem;*/
+}
+.SyntheticDetail {
+  font-size: 1rem;
+  text-align: right;
+  margin-top: 0.75rem;
 }
 `;
 
@@ -139,26 +149,20 @@ class EventItem extends Component {
               <h3 className="category">
                 {category !== undefined ? category : 'Autres évènements'}
               </h3>
-              <h3>
-                <span className="name">{name}</span>
-              </h3>
+              <h3 className="name">{name}</h3>
             </div>
             <div className="SyntheticLocation">
-              <h4>
-                Lieu : <span className="location">{location}</span>
-              </h4>
+              <h4 className="location">Lieu : {location}</h4>
             </div>
             <div className="SyntheticCity">
-              <h4>
-                Ville : <span className="city">{city}</span>
-              </h4>
-              <Link to={`/event/${id}`}>More details</Link>
+              <h4 className="city">Ville : {city}</h4>
             </div>
           </div>
           <div className="SyntheticPrice">
-            <h4>
-              Tarif : <span className="price">{price}</span>
-            </h4>
+            <h4 className="price">Tarif : {price}</h4>
+          </div>
+          <div className="SyntheticDetail">
+            <Link to={`/event/${id}`}>Voir plus</Link>
           </div>
         </DIV>
       </div>

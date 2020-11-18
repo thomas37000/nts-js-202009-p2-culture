@@ -27,7 +27,7 @@ const FIGURE = styled.figure`
   h2,
   h3,
   h4 {
-    margin: 0.5rem;
+    margin: 0.75rem;
   }
 
   .Card {
@@ -37,7 +37,7 @@ const FIGURE = styled.figure`
     width: auto;
     height: auto;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.15);
-    background-color: rgb(245, 239, 239);
+    background-color: #c4c4c4;
     border-radius: 2px;
     font-size: 0.75em;
   }
@@ -117,7 +117,7 @@ const FIGURE = styled.figure`
       text-align: left;
       width: 100%;
       height: auto;
-      background-color: rgb(245, 239, 239);
+      background-color: #c4c4c4;
       box-shadow: none;
       border-radius: none;
       font-size: 0.75em;
