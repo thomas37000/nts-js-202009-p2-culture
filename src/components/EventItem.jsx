@@ -113,7 +113,7 @@ class EventItem extends Component {
   render() {
     const {
       libelle_festival: category,
-      id_manif: id,
+      recordid: id,
       nom: name,
       media_1: media,
       date: eventdate,
@@ -123,6 +123,7 @@ class EventItem extends Component {
       ville: city,
       precisions_tarifs: price,
     } = this.props;
+    console.log(this.props);
     return (
       <div>
         <DIV>

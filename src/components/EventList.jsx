@@ -113,9 +113,9 @@ class EventList extends Component {
               return event.fields.gratuit === 'oui';
             }).map((event) => {
               return (
-                <li key={event.fields.recordid}>
+                <li key={event.recordid}>
                   {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-                  <EventItem {...event.fields} />
+                  <EventItem {...event.fields} recordid={event.recordid} />
                 </li>
               );
             })}

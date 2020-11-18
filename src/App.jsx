@@ -79,7 +79,7 @@ class App extends Component {
               <H1>Evènements du Voyage à Nantes</H1>
               <EventListVoyageNantes />
             </Route>
-            <Route exact path="/event/:id_manif" component={DetailEvent} />
+            <Route exact path="/event/:id" component={DetailEvent} />
           </Switch>
           <Footer />
         </Router>

@@ -109,7 +109,7 @@ const FIGURE = styled.figure`
       justify-content: space-around;
       align-items: center;
       text-align: left;
-      width: auto;
+      width: 100%;
       height: auto;
       background-color: rgb(245, 239, 239);
       box-shadow: none;
@@ -117,12 +117,15 @@ const FIGURE = styled.figure`
       font-size: 0.75em;
     }
 
+    .description {
+      width: 60rem;
+    }
     .information {
       margin: 2rem;
     }
 
     .price {
-      width: auto;
+      width: 60rem;
     }
   }
 `;
@@ -137,50 +140,51 @@ class DetailEvent extends Component {
 
   componentDidMount() {
     // eslint-disable-next-line react/prop-types
-    const id = this.props.match.params.id_manif;
-    console.log(id);
+    const { id } = this.props.match.params;
     axios
       .get(
-        `https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_agenda-evenements-nantes-nantes-metropole&q=&facet=emetteur&facet=rubrique&facet=lieu&facet=ville&facet=lieu_quartier/${id}`
+        `https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_agenda-evenements-nantes-nantes-metropole&refine.recordid=${id}`
       )
       .then((response) => {
+        console.log(response);
         this.setState({
-          eventDetails: response.data,
+          eventDetails: response.data.records[0].fields,
         });
       });
   }
 
   render() {
     const { eventDetails } = this.state;
-    console.log(eventDetails);
     return (
       <div>
         <FIGURE className="DetailCard">
           <img
             className="photo"
-            src={eventDetails.media}
-            alt={eventDetails.name}
+            src={eventDetails.media_1}
+            alt={eventDetails.nom}
           />
           <section className="eventName">
-            <h1>{eventDetails.category}</h1>
-            <h2>{eventDetails.name}</h2>
+            <h1>{eventDetails.libelle_festival}</h1>
+            <h2>{eventDetails.nom}</h2>
           </section>
           <section className="Card">
             <div className="information">
-              <h1 className="date">{eventDetails.eventdate}</h1>
-              <h4 className="description">Description :</h4>
+              <h1 className="date">{eventDetails.date}</h1>
+              <h4 className="description">
+                Description : {eventDetails.description}
+              </h4>
               <h4 className="price">
-                Tarif : <span>{eventDetails.price}</span>
+                Tarif : <span>{eventDetails.precisions_tarifs}</span>
               </h4>
               <h4 className="accessibilité">Accessiblité :</h4>
               <h4 className="gratuité">Gratuité : </h4>
               <h4 className="lieu">
-                Lieu : <span>{eventDetails.location}</span>
+                Lieu : <span>{eventDetails.lieu}</span>
               </h4>
               <h4>
                 Horaire :{' '}
                 <span>
-                  {eventDetails.beginning} - {eventDetails.end}
+                  {eventDetails.heure_debut} - {eventDetails.heure_fin}
                 </span>
               </h4>
             </div>
@@ -188,8 +192,8 @@ class DetailEvent extends Component {
               <div className="contact">
                 <h3>Coordonnées :</h3>
                 <p>{eventDetails.city}</p>
-                <p>Tél. :</p>
-                <p>email :</p>
+                <p>Tél. : {eventDetails.lieu_tel}</p>
+                <p>site web : {eventDetails.lieu_siteweb}</p>
               </div>
               <div className="map">
                 <iframe src="https://google/maps/gfpwj2aMgwTsRtEy7" />
