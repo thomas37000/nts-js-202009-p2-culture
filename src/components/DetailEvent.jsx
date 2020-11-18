@@ -178,9 +178,8 @@ class DetailEvent extends Component {
               </h4>
               <h4 className="accessibilité">Accessiblité :</h4>
               <h4 className="gratuité">Gratuité : </h4>
-              <h4 className="lieu">
-                Lieu : <span>{eventDetails.lieu}</span>
-              </h4>
+              <h4 className="lieu">Lieu : {eventDetails.lieu} </h4>
+              <h4 className="adresse">Adresse : {eventDetails.adresse} </h4>
               <h4>
                 Horaire :{' '}
                 <span>
