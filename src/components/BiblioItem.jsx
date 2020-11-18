@@ -16,8 +16,8 @@ const BIBLIOITEM = styled.div`
   width: auto;
   height: auto;
   font-family: Roboto, sans-serif;
-  background-color: rgb(245, 239, 239);
-  border-radius: 20px;
+  background-color: #c4c4c4;
+  border-radius: 10px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
   font-size: 0.75em;
 
@@ -80,7 +80,7 @@ span.free {
   padding: 1rem;
   max-width: 50rem;
   height: auto;
-  background-color: rgb(245, 239, 239);
+  background-color: #c4c4c4;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
   font-size: 0.75em;
 
