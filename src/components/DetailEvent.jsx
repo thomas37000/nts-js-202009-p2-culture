@@ -23,6 +23,13 @@ const FIGURE = styled.figure`
     margin: 0.5rem;
   }
 
+  p,
+  h2,
+  h3,
+  h4 {
+    margin: 0.5rem;
+  }
+
   .Card {
     display: flex;
     flex-direction: column;
