@@ -10,6 +10,7 @@ const DIV = styled.div`
     width: 50%;
     height: 40%;
     margin: auto;
+    margin-top: 20px;
     font-weight: bold;
     color: navy;
   }

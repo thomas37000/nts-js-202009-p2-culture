@@ -16,7 +16,6 @@ class GitApi extends Component {
   }
 
   fetchDatas() {
-    console.log("hello")
     axios.get(`https://raw.githubusercontent.com/Francois2344/demo/master/db.json`).then((response) => {
       console.log(response);
       this.setState({
@@ -30,9 +29,6 @@ class GitApi extends Component {
     return (
       <div>
         {profile.map((profil) => (<GithubProfil key={profil.id} {...profil} />))}
-        <button type="button" onClick={this.fetchDatas}>
-          Profil GitHub
-        </button>
       </div>
     );
   }
