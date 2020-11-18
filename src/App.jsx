@@ -51,26 +51,20 @@ class App extends Component {
     return (
       <>
         <Router>
+          <Navbar />
           <Switch>
             <Route exact path="/">
-              <Navbar />
               <Grid />
               <Filters dateUpdate={this.dateUpdate} />
               <EventList date={this.state.date} />
-              <Footer />
             </Route>
             <Route exact path="/bibliotheques">
-              <Navbar />
               <BiblioList />
-              <Footer />
             </Route>
             <Route exact path="/contact">
-              <Navbar />
               <Contact />
-              <Footer />
             </Route>
             <Route exact path="/voyage">
-              <Navbar />
               <CATEGORY>
                 <Link to="/animations">
                   <SPAN>Animations estivales</SPAN>
@@ -84,10 +78,10 @@ class App extends Component {
               </CATEGORY>
               <H1>Evènements du Voyage à Nantes</H1>
               <EventListVoyageNantes />
-              <Footer />
             </Route>
             <Route exact path="/event/:id_manif" component={DetailEvent} />
           </Switch>
+          <Footer />
         </Router>
       </>
     );
