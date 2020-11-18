@@ -176,7 +176,10 @@ class DetailEvent extends Component {
                 Description : {eventDetails.description}
               </h4>
               <h4 className="accessibilité">
-                Public : {eventDetails.precisions_public}
+                Public :{' '}
+                {eventDetails.precisions_public !== undefined
+                  ? eventDetails.precisions_public
+                  : 'non précisé'}
               </h4>
               <h4 className="lieu">Lieu : {eventDetails.lieu}</h4>
               <h4>
@@ -190,10 +193,25 @@ class DetailEvent extends Component {
             <div className="location">
               <div className="contact">
                 <h3>Coordonnées :</h3>
-                <p>Adresse : {eventDetails.adresse}</p>
+                <p>
+                  Adresse :{' '}
+                  {eventDetails.adresse !== undefined
+                    ? eventDetails.adresse
+                    : 'non précisé'}
+                </p>
                 <p>Ville : {eventDetails.ville}</p>
-                <p>Tél. : {eventDetails.lieu_tel}</p>
-                <p>site web : {eventDetails.lieu_siteweb}</p>
+                <p>
+                  Tél. :{' '}
+                  {eventDetails.lieu_tel !== undefined
+                    ? eventDetails.lieu_tel
+                    : 'non précisé'}
+                </p>
+                <p>
+                  site web :{' '}
+                  {eventDetails.lieu_siteweb !== undefined
+                    ? eventDetails.lieu_siteweb
+                    : 'non précisé'}
+                </p>
               </div>
               <div className="map">
                 <iframe src="https://google/maps/gfpwj2aMgwTsRtEy7" />
