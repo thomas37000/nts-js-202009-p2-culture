@@ -37,6 +37,7 @@ class Filters extends React.Component {
   constructor(props) {
     super(props);
     this.changeDate = this.changeDate.bind(this);
+    this.changePrice = this.changePrice.bind(this);
   }
 
   changeDate(date) {
@@ -44,11 +45,16 @@ class Filters extends React.Component {
     dateUpdate(date);
   }
 
+  changePrice(price) {
+    const { priceUpdate } = this.props;
+    priceUpdate(price);
+  }
+
   render() {
     return (
       <Section>
         <div className="price">
-          <Slider />
+          <Slider changePrice={this.changePrice} />
         </div>
         <div className="calendar">
           <HomeCalendar changeDate={this.changeDate} />

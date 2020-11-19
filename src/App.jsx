@@ -12,12 +12,18 @@ class App extends Component {
     super(props);
     this.state = {
       date: null,
+      price: '2',
     };
     this.dateUpdate = this.dateUpdate.bind(this);
+    this.priceUpdate = this.priceUpdate.bind(this);
   }
 
   dateUpdate(date) {
     this.setState({ date });
+  }
+
+  priceUpdate(price) {
+    this.setState({ price });
   }
 
   render() {
@@ -28,8 +34,11 @@ class App extends Component {
             <Route exact path="/">
               <Navbar />
               <Grid />
-              <Filters dateUpdate={this.dateUpdate} />
-              <EventList date={this.state.date} />
+              <Filters
+                dateUpdate={this.dateUpdate}
+                priceUpdate={this.priceUpdate}
+              />
+              <EventList date={this.state.date} price={this.state.price} />
               <Footer />
             </Route>
             <Route path="/contact" component={Contact} />

@@ -80,6 +80,7 @@ class EventList extends Component {
     const date = this.props.date
       ? this.props.date.toLocaleDateString().split('/').reverse().join('-')
       : null;
+    console.log(this.props.price);
     return (
       <div className="EventList">
         <EVENTLIST>
@@ -104,6 +105,7 @@ class EventList extends Component {
               return event.fields.gratuit === 'oui';
             })
               .filter((event) => (date ? date === event.fields.date : true))
+              
               .map((event) => {
                 return (
                   <li key={event.fields.recordid}>
