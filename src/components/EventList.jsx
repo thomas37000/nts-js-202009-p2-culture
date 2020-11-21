@@ -1,3 +1,6 @@
+/* eslint-disable no-alert */
+/* eslint-disable react/sort-comp */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-shadow */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
@@ -7,6 +10,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import Calendar from 'react-calendar';
 import EventItem from './EventItem';
 
 const EVENTLIST = styled.div`
@@ -26,6 +30,14 @@ const EVENTLIST = styled.div`
     margin: 2rem;
     width: 10rem;
   }
+
+  label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 2rem;
+    width: 20rem;
+  }
 `;
 
 class EventList extends Component {
@@ -33,10 +45,11 @@ class EventList extends Component {
     super(props);
     this.state = {
       EventList: [],
-      choiceOfDate: new Date().toISOString().split('T')[0],
+      choiceOfDate: '',
     };
     this.todayDate = this.todayDate.bind(this);
     this.tomorrowDate = this.tomorrowDate.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -82,6 +95,10 @@ class EventList extends Component {
     });
   }
 
+  handleChange(event) {
+    this.setState({ choiceOfDate: event.target.value });
+  }
+
   render() {
     const { EventList, choiceOfDate } = this.state;
 
@@ -94,6 +111,16 @@ class EventList extends Component {
           <button type="button" onClick={this.tomorrowDate}>
             Demain
           </button>
+          <form>
+            <label>
+              Date choisie (AAAA-MM-JJ) :{'  '}
+              <input
+                type="text"
+                value={this.state.choiceOfDate}
+                onChange={this.handleChange}
+              />
+            </label>
+          </form>
           <ul>
             {EventList.filter((event) => {
               return event.fields.date === this.state.choiceOfDate;

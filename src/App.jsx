@@ -55,7 +55,6 @@ class App extends Component {
           <Switch>
             <Route exact path="/">
               <Grid />
-              <Filters dateUpdate={this.dateUpdate} />
               <EventList date={this.state.date} />
             </Route>
             <Route exact path="/bibliotheques">
