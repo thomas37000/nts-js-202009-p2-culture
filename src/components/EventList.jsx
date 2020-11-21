@@ -23,7 +23,7 @@ const EVENTLIST = styled.div`
     flex-direction: column;
     align-items: center;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
-    margin: 1rem;
+    margin: 2rem;
     width: 10rem;
   }
 `;
@@ -33,7 +33,7 @@ class EventList extends Component {
     super(props);
     this.state = {
       EventList: [],
-      choiceOfDate: 'all',
+      choiceOfDate: new Date().toISOString().split('T')[0],
     };
     this.todayDate = this.todayDate.bind(this);
     this.tomorrowDate = this.tomorrowDate.bind(this);
