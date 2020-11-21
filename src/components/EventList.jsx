@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/destructuring-assignment */
@@ -35,6 +36,7 @@ class EventList extends Component {
       choiceOfDate: 'all',
     };
     this.todayDate = this.todayDate.bind(this);
+    this.tomorrowDate = this.tomorrowDate.bind(this);
   }
 
   componentDidMount() {
@@ -71,8 +73,16 @@ class EventList extends Component {
     });
   }
 
+  tomorrowDate() {
+    const Today = new Date();
+    this.setState({
+      choiceOfDate: new Date(Today.setDate(Today.getDate() + 1))
+        .toISOString()
+        .split('T')[0],
+    });
+  }
+
   render() {
-    // eslint-disable-next-line no-shadow
     const { EventList, choiceOfDate } = this.state;
 
     return (
@@ -80,6 +90,9 @@ class EventList extends Component {
         <EVENTLIST>
           <button type="button" onClick={this.todayDate}>
             Aujourd'hui
+          </button>
+          <button type="button" onClick={this.tomorrowDate}>
+            Demain
           </button>
           <ul>
             {EventList.filter((event) => {
