@@ -31,12 +31,13 @@ const EVENTLIST = styled.div`
     width: 10rem;
   }
 
-  label {
+  input {
     display: flex;
     flex-direction: row;
     align-items: center;
+    text-align: center;
     margin: 2rem;
-    width: 20rem;
+    width: 10rem;
   }
 `;
 
@@ -111,16 +112,12 @@ class EventList extends Component {
           <button type="button" onClick={this.tomorrowDate}>
             Demain
           </button>
-          <form>
-            <label>
-              Date choisie (AAAA-MM-JJ) :{'  '}
-              <input
-                type="text"
-                value={this.state.choiceOfDate}
-                onChange={this.handleChange}
-              />
-            </label>
-          </form>
+          <input
+            type="text"
+            placeholder="AAAA-MM-JJ"
+            value={this.state.choiceOfDate}
+            onChange={this.handleChange}
+          />
           <ul>
             {EventList.filter((event) => {
               return event.fields.date === this.state.choiceOfDate;
