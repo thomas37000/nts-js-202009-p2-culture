@@ -28,7 +28,7 @@ const Section = styled.section`
 
 class Slider extends React.Component {
   state = {
-    value: 0,
+    value: 2,
   };
 
   handleOnChange = (e) => this.setState({ value: e.target.value });
@@ -38,7 +38,7 @@ class Slider extends React.Component {
       <Section>
         <div className="label-slider">
           <div>Gratuit</div>
-          <div>{'< 50 €'}</div>
+          <div>Payant</div>
           <div>Tous</div>
         </div>
         <input

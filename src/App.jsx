@@ -38,14 +38,18 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: new Date(),
+      date: null,
     };
     this.dateUpdate = this.dateUpdate.bind(this);
   }
 
   dateUpdate(date) {
+<<<<<<< HEAD
     this.setState({ date: date });
     console.log('app : ', date);
+=======
+    this.setState({ date });
+>>>>>>> a04a76baabf5915d190309088471256b14c91205
   }
 
   render() {
