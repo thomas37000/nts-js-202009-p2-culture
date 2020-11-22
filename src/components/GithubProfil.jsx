@@ -49,6 +49,8 @@ class GithubProfil extends Component {
 GithubProfil.propTypes = {
   login: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
+  urlGitHub: PropTypes.string.isRequired,
+  urlLinkedin: PropTypes.string.isRequired,
 };
 
 export default GithubProfil;
