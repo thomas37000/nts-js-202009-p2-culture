@@ -182,7 +182,6 @@ class BiblioList extends Component {
               Agenda des animations culturelles des bibliothèques et
               médiathèques de la ville de Nantes
             </h1>
-            <Clock />
           </div>
           <div className="today">
             <button type="button" onClick={this.todayDate}>
