@@ -33,13 +33,17 @@ const FIGURE = styled.figure`
   .Card {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     text-align: left;
-    width: auto;
+    line-height: 1.6;
+    text-align: justify;
+    width: 100%;
     height: auto;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.15);
     background-color: #c4c4c4;
-    border-radius: 2px;
-    font-size: 0.75em;
+    box-shadow: none;
+    border-radius: none;
+    font-size: 0.75rem;
   }
 
   iframe {
@@ -113,12 +117,14 @@ const FIGURE = styled.figure`
       justify-content: space-around;
       align-items: center;
       text-align: left;
+      line-height: 1.6;
+      text-align: justify;
       width: 100%;
       height: auto;
       background-color: #c4c4c4;
       box-shadow: none;
       border-radius: none;
-      font-size: 0.75em;
+      font-size: 1rem;
     }
 
     .description {

@@ -10,7 +10,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import Calendar from 'react-calendar';
 import EventItem from './EventItem';
 
 const EVENTLIST = styled.div`
@@ -46,7 +45,7 @@ class EventList extends Component {
     super(props);
     this.state = {
       EventList: [],
-      choiceOfDate: '',
+      choiceOfDate: new Date().toISOString().split('T')[0],
     };
     this.todayDate = this.todayDate.bind(this);
     this.tomorrowDate = this.tomorrowDate.bind(this);
