@@ -144,4 +144,3 @@ class EventListVoyageNantes extends Component {
 }
 
 export default EventListVoyageNantes;
-
