@@ -19,7 +19,15 @@ const EVENTLIST = styled.div`
   }
 
   li {
+    display: flex;
     list-style: none;
+    justify-content: center;
+  }
+
+  .button-filter-price {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 
   button {
@@ -27,8 +35,8 @@ const EVENTLIST = styled.div`
     flex-direction: column;
     align-items: center;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
-    margin: 2rem;
-    width: 10rem;
+    margin: 1rem;
+    width: 5rem;
   }
 
   input {
@@ -101,15 +109,17 @@ class EventList extends Component {
     return (
       <div className="EventList">
         <EVENTLIST>
-          <button type="button" onClick={this.free}>
-            Gratuit
-          </button>
-          <button type="button" onClick={this.paying}>
-            Payant
-          </button>
-          <button type="button" onClick={this.showAll}>
-            Tous
-          </button>
+          <div className="button-filter-price">
+            <button type="button" onClick={this.free}>
+              Gratuit
+            </button>
+            <button type="button" onClick={this.paying}>
+              Payant
+            </button>
+            <button type="button" onClick={this.showAll}>
+              Tous
+            </button>
+          </div>
           <ul>
             {EventList.filter((event) => {
               // eslint-disable-next-line no-console
