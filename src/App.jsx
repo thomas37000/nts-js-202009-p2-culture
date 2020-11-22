@@ -12,11 +12,15 @@ import Navbar from './components/Navbar';
 import Grid from './components/Grid';
 import Filters from './components/filters/Filters';
 import EventList from './components/EventList';
+import EventListAllYear from './components/EventListAllYear';
 import EventListVoyageNantes from './components/EventListVoyageNantes';
+import EventListEstivales from './components/EventListEstivales';
+import EventListPatrimoine from './components/EventListPatrimoine';
 import BiblioList from './components/BiblioList';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
 import DetailEvent from './components/DetailEvent';
+
 
 const H1 = styled.h1`
   font-size: 1rem;
@@ -41,7 +45,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: null,
+      date: new Date(),
     };
     this.dateUpdate = this.dateUpdate.bind(this);
   }
@@ -86,6 +90,31 @@ class App extends Component {
             <Route exact path="/contact">
               <Contact />
             </Route>
+            <Route exact path="/diversite">
+              <CATEGORY>
+                <Link to="/voyage">
+                  <SPAN>Voyage à Nantes</SPAN>
+                </Link>
+                <Link to="/animations">
+                  <SPAN>Animations estivales</SPAN>
+                </Link>
+                <Link to="/patrimoine">
+                  <SPAN>Journées du patrimoine</SPAN>
+                </Link>
+              </CATEGORY>
+              <H1>Evènements tout au long de l'année</H1>
+              <Filters dateUpdate={this.dateUpdate} />
+              <EventListAllYear date={this.state.date} />
+              <ScrollUpButton
+                style={{
+                  backgroundColor: 'none',
+                  width: '40px',
+                  height: '40px',
+                  outline: 'none',
+                  transform: 'translateY(-3rem) translateX(1.5rem)',
+                }}
+              />
+            </Route>
             <Route exact path="/voyage">
               <CATEGORY>
                 <Link to="/diversite">
@@ -100,7 +129,57 @@ class App extends Component {
               </CATEGORY>
               <H1>Evènements du Voyage à Nantes</H1>
               <Filters dateUpdate={this.dateUpdate} />
-              <EventListVoyageNantes />
+              <EventListVoyageNantes date={this.state.date} />
+              <ScrollUpButton
+                style={{
+                  backgroundColor: 'none',
+                  width: '40px',
+                  height: '40px',
+                  outline: 'none',
+                  transform: 'translateY(-3rem) translateX(1.5rem)',
+                }}
+              />
+            </Route>
+            <Route exact path="/animations">
+              <CATEGORY>
+                <Link to="/diversite">
+                  <SPAN>Toute l'année</SPAN>
+                </Link>
+                <Link to="/voyage">
+                  <SPAN>Voyage à Nantes</SPAN>
+                </Link>
+                <Link to="/patrimoine">
+                  <SPAN>Journées du patrimoine</SPAN>
+                </Link>
+              </CATEGORY>
+              <H1>Animations estivales</H1>
+              <Filters dateUpdate={this.dateUpdate} />
+              <EventListEstivales date={this.state.date} />
+              <ScrollUpButton
+                style={{
+                  backgroundColor: 'none',
+                  width: '40px',
+                  height: '40px',
+                  outline: 'none',
+                  transform: 'translateY(-3rem) translateX(1.5rem)',
+                }}
+              />
+            </Route>
+            <Route exact path="/patrimoine">
+              <CATEGORY>
+                <Link to="/voyage">
+                  <SPAN>Voyage à Nantes</SPAN>
+                </Link>
+                <Link to="/animations">
+                  <SPAN>Animations estivales</SPAN>
+                </Link>
+                <Link to="/diversite">
+                  <SPAN>Toute l'année</SPAN>
+                </Link>
+              </CATEGORY>
+              <H1>Journées du Patrimoine</H1>
+              <Filters dateUpdate={this.dateUpdate} />
+              <EventListPatrimoine date={this.state.date} />
               <ScrollUpButton
                 style={{
                   backgroundColor: 'none',
