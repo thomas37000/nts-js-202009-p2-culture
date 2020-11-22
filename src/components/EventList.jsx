@@ -13,6 +13,10 @@ import axios from 'axios';
 import Calendar from 'react-calendar';
 import EventItem from './EventItem';
 
+const CALENDAR = styled.div`
+  margin: 2rem;
+`;
+
 const EVENTLIST = styled.div`
   ul {
     padding: 0;
@@ -46,10 +50,11 @@ class EventList extends Component {
     super(props);
     this.state = {
       EventList: [],
-      choiceOfDate: '',
+      choiceOfDate: null,
     };
     this.todayDate = this.todayDate.bind(this);
     this.tomorrowDate = this.tomorrowDate.bind(this);
+    this.onChange = this.onChange.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -100,11 +105,18 @@ class EventList extends Component {
     this.setState({ choiceOfDate: event.target.value });
   }
 
+  onChange(event) {
+    this.setState({ choiceOfDate: event.target.value });
+  }
+
   render() {
     const { EventList, choiceOfDate } = this.state;
 
     return (
       <div className="EventList">
+        <CALENDAR className="Calendar">
+          <Calendar onChange={this.onChange} />
+        </CALENDAR>
         <EVENTLIST>
           <button type="button" onClick={this.todayDate}>
             Aujourd'hui
