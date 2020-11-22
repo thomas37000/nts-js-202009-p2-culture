@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { TinyButton as ScrollUpButton } from 'react-scroll-up-button';
 import Navbar from './components/Navbar';
 import Grid from './components/Grid';
 import Filters from './components/filters/Filters';
@@ -56,9 +57,27 @@ class App extends Component {
             <Route exact path="/">
               <Grid />
               <EventList date={this.state.date} />
+              <ScrollUpButton
+                style={{
+                  backgroundColor: 'none',
+                  width: '40px',
+                  height: '40px',
+                  outline: 'none',
+                  transform: 'translateY(-3rem) translateX(1.5rem)',
+                }}
+              />
             </Route>
             <Route exact path="/bibliotheques">
               <BiblioList />
+              <ScrollUpButton
+                style={{
+                  backgroundColor: 'none',
+                  width: '40px',
+                  height: '40px',
+                  outline: 'none',
+                  transform: 'translateY(-3rem) translateX(1.5rem)',
+                }}
+              />
             </Route>
             <Route exact path="/contact">
               <Contact />
@@ -77,6 +96,15 @@ class App extends Component {
               </CATEGORY>
               <H1>Evènements du Voyage à Nantes</H1>
               <EventListVoyageNantes />
+              <ScrollUpButton
+                style={{
+                  backgroundColor: 'none',
+                  width: '40px',
+                  height: '40px',
+                  outline: 'none',
+                  transform: 'translateY(-3rem) translateX(1.5rem)',
+                }}
+              />
             </Route>
             <Route exact path="/event/:id" component={DetailEvent} />
           </Switch>
