@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import twitter from './twitter.png';
 import instagram from './instagram.png';
 import facebook from './facebook.png';
@@ -25,6 +26,10 @@ const FOOTER = styled.div`
   .footer-logo {
     display: flex;
     justify-content: space-around;
+  }
+
+  a {
+    color: #ffffff;
   }
 
   @media screen and (min-width: 768px) {
@@ -56,8 +61,10 @@ const Footer = () => {
       <FOOTER>
         <footer className="Footer">
           <div className="footer-link">
-            <span>Contact</span>
-            <span>Partenaires</span>
+            <span>
+              <Link to="/contact">Contact</Link>
+            </span>
+            <a href="https://www.wildcodeschool.com/">Partenaires</a>
           </div>
           <div className="footer-logo">
             <img src={facebook} alt="facebook" />
