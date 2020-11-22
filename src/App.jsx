@@ -1,3 +1,5 @@
+/* eslint-disable import/no-named-as-default */
+/* eslint-disable import/no-named-as-default-member */
 /* eslint-disable react/jsx-indent */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable object-shorthand */
@@ -44,12 +46,8 @@ class App extends Component {
   }
 
   dateUpdate(date) {
-<<<<<<< HEAD
-    this.setState({ date: date });
-    console.log('app : ', date);
-=======
     this.setState({ date });
->>>>>>> a04a76baabf5915d190309088471256b14c91205
+    console.log('app : ', date);
   }
 
   render() {

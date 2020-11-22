@@ -45,12 +45,8 @@ class EventList extends Component {
     super(props);
     this.state = {
       EventList: [],
-<<<<<<< HEAD
-      choiceOfDate: new Date().toISOString().split('T')[0],
-=======
       // eslint-disable-next-line react/no-unused-state
       status: 'all',
->>>>>>> a04a76baabf5915d190309088471256b14c91205
     };
     this.todayDate = this.todayDate.bind(this);
     this.tomorrowDate = this.tomorrowDate.bind(this);
@@ -97,16 +93,12 @@ class EventList extends Component {
   }
 
   render() {
-<<<<<<< HEAD
-    const { EventList, choiceOfDate } = this.state;
-
-=======
     // eslint-disable-next-line no-shadow
     const { EventList, status } = this.state;
     const date = this.props.date
+      // eslint-disable-next-line react/prop-types
       ? this.props.date.toLocaleDateString().split('/').reverse().join('-')
       : null;
->>>>>>> a04a76baabf5915d190309088471256b14c91205
     return (
       <div className="EventList">
         <EVENTLIST>
@@ -124,16 +116,6 @@ class EventList extends Component {
           />
           <ul>
             {EventList.filter((event) => {
-<<<<<<< HEAD
-              return event.fields.date === this.state.choiceOfDate;
-            }).map((event) => {
-              return (
-                <li key={event.recordid}>
-                  <EventItem {...event.fields} recordid={event.recordid} />
-                </li>
-              );
-            })}
-=======
               // eslint-disable-next-line no-console
               if (status === 'all') {
                 return true;
@@ -152,7 +134,6 @@ class EventList extends Component {
                   </li>
                 );
               })}
->>>>>>> a04a76baabf5915d190309088471256b14c91205
           </ul>
         </EVENTLIST>
       </div>
