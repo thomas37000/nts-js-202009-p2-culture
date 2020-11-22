@@ -51,12 +51,12 @@ const Container = styled.div`
     color: #fff;
     background: #000080;
     padding: 2px;
-    box-shadow: #000 5px 5px 0px;
+    box-shadow: #62eca7 5px 5px 0px;
   }
 
   .bg .overlay p > a {
     font-family: 'Roboto', sans-serif;
-    box-shadow: #008000 3px 3px 0px;
+    box-shadow: #62eca7 3px 3px 0px;
     font-size: 1rem;
   }
 

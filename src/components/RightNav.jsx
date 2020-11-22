@@ -16,7 +16,7 @@ const Slideburger = styled.ul`
   }
 
   a {
-    color: #f5f5f5;
+    color: #00ff80;
   }
 
   @media (max-width: 768px) {
@@ -37,7 +37,7 @@ const Slideburger = styled.ul`
       border-bottom: 2px solid;
     }
     a {
-      color: #f5f5f5;
+      color: #62eca7;
     }
   } ;
 `;
