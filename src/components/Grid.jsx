@@ -51,12 +51,12 @@ const Container = styled.div`
     color: #fff;
     background: #000080;
     padding: 2px;
-    box-shadow: #62eca7 5px 5px 0px;
+    box-shadow: #ffffff 3px 3px 5px;
   }
 
   .bg .overlay p > a {
     font-family: 'Roboto', sans-serif;
-    box-shadow: #62eca7 3px 3px 0px;
+    box-shadow: #ffffff 3px 3px 5px;
     font-size: 1rem;
   }
 
@@ -86,7 +86,7 @@ const Container = styled.div`
     .bg {
       height: 100%;
       width: inherit;
-      box-shadow: #008000 3px 3px 5px;
+      box-shadow: #ffffff 2px 2px 3px;
     }
 
     .bg .overlay {

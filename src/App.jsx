@@ -72,6 +72,8 @@ class App extends Component {
                   height: '40px',
                   outline: 'none',
                   transform: 'translateY(-3rem) translateX(1.5rem)',
+                  borderRadius: '5px',
+                  boxShadow: '#ffffff 3px 3px 5px',
                 }}
               />
             </Route>
