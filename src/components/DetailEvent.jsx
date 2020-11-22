@@ -3,8 +3,8 @@
 /* eslint-disable no-template-curly-in-string */
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Maps from './Maps';
 
 const FIGURE = styled.figure`
   .eventName {
@@ -183,10 +183,7 @@ class DetailEvent extends Component {
                 <p>site web : {eventDetails.lieu_siteweb}</p>
               </div>
               <div className="map">
-                <iframe
-                  title="map"
-                  src="https://google/maps/gfpwj2aMgwTsRtEy7"
-                />
+                <Maps />
               </div>
             </div>
           </section>

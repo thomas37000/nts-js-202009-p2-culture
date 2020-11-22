@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 import EventList from './components/EventList';
 import Footer from './components/Footer';
 import Filters from './components/filters/Filters';
-import Contact from './components/Contact';
+// import Contact from './components/Contact';
 import DetailEvent from './components/DetailEvent';
 
 class App extends Component {
@@ -34,8 +34,8 @@ class App extends Component {
               <Filters dateUpdate={this.dateUpdate} />
               <EventList date={this.state.date} />
             </Route>
-            <Route path="/contact" component={Contact} />
             <Route exact path="/event/:id" component={DetailEvent} />
+            {/* <Route path="/contact" component={Contact} /> */}
           </Switch>
           <Footer />
           <ScrollUpButton
