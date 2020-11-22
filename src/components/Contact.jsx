@@ -1,15 +1,15 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import GitApi from './GitApi';
-import GithubProfil from './GithubProfil';
 import Form from './Form';
 
-const Contact = () => {
+function Contact() {
   return (
     <div>
+      <GitApi />
       <Form />
     </div>
   );
-};
+}
 
 export default Contact;

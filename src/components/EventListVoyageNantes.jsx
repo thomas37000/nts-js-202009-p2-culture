@@ -121,7 +121,7 @@ class EventListVoyageNantes extends Component {
               return (
                 <li key={event.fields.recordid}>
                   {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-                  <EventItem {...event.fields} />
+                  <EventItem {...event.fields} recordid={event.recordid} />
                 </li>
               );
             })}
