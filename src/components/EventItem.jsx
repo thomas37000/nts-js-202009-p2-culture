@@ -169,6 +169,7 @@ class EventItem extends Component {
 EventItem.propTypes = {
   id_manif: PropTypes.string.isRequired,
   libelle_festival: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
   nom: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   media_1: PropTypes.string.isRequired,

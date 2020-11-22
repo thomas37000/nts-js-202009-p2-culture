@@ -1,3 +1,11 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-alert */
+/* eslint-disable react/sort-comp */
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable no-shadow */
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
@@ -22,6 +30,15 @@ const EVENTLIST = styled.div`
     margin: 2rem;
     width: 10rem;
   }
+
+  input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    margin: 2rem;
+    width: 10rem;
+  }
 `;
 
 class EventListVoyageNantes extends Component {
@@ -29,7 +46,6 @@ class EventListVoyageNantes extends Component {
     super(props);
     this.state = {
       EventListVoyageNantes: [],
-      date: this.props.date,
       // eslint-disable-next-line react/no-unused-state
       status: 'all',
     };
@@ -42,21 +58,13 @@ class EventListVoyageNantes extends Component {
     this.fetchDatas();
   }
 
-  /*
-  componentDidUpdate() {
-    const { date } = this.props;
-    this.setState({ date: date });
-    console.log('eventliste : ', date);
-  }
-*/
-
   fetchDatas() {
     axios
       .get('https://data.nantesmetropole.fr/api/records/1.0/search/', {
         params: {
           dataset: '244400404_agenda-evenements-nantes-nantes-metropole',
           apikey: 'a2c65fe09812bd0c8a2628bdfe6f71bb1bd48facca5b74d63070e77f',
-          rows: 500,
+          rows: 2000,
         },
       })
       .then((response) => {
@@ -87,7 +95,9 @@ class EventListVoyageNantes extends Component {
   render() {
     // eslint-disable-next-line no-shadow
     const { EventListVoyageNantes, status } = this.state;
-
+    const date = this.props.date
+      ? this.props.date.toLocaleDateString().split('/').reverse().join('-')
+      : null;
     return (
       <div className="EventList">
         <EVENTLIST>
@@ -103,7 +113,6 @@ class EventListVoyageNantes extends Component {
           <ul>
             {EventListVoyageNantes.filter((event) => {
               // eslint-disable-next-line no-console
-              console.log(status);
               if (status === 'all') {
                 return event.fields.libelle_festival === 'Voyage à Nantes';
               }
@@ -117,14 +126,16 @@ class EventListVoyageNantes extends Component {
                 event.fields.gratuit === 'oui' &&
                 event.fields.libelle_festival === 'Voyage à Nantes'
               );
-            }).map((event) => {
-              return (
-                <li key={event.fields.recordid}>
-                  {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-                  <EventItem {...event.fields} recordid={event.recordid} />
-                </li>
-              );
-            })}
+            })
+              .filter((event) => (date ? date === event.fields.date : true))
+              .map((event) => {
+                return (
+                  <li key={event.fields.recordid}>
+                    {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+                    <EventItem {...event.fields} recordid={event.recordid} />
+                  </li>
+                );
+              })}
           </ul>
         </EVENTLIST>
       </div>
@@ -133,3 +144,4 @@ class EventListVoyageNantes extends Component {
 }
 
 export default EventListVoyageNantes;
+

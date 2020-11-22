@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-alert */
 /* eslint-disable react/sort-comp */
 /* eslint-disable jsx-a11y/label-has-associated-control */
@@ -48,9 +49,9 @@ class EventList extends Component {
       // eslint-disable-next-line react/no-unused-state
       status: 'all',
     };
-    this.todayDate = this.todayDate.bind(this);
-    this.tomorrowDate = this.tomorrowDate.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.free = this.free.bind(this);
+    this.paying = this.paying.bind(this);
+    this.showAll = this.showAll.bind(this);
   }
 
   componentDidMount() {
@@ -73,47 +74,42 @@ class EventList extends Component {
       });
   }
 
-  todayDate() {
+  free() {
     this.setState({
-      choiceOfDate: new Date().toISOString().split('T')[0],
+      status: 'free',
     });
   }
 
-  tomorrowDate() {
-    const Today = new Date();
+  paying() {
     this.setState({
-      choiceOfDate: new Date(Today.setDate(Today.getDate() + 1))
-        .toISOString()
-        .split('T')[0],
+      status: 'paying',
     });
   }
 
-  handleChange(event) {
-    this.setState({ choiceOfDate: event.target.value });
+  showAll() {
+    this.setState({
+      status: 'all',
+    });
   }
 
   render() {
     // eslint-disable-next-line no-shadow
     const { EventList, status } = this.state;
     const date = this.props.date
-      // eslint-disable-next-line react/prop-types
       ? this.props.date.toLocaleDateString().split('/').reverse().join('-')
       : null;
     return (
       <div className="EventList">
         <EVENTLIST>
-          <button type="button" onClick={this.todayDate}>
-            Aujourd'hui
+          <button type="button" onClick={this.free}>
+            Gratuit
           </button>
-          <button type="button" onClick={this.tomorrowDate}>
-            Demain
+          <button type="button" onClick={this.paying}>
+            Payant
           </button>
-          <input
-            type="text"
-            placeholder="AAAA-MM-JJ"
-            value={this.state.choiceOfDate}
-            onChange={this.handleChange}
-          />
+          <button type="button" onClick={this.showAll}>
+            Tous
+          </button>
           <ul>
             {EventList.filter((event) => {
               // eslint-disable-next-line no-console
@@ -130,7 +126,7 @@ class EventList extends Component {
                 return (
                   <li key={event.fields.recordid}>
                     {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-                    <EventItem {...event.fields} />
+                    <EventItem {...event.fields} recordid={event.recordid} />
                   </li>
                 );
               })}

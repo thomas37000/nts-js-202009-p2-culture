@@ -99,6 +99,7 @@ class App extends Component {
                 </Link>
               </CATEGORY>
               <H1>Evènements du Voyage à Nantes</H1>
+              <Filters dateUpdate={this.dateUpdate} />
               <EventListVoyageNantes />
               <ScrollUpButton
                 style={{
