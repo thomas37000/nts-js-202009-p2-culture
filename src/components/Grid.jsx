@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import styled from 'styled-components';
@@ -5,7 +6,7 @@ import { Link } from 'react-router-dom';
 import ligne from './imgGrid/ligne-verte-nantes.jpg';
 import chateau from './imgGrid/chateau.jpg';
 import animation from './imgGrid/animation.jpg';
-import marionnettes from './imgGrid/marionnettes.jpeg';
+import cinema from './imgGrid/cinema.jpg';
 
 const Container = styled.div`
   @import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i');
@@ -131,6 +132,17 @@ const Grid = () => {
     <Container>
       <section className="container">
         <div className="bg">
+          <img src={cinema} alt="cinéma" />
+          <div className="overlay">
+            <h2>
+              <Link to="/diversite/">Toute l'année</Link>
+            </h2>
+            <p>
+              <Link to="/diversite/">Diversité culturelle...</Link>
+            </p>
+          </div>
+        </div>
+        <div className="bg">
           <img src={ligne} alt="la_ligne_verte" />
           <div className="overlay">
             <h2>
@@ -160,17 +172,6 @@ const Grid = () => {
             </h2>
             <p>
               <Link to="/patrimoine/">Les monuments nantais...</Link>
-            </p>
-          </div>
-        </div>
-        <div className="bg">
-          <img src={marionnettes} alt="marionnettes enfants" />
-          <div className="overlay">
-            <h2>
-              <Link to="/diversite/">Autres évènements</Link>
-            </h2>
-            <p>
-              <Link to="/diversite/">Diversité culturelle...</Link>
             </p>
           </div>
         </div>

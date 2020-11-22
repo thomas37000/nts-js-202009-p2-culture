@@ -84,14 +84,14 @@ class App extends Component {
             </Route>
             <Route exact path="/voyage">
               <CATEGORY>
+                <Link to="/diversite">
+                  <SPAN>Toute l'année</SPAN>
+                </Link>
                 <Link to="/animations">
                   <SPAN>Animations estivales</SPAN>
                 </Link>
                 <Link to="/patrimoine">
                   <SPAN>Journées du patrimoine</SPAN>
-                </Link>
-                <Link to="/diversite">
-                  <SPAN>Autres évènements</SPAN>
                 </Link>
               </CATEGORY>
               <H1>Evènements du Voyage à Nantes</H1>
