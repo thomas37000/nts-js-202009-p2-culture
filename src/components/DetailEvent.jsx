@@ -37,7 +37,6 @@ const FIGURE = styled.figure`
     align-items: center;
     text-align: left;
     line-height: 1.6;
-    text-align: justify;
     width: 100%;
     height: auto;
     background-color: #c4c4c4;
@@ -68,6 +67,10 @@ const FIGURE = styled.figure`
   .information,
   .location {
     padding: 1rem;
+  }
+
+  .description {
+    text-align: justify;
   }
 
   .price span {
@@ -118,7 +121,6 @@ const FIGURE = styled.figure`
       align-items: center;
       text-align: left;
       line-height: 1.6;
-      text-align: justify;
       width: 100%;
       height: auto;
       background-color: #c4c4c4;
@@ -129,6 +131,7 @@ const FIGURE = styled.figure`
 
     .description {
       width: 60rem;
+      text-align: justify;
     }
     .information {
       margin: 2rem;

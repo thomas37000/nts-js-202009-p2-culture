@@ -4,10 +4,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import styled from 'styled-components';
+// eslint-disable-next-line import/no-unresolved
 import { TinyButton as ScrollUpButton } from 'react-scroll-up-button';
 import Navbar from './components/Navbar';
 import Grid from './components/Grid';
-import Filters from './components/filters/Filters';
 import EventList from './components/EventList';
 import EventListVoyageNantes from './components/EventListVoyageNantes';
 import BiblioList from './components/BiblioList';

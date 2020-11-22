@@ -32,7 +32,7 @@ const Slideburger = styled.ul`
     transition: transform 0.3s ease-in-out;
 
     li {
-      color: #f5f5f5;
+      color: black;
       text-align: center;
       border-bottom: 2px solid;
     }
