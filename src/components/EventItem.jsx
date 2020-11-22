@@ -22,79 +22,79 @@ const DIV = styled.div`
   border-radius: 10px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
   font-size: 0.75em;
-.SyntheticTimetable {
-  width: 7.5rem;
-}
-.category {
-  color: red;
-}
-span,
-h3,
-h4 {
-  font-size: 12px;
-  margin: 0.5rem;
-}
-.SyntheticPrice h4 {
-  font-size: 12px;
-}
-.SyntheticPhoto {
-  margin: auto;
-  max-width: 15rem;
-  height: auto;
-  margin: 1rem;
-}
-.SyntheticCard.Information {
-  flex-wrap: wrap;
-  margin: auto;
-}
-.SyntheticPrice {
-  width: auto;
-  text-align: left;
-}
-.SyntheticDetail {
-  width: 10rem;
-  font-size: 1rem;
-  text-align: left;
-  margin-top: 0.5rem;
-}
-@media screen and (min-width: 800px) {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  text-align: left;
-  padding: 1rem;
-  max-width: 65rem;
-  height: auto;
-  background-color: #c4c4c4;
-  border-radius: 5px;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
-  font-size: 0.75em;
   .SyntheticTimetable {
+    width: 7.5rem;
+  }
+  .category {
+    color: red;
+  }
+  span,
+  h3,
+  h4 {
     font-size: 12px;
-    width: 7rem;
+    margin: 0.5rem;
+  }
+  .SyntheticPrice h4 {
+    font-size: 12px;
   }
   .SyntheticPhoto {
-    width: 9rem;
+    margin: auto;
+    max-width: 15rem;
     height: auto;
   }
-  .SyntheticInformation {
-    width: 22.5rem;
-    height: auto;
-    margin: 1rem;
+  .SyntheticCard.Information {
+    flex-wrap: wrap;
+    margin: auto;
   }
   .SyntheticPrice {
-    width: 20rem;
-    margin: 1rem;
+    width: auto;
     text-align: left;
-    /*margin-bottom: 7rem;*/
-  .SyntheticDetail {
-    width: 3rem;
-    font-size: 1rem;
-    text-align: right;
-    margin-top: 0.75rem;
   }
-}
+  .SyntheticDetail {
+    width: 10rem;
+    font-size: 1rem;
+    text-align: left;
+    margin-top: 0.5rem;
+  }
+  @media screen and (min-width: 800px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 1rem;
+    max-width: 65rem;
+    height: auto;
+    background-color: #c4c4c4;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+    font-size: 0.75em;
+    .SyntheticTimetable {
+      font-size: 12px;
+      width: 7rem;
+    }
+    .SyntheticPhoto {
+      width: 9rem;
+      height: auto;
+    }
+    .SyntheticInformation {
+      width: 22.5rem;
+      height: auto;
+      margin: 1rem;
+    }
+    .SyntheticPrice {
+      width: 20rem;
+      margin: 1rem;
+      text-align: left;
+      /*margin-bottom: 7rem;*/
+      .SyntheticDetail {
+        width: 3rem;
+        font-size: 1rem;
+        text-align: right;
+        margin-top: 0.75rem;
+      }
+    }
+  }
 `;
 
 class EventItem extends Component {

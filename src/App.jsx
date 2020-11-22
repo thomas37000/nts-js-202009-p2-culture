@@ -1,13 +1,38 @@
+/* eslint-disable react/jsx-indent */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable object-shorthand */
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import styled from 'styled-components';
 import { TinyButton as ScrollUpButton } from 'react-scroll-up-button';
-import Grid from './components/Grid';
 import Navbar from './components/Navbar';
-import EventList from './components/EventList';
-import Footer from './components/Footer';
+import Grid from './components/Grid';
 import Filters from './components/filters/Filters';
-// import Contact from './components/Contact';
+import EventList from './components/EventList';
+import EventListVoyageNantes from './components/EventListVoyageNantes';
+import BiblioList from './components/BiblioList';
+import Footer from './components/Footer';
+import Contact from './components/Contact';
 import DetailEvent from './components/DetailEvent';
+
+const H1 = styled.h1`
+  font-size: 1rem;
+  margin: 2rem;
+`;
+
+const CATEGORY = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+`;
+
+const SPAN = styled.span`
+  display: flex;
+  font-size: 0.75rem;
+  margin: 2rem;
+  justify-content: left;
+`;
 
 class App extends Component {
   constructor(props) {
@@ -31,22 +56,59 @@ class App extends Component {
           <Switch>
             <Route exact path="/">
               <Grid />
-              <Filters dateUpdate={this.dateUpdate} />
               <EventList date={this.state.date} />
+              <ScrollUpButton
+                style={{
+                  backgroundColor: 'none',
+                  width: '40px',
+                  height: '40px',
+                  outline: 'none',
+                  transform: 'translateY(-3rem) translateX(1.5rem)',
+                }}
+              />
+            </Route>
+            <Route exact path="/bibliotheques">
+              <BiblioList />
+              <ScrollUpButton
+                style={{
+                  backgroundColor: 'none',
+                  width: '40px',
+                  height: '40px',
+                  outline: 'none',
+                  transform: 'translateY(-3rem) translateX(1.5rem)',
+                }}
+              />
+            </Route>
+            <Route exact path="/contact">
+              <Contact />
+            </Route>
+            <Route exact path="/voyage">
+              <CATEGORY>
+                <Link to="/animations">
+                  <SPAN>Animations estivales</SPAN>
+                </Link>
+                <Link to="/patrimoine">
+                  <SPAN>Journées du patrimoine</SPAN>
+                </Link>
+                <Link to="/diversite">
+                  <SPAN>Autres évènements</SPAN>
+                </Link>
+              </CATEGORY>
+              <H1>Evènements du Voyage à Nantes</H1>
+              <EventListVoyageNantes />
+              <ScrollUpButton
+                style={{
+                  backgroundColor: 'none',
+                  width: '40px',
+                  height: '40px',
+                  outline: 'none',
+                  transform: 'translateY(-3rem) translateX(1.5rem)',
+                }}
+              />
             </Route>
             <Route exact path="/event/:id" component={DetailEvent} />
-            {/* <Route path="/contact" component={Contact} /> */}
           </Switch>
           <Footer />
-          <ScrollUpButton
-            style={{
-              width: '50px',
-              height: '50px',
-              borderRadius: '50%',
-              // eslint-disable-next-line no-useless-concat
-              backgroundColor: 'none',
-            }}
-          />
         </Router>
       </>
     );

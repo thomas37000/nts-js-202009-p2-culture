@@ -2,10 +2,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-
-import spectacle from './imgGrid/concerts.jpg';
-import activité from './imgGrid/activité.jpg';
-import expo from './imgGrid/expo.jpg';
+import ligne from './imgGrid/ligne-verte-nantes.jpg';
+import chateau from './imgGrid/chateau.jpg';
+import animation from './imgGrid/animation.jpg';
 import marionnettes from './imgGrid/marionnettes.jpeg';
 
 const Container = styled.div`
@@ -40,7 +39,7 @@ const Container = styled.div`
 
   .bg .overlay h2 {
     font-family: 'Roboto', serif;
-    font-size: 3em;
+    font-size: 1.5rem;
     margin-top: 50px;
     padding-top: 25%;
     padding-bottom: 10px;
@@ -58,7 +57,7 @@ const Container = styled.div`
   .bg .overlay p > a {
     font-family: 'Roboto', sans-serif;
     box-shadow: red 5px 3px 0px;
-    font-size: 25px;
+    font-size: 1rem;
   }
 
   .bg .overlay {
@@ -97,6 +96,7 @@ const Container = styled.div`
 
     .bg .overlay h2 {
       padding-top: 30%;
+      font-size: 2rem;
       margin: auto;
       color: #000080;
     }
@@ -104,6 +104,9 @@ const Container = styled.div`
     .bg .overlay p > a {
       color: #fff;
       background: #000080;
+      display: flex 80%;
+      font-size: 1.25rem;
+      justify-content: center;
     }
 
     .bg:hover .overlay {
@@ -128,35 +131,35 @@ const Grid = () => {
     <Container>
       <section className="container">
         <div className="bg">
-          <img src={spectacle} alt="Culture" />
+          <img src={ligne} alt="la_ligne_verte" />
           <div className="overlay">
             <h2>
-              <Link to="/spectacles/">Spectacles</Link>
+              <Link to="/voyage/">Voyage à Nantes</Link>
             </h2>
             <p>
-              <Link to="/spectacles/">Aller à un concert à Nantes.</Link>
+              <Link to="/voyage/">Le long de la ligne verte...</Link>
             </p>
           </div>
         </div>
         <div className="bg">
-          <img src={expo} alt="exposition" />
+          <img src={animation} alt="40_pieds" />
           <div className="overlay">
             <h2>
-              <Link to="/expositions/">Expositions</Link>
+              <Link to="/animations/">Animations estivales</Link>
             </h2>
             <p>
-              <Link to="/expositions/">Visites à Nantes.</Link>
+              <Link to="/animations/">Un été à la nantaise...</Link>
             </p>
           </div>
         </div>
         <div className="bg">
-          <img src={activité} alt="Sport à Nantes" />
+          <img src={chateau} alt="Chateau_des_Ducs" />
           <div className="overlay">
             <h2>
-              <Link to="/activité/">Activité à partager</Link>
+              <Link to="/patrimoine/">Journées du patrimoine</Link>
             </h2>
             <p>
-              <Link to="/activité/">A faire en groupe.</Link>
+              <Link to="/patrimoine/">Les monuments nantais...</Link>
             </p>
           </div>
         </div>
@@ -164,10 +167,10 @@ const Grid = () => {
           <img src={marionnettes} alt="marionnettes enfants" />
           <div className="overlay">
             <h2>
-              <Link to="/enfants/">Enfants</Link>
+              <Link to="/diversite/">Autres évènements</Link>
             </h2>
             <p>
-              <Link to="/enfants/">Spectacles pour enfants.</Link>
+              <Link to="/diversite/">Diversité culturelle...</Link>
             </p>
           </div>
         </div>

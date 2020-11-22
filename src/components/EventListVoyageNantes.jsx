@@ -9,9 +9,11 @@ const EVENTLIST = styled.div`
   ul {
     padding: 0;
   }
+
   li {
     list-style: none;
   }
+
   button {
     display: flex;
     flex-direction: column;
@@ -20,27 +22,20 @@ const EVENTLIST = styled.div`
     margin: 2rem;
     width: 10rem;
   }
-
-  input {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
-    margin: 2rem;
-    width: 10rem;
-  }
 `;
 
-class EventList extends Component {
+class EventListVoyageNantes extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      EventList: [],
-      choiceOfDate: new Date().toISOString().split('T')[0],
+      EventListVoyageNantes: [],
+      date: this.props.date,
+      // eslint-disable-next-line react/no-unused-state
+      status: 'all',
     };
-    this.todayDate = this.todayDate.bind(this);
-    this.tomorrowDate = this.tomorrowDate.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.free = this.free.bind(this);
+    this.paying = this.paying.bind(this);
+    this.showAll = this.showAll.bind(this);
   }
 
   componentDidMount() {
@@ -66,54 +61,65 @@ class EventList extends Component {
       })
       .then((response) => {
         this.setState({
-          EventList: response.data.records,
+          EventListVoyageNantes: response.data.records,
         });
       });
   }
 
-  todayDate() {
+  free() {
     this.setState({
-      choiceOfDate: new Date().toISOString().split('T')[0],
+      status: 'free',
     });
   }
 
-  tomorrowDate() {
-    const Today = new Date();
+  paying() {
     this.setState({
-      choiceOfDate: new Date(Today.setDate(Today.getDate() + 1))
-        .toISOString()
-        .split('T')[0],
+      status: 'paying',
     });
   }
 
-  handleChange(event) {
-    this.setState({ choiceOfDate: event.target.value });
+  showAll() {
+    this.setState({
+      status: 'all',
+    });
   }
 
   render() {
-    const { EventList, choiceOfDate } = this.state;
+    // eslint-disable-next-line no-shadow
+    const { EventListVoyageNantes, status } = this.state;
 
     return (
       <div className="EventList">
         <EVENTLIST>
-          <button type="button" onClick={this.todayDate}>
-            Aujourd'hui
+          <button type="button" onClick={this.free}>
+            Gratuit
           </button>
-          <button type="button" onClick={this.tomorrowDate}>
-            Demain
+          <button type="button" onClick={this.paying}>
+            Payant
           </button>
-          <input
-            type="text"
-            placeholder="AAAA-MM-JJ"
-            value={choiceOfDate}
-            onChange={this.handleChange}
-          />
+          <button type="button" onClick={this.showAll}>
+            Tous
+          </button>
           <ul>
-            {EventList.filter((event) => {
-              return event.fields.date === choiceOfDate;
+            {EventListVoyageNantes.filter((event) => {
+              // eslint-disable-next-line no-console
+              console.log(status);
+              if (status === 'all') {
+                return event.fields.libelle_festival === 'Voyage à Nantes';
+              }
+              if (status === 'paying') {
+                return (
+                  event.fields.gratuit === 'non' &&
+                  event.fields.libelle_festival === 'Voyage à Nantes'
+                );
+              }
+              return (
+                event.fields.gratuit === 'oui' &&
+                event.fields.libelle_festival === 'Voyage à Nantes'
+              );
             }).map((event) => {
               return (
-                <li key={event.recordid}>
+                <li key={event.fields.recordid}>
                   {/* eslint-disable-next-line react/jsx-props-no-spreading */}
                   <EventItem {...event.fields} recordid={event.recordid} />
                 </li>
@@ -126,4 +132,4 @@ class EventList extends Component {
   }
 }
 
-export default EventList;
+export default EventListVoyageNantes;

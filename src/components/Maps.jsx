@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './Maps.css';
+import styled from 'styled-components';
 import L from 'leaflet';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+
+const DivMap = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .map {
+    height: 650px;
+    width: 750px;
+  }
+`;
 
 const myIcon = L.icon({
   iconUrl: 'https://www.flaticon.com/svg/static/icons/svg/0/619.svg',
@@ -44,7 +55,7 @@ class Maps extends Component {
     const position = [lat, lng];
 
     return (
-      <div className="maps">
+      <DivMap>
         <MapContainer className="map" center={position} zoom={zoom}>
           <TileLayer
             attribution='&amp;copy <a href="http://
@@ -57,7 +68,7 @@ contributors'
             <Popup>{leaflet.emmeteur}</Popup>
           </Marker>
         </MapContainer>
-      </div>
+      </DivMap>
     );
   }
 }

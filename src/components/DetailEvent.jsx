@@ -3,8 +3,9 @@
 /* eslint-disable no-template-curly-in-string */
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import Maps from './Maps';
+// import Maps from './Maps';
 
 const FIGURE = styled.figure`
   .eventName {
@@ -15,9 +16,18 @@ const FIGURE = styled.figure`
   }
   .eventName h1 {
     margin: 0.5rem;
+    color: #000080;
   }
   .eventName h2 {
     margin: 0.5rem;
+    color: #000080;
+  }
+
+  p,
+  h2,
+  h3,
+  h4 {
+    margin: 0.75rem;
   }
   p,
   h2,
@@ -28,8 +38,12 @@ const FIGURE = styled.figure`
   .Card {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     text-align: left;
-    width: auto;
+    line-height: 1.6;
+    text-align: justify;
+    width: 100%;
     height: auto;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.15);
     background-color: #c4c4c4;
@@ -47,9 +61,7 @@ const FIGURE = styled.figure`
   .photo {
     width: 100%;
     height: auto;
-    position: relative;
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.15);
     margin: 0rem;
@@ -105,7 +117,7 @@ const FIGURE = styled.figure`
       background-color: #c4c4c4;
       box-shadow: none;
       border-radius: none;
-      font-size: 0.75em;
+      font-size: 1rem;
     }
     .description {
       width: 60rem;
@@ -164,6 +176,10 @@ class DetailEvent extends Component {
               </h4>
               <h4 className="accessibilité">
                 Public : {eventDetails.precisions_public}
+                {/* Public :{' '}
+                {eventDetails.precisions_public !== undefined
+                  ? eventDetails.precisions_public
+                  : 'non précisé'} */}
               </h4>
               <h4 className="lieu">Lieu : {eventDetails.lieu}</h4>
               <h4>
@@ -182,9 +198,7 @@ class DetailEvent extends Component {
                 <p>Tél. : {eventDetails.lieu_tel}</p>
                 <p>site web : {eventDetails.lieu_siteweb}</p>
               </div>
-              <div className="map">
-                <Maps />
-              </div>
+              <div className="map">{/* <Maps /> */}</div>
             </div>
           </section>
         </FIGURE>

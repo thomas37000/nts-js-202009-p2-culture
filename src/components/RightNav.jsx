@@ -58,9 +58,6 @@ const RightNav = ({ open, id }) => {
       <li>
         <Link to="/contact">Contact</Link>
       </li>
-      <li>
-        <Link to="/reservation">Reservation</Link>
-      </li>
     </Slideburger>
   );
 };
