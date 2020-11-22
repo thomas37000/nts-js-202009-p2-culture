@@ -28,7 +28,6 @@ class EventList extends Component {
     super(props);
     this.state = {
       EventList: [],
-      date: this.props.date,
       // eslint-disable-next-line react/no-unused-state
       status: 'all',
     };
@@ -40,14 +39,6 @@ class EventList extends Component {
   componentDidMount() {
     this.fetchDatas();
   }
-
-  /*
-  componentDidUpdate() {
-    const { date } = this.props;
-    this.setState({ date: date });
-    console.log('eventliste : ', date);
-  }
-*/
 
   fetchDatas() {
     axios
@@ -86,7 +77,9 @@ class EventList extends Component {
   render() {
     // eslint-disable-next-line no-shadow
     const { EventList, status } = this.state;
-
+    const date = this.props.date
+      ? this.props.date.toLocaleDateString().split('/').reverse().join('-')
+      : null;
     return (
       <div className="EventList">
         <EVENTLIST>
@@ -102,7 +95,6 @@ class EventList extends Component {
           <ul>
             {EventList.filter((event) => {
               // eslint-disable-next-line no-console
-              console.log(status);
               if (status === 'all') {
                 return true;
               }
@@ -110,14 +102,16 @@ class EventList extends Component {
                 return event.fields.gratuit === 'non';
               }
               return event.fields.gratuit === 'oui';
-            }).map((event) => {
-              return (
-                <li key={event.fields.recordid}>
-                  {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-                  <EventItem {...event.fields} />
-                </li>
-              );
-            })}
+            })
+              .filter((event) => (date ? date === event.fields.date : true))
+              .map((event) => {
+                return (
+                  <li key={event.fields.recordid}>
+                    {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+                    <EventItem {...event.fields} />
+                  </li>
+                );
+              })}
           </ul>
         </EVENTLIST>
       </div>
