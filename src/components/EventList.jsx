@@ -105,7 +105,6 @@ class EventList extends Component {
               return event.fields.gratuit === 'oui';
             })
               .filter((event) => (date ? date === event.fields.date : true))
-              
               .map((event) => {
                 return (
                   <li key={event.fields.recordid}>

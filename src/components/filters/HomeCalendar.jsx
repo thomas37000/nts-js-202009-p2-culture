@@ -24,6 +24,7 @@ class HomeCalendar extends Component {
   onChange(date) {
     const { changeDate } = this.props;
     this.setState({ date });
+    console.log(date);
     changeDate(date);
   }
 

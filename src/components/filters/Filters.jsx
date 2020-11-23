@@ -1,8 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 import Slider from './Slider';
 import When from './When';
 import HomeCalendar from './HomeCalendar';
+import styled from 'styled-components';
 
 const Section = styled.section`
   margin: 2rem auto;
