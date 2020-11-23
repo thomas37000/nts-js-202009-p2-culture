@@ -21,7 +21,6 @@ import Footer from './components/Footer';
 import Contact from './components/Contact';
 import DetailEvent from './components/DetailEvent';
 
-
 const H1 = styled.h1`
   font-size: 1rem;
   margin: 2rem;
