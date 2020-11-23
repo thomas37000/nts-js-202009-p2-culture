@@ -28,7 +28,7 @@ function Maps(props) {
   const [leaflet, setLeaflet] = useState([]);
   const [lat, setLat] = useState(47.2173);
   const [lng, setLng] = useState(-1.5534);
-  const [zoom, setZoom] = useState(10);
+  const [zoom, setZoom] = useState(14);
 
   useEffect(() => {
     axios
