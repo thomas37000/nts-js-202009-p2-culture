@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import { Component } from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const DIV = styled.div`
