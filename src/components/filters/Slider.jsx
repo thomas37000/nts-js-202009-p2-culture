@@ -26,12 +26,20 @@ const Section = styled.section`
   }
 `;
 
-class Slider extends React.Component {
-  state = {
-    value: 2,
-  };
+export default class Slider extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      price: '2',
+    };
+    this.handleOnChange = this.handleOnChange.bind(this);
+  }
 
-  handleOnChange = (e) => this.setState({ value: e.target.value });
+  handleOnChange(price) {
+    const { changePrice } = this.props;
+    this.setState({ price: price.target.value });
+    changePrice(price.target.value);
+  }
 
   render() {
     return (
@@ -45,7 +53,7 @@ class Slider extends React.Component {
           type="range"
           min={0}
           max={2}
-          value={this.state.value}
+          value={this.state.price}
           className="slider"
           onChange={this.handleOnChange}
         />
@@ -53,5 +61,3 @@ class Slider extends React.Component {
     );
   }
 }
-
-export default Slider;
