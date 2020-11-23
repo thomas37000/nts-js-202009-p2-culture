@@ -15,7 +15,7 @@ const Section = styled.section`
   .react-calendar {
     width: 80%;
     margin: auto;
-    border-radius: 5px;
+    border-radius: 0px;
     border: solid #006edc 2px;
   }
   .react-calendar__navigation {
@@ -41,16 +41,14 @@ class Filters extends React.Component {
 
   changeDate(date) {
     const { dateUpdate } = this.props;
-    console.log('filters :', date);
     dateUpdate(date);
   }
 
   render() {
     return (
       <Section>
-        <div className="price">
-          <Slider />
-        </div>
+
+
         <div className="calendar">
           <HomeCalendar changeDate={this.changeDate} />
         </div>

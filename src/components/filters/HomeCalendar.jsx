@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import styled from 'styled-components';
+
+const Section = styled.section`
+  border-radius: 5px;
+  /*border: solid #006edc 2px;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
 
 class HomeCalendar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: new Date(),
+      date: null,
     };
     this.onChange = this.onChange.bind(this);
   }
@@ -14,12 +23,15 @@ class HomeCalendar extends Component {
   onChange(date) {
     const { changeDate } = this.props;
     this.setState({ date });
-    console.log('homeCalendar :', date);
     changeDate(date);
   }
 
   render() {
-    return <Calendar onChange={this.onChange} value={this.state.date} />;
+    return (
+      <Section>
+        <Calendar onChange={this.onChange} value={this.state.date} />
+      </Section>
+    );
   }
 }
 
