@@ -19,15 +19,7 @@ const EVENTLIST = styled.div`
   }
 
   li {
-    display: flex;
     list-style: none;
-    justify-content: center;
-  }
-
-  .button-filter-price {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
   }
 
   button {
@@ -35,8 +27,8 @@ const EVENTLIST = styled.div`
     flex-direction: column;
     align-items: center;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
-    margin: 1rem;
-    width: 5rem;
+    margin: 2rem;
+    width: 10rem;
   }
 
   input {
@@ -49,11 +41,11 @@ const EVENTLIST = styled.div`
   }
 `;
 
-class EventList extends Component {
+class EventListEstivales extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      EventList: [],
+      EventListEstivales: [],
       // eslint-disable-next-line react/no-unused-state
       status: 'all',
     };
@@ -77,7 +69,7 @@ class EventList extends Component {
       })
       .then((response) => {
         this.setState({
-          EventList: response.data.records,
+          EventListEstivales: response.data.records,
         });
       });
   }
@@ -102,34 +94,49 @@ class EventList extends Component {
 
   render() {
     // eslint-disable-next-line no-shadow
-    const { EventList, status } = this.state;
+    const { EventListEstivales, status } = this.state;
     const date = this.props.date
       ? this.props.date.toLocaleDateString().split('/').reverse().join('-')
       : null;
     return (
       <div className="EventList">
         <EVENTLIST>
-          <div className="button-filter-price">
-            <button type="button" onClick={this.free}>
-              Gratuit
-            </button>
-            <button type="button" onClick={this.paying}>
-              Payant
-            </button>
-            <button type="button" onClick={this.showAll}>
-              Tous
-            </button>
-          </div>
+          <button type="button" onClick={this.free}>
+            Gratuit
+          </button>
+          <button type="button" onClick={this.paying}>
+            Payant
+          </button>
+          <button type="button" onClick={this.showAll}>
+            Tous
+          </button>
           <ul>
-            {EventList.filter((event) => {
+            {EventListEstivales.filter((event) => {
               // eslint-disable-next-line no-console
               if (status === 'all') {
-                return true;
+                return (
+                  event.fields.libelle_festival !==
+                    'Journées du Patrimoine (19 et 20 septembre 2020)' &&
+                  event.fields.libelle_festival !== undefined &&
+                  event.fields.libelle_festival !== 'Voyage à Nantes'
+                );
               }
               if (status === 'paying') {
-                return event.fields.gratuit === 'non';
+                return (
+                  event.fields.gratuit === 'non' &&
+                  event.fields.libelle_festival !==
+                    'Journées du Patrimoine (19 et 20 septembre 2020)' &&
+                  event.fields.libelle_festival !== undefined &&
+                  event.fields.libelle_festival !== 'Voyage à Nantes'
+                );
               }
-              return event.fields.gratuit === 'oui';
+              return (
+                event.fields.gratuit === 'oui' &&
+                event.fields.libelle_festival !==
+                  'Journées du Patrimoine (19 et 20 septembre 2020)' &&
+                event.fields.libelle_festival !== undefined &&
+                event.fields.libelle_festival !== 'Voyage à Nantes'
+              );
             })
               .filter((event) => (date ? date === event.fields.date : true))
               .map((event) => {
@@ -147,4 +154,4 @@ class EventList extends Component {
   }
 }
 
-export default EventList;
+export default EventListEstivales;

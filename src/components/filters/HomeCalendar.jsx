@@ -5,11 +5,10 @@ import styled from 'styled-components';
 
 const Section = styled.section`
   border-radius: 5px;
-  border: solid #006edc 2px;
+  /*border: solid #006edc 2px;*/
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 `;
 
 class HomeCalendar extends Component {

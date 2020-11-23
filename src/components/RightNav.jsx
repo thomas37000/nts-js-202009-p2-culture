@@ -16,7 +16,7 @@ const Slideburger = styled.ul`
   }
 
   a {
-    color: #f5f5f5;
+    color: #ffffff;
   }
 
   @media (max-width: 768px) {
@@ -32,12 +32,12 @@ const Slideburger = styled.ul`
     transition: transform 0.3s ease-in-out;
 
     li {
-      color: #f5f5f5;
+      color: black;
       text-align: center;
       border-bottom: 2px solid;
     }
     a {
-      color: #f5f5f5;
+      color: #ffffff;
     }
   } ;
 `;
@@ -50,16 +50,10 @@ const RightNav = ({ open }) => {
         <Link to="/">Accueil</Link>
       </li>
       <li>
-        <Link to="/evenements">Evènements</Link>
-      </li>
-      <li>
-        <Link to="/calendrier">Calendrier</Link>
+        <Link to="/bibliotheques">Bibliothèques / Médiathèques</Link>
       </li>
       <li>
         <Link to="/contact">Contact</Link>
-      </li>
-      <li>
-        <Link to="/reservation">Reservation</Link>
       </li>
     </Slideburger>
   );

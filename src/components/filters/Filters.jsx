@@ -47,9 +47,8 @@ class Filters extends React.Component {
   render() {
     return (
       <Section>
-        <div className="price">
-          <Slider />
-        </div>
+
+
         <div className="calendar">
           <HomeCalendar changeDate={this.changeDate} />
         </div>

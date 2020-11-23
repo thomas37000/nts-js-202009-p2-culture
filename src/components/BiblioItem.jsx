@@ -1,21 +1,18 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unused-state */
-/* eslint-disable react/prop-types */
-/* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/no-unused-prop-types */
-/* eslint-disable react/jsx-no-comment-textnodes */
+/* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
-const DIV = styled.div`
+const BIBLIOITEM = styled.div`
 
   display: flex;
   flex-direction: column;
+  align-items: center;
   text-align: left;
-  margin: 2rem;
-  padding: 1em;
+  margin: 1rem;
+  padding: 0.5rem;
   width: auto;
   height: auto;
   font-family: Roboto, sans-serif;
@@ -26,63 +23,69 @@ const DIV = styled.div`
 
 .SyntheticTimetable {
   width: 7.5rem;
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  text-align: center;
 }
 
-.category {
-  color: red;
-}
-
-span,
-h3,
-h4 {
-  font-size: 12px;
+.SyntheticTimetable h3 {
+  font-size: 14px;
   margin: 0.5rem;
+}
+
+.SyntheticCategory h4,
+.SyntheticLocation h4,
+.SyntheticAddress h4{
+  font-size: 12px;
+  margin: 0.25rem;
+}
+
+.SyntheticName h4 {
+  color: red;
+  font-size: 14px;
+  margin: 0.25rem;
+}
+
+span.free {
+  margin: 0.5 0 rem;
+  color : red;
+}
+
+.horaire {
+  font-size: 14px;
 }
 
 .SyntheticPrice h4 {
   font-size: 12px;
+  margin: 0.25rem;
 }
 
 .SyntheticPhoto {
   margin: auto;
   max-width: 15rem;
   height: auto;
-}
-
-.SyntheticCard.Information {
-  flex-wrap: wrap;
-  margin: auto;
+  margin: 1rem;
 }
 
 .SyntheticPrice {
   width: auto;
-  text-align: left;
-}
-
-.SyntheticDetail {
-  width: 10rem;
-  font-size: 1rem;
   text-align: center;
-  margin-top: 0.5rem;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   text-align: left;
   padding: 1rem;
-  max-width: 65rem;
+  max-width: 50rem;
   height: auto;
   background-color: #c4c4c4;
-  border-radius: 5px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
   font-size: 0.75em;
 
   .SyntheticTimetable {
-    font-size: 12px;
+    font-size: 1rem;
     width: 7rem;
   }
   .SyntheticPhoto {
@@ -90,25 +93,19 @@ h4 {
     height: auto;
   }
   .SyntheticInformation {
-    width: 22.5rem;
+    width: 18rem;
     height: auto;
     margin: 1rem;
   }
-  .SyntheticPrice {
-    width: 20rem;
-    margin: 1rem;
-    text-align: left;
 
-  .SyntheticDetail {
-    width: 2rem;
-    font-size: 1rem;
+  .SyntheticPrice {
+    width: 7rem;
+    margin: 1rem;
     text-align: center;
-    margin-top: 0.5rem;
-  }
 }
 `;
 
-class EventItem extends Component {
+class BiblioItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -118,66 +115,70 @@ class EventItem extends Component {
 
   render() {
     const {
-      libelle_festival: category,
-      recordid: id,
+      categorie_1: category,
       nom: name,
       media_1: media,
       date: eventdate,
       heure_debut: beginning,
       heure_fin: end,
       lieu: location,
+      adresse: address,
       ville: city,
+      gratuit: free,
       precisions_tarifs: price,
     } = this.props;
-    console.log(this.props);
     return (
       <div>
-        <DIV>
+        <BIBLIOITEM>
           <div className="SyntheticTimetable">
             <h3>{eventdate}</h3>
-            <span>
+            <span className="horaire">
               {beginning} - {end}
             </span>
           </div>
           <img className="SyntheticPhoto" src={media} alt={name} />
           <div className="SyntheticInformation">
             <div className="SyntheticCategory">
-              <h3 className="category">
-                {category !== undefined ? category : 'Autres évènements'}
-              </h3>
-              <h3 className="name">{name}</h3>
+              <h4>Catégorie : {category}</h4>
+            </div>
+            <div className="SyntheticName">
+              <h4>{name}</h4>
             </div>
             <div className="SyntheticLocation">
-              <h4 className="location">Lieu : {location}</h4>
+              <h4>Lieu : {location}</h4>
             </div>
-            <div className="SyntheticCity">
-              <h4 className="city">Ville : {city}</h4>
+            <div className="SyntheticAddress">
+              <h4>Adresse : {address}</h4>
+              <h4>Ville : {city}</h4>
             </div>
           </div>
           <div className="SyntheticPrice">
-            <h4 className="price">Tarif : {price}</h4>
+            <h4>Tarif : {price}</h4>
+            <span className="free">
+              {free === 1 ? <strong>Gratuit</strong> : ''}
+            </span>
           </div>
-          <div className="SyntheticDetail">
-            <Link to={`/event/${id}`}>Voir plus</Link>
-          </div>
-        </DIV>
+        </BIBLIOITEM>
       </div>
     );
   }
 }
 
-EventItem.propTypes = {
+BiblioItem.propTypes = {
+  active: PropTypes.bool.isRequired,
   id_manif: PropTypes.string.isRequired,
-  libelle_festival: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
+  categorie_1: PropTypes.string.isRequired,
   nom: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   media_1: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
   heure_debut: PropTypes.string.isRequired,
   heure_fin: PropTypes.string.isRequired,
   lieu: PropTypes.string.isRequired,
   ville: PropTypes.string.isRequired,
+  adresse: PropTypes.string.isRequired,
   precisions_tarifs: PropTypes.string.isRequired,
+  gratuit: PropTypes.string.isRequired,
 };
 
-export default EventItem;
+export default BiblioItem;
