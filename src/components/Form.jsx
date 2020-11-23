@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const DIV = styled.div`
@@ -95,62 +95,69 @@ const DIV = styled.div`
   }
 `;
 
-function Formulaire() {
-  const [form, setForm] = React.useState({
+class Form extends Component {
+  constructor(props) {
+  super(props)
+  this.state = {
     name: '',
-    email: '',
-    objet: '',
-    texte: '',
-  });
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  this.handleChange = this.handleChange.bind(this);
+  this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit (e) {
+    e.preventDefault();
+  };
+  
+  handleChange (e) {
+    this.setState({[e.target.name] : e.target.value})
+  };
+
+
+  render() {
   return (
     <DIV className="formContact">
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form onSubmit={this.handleSubmit}>
         <label htmlFor="name">Name:</label>
         <input
           type="text"
           name="name"
           placeholder=""
-          value={form.name}
-          onChange={(e) => handleChange(e)}
+          value={this.state.name}
+          onChange={this.handleChange}
         />
         <label htmlFor="Email">Email:</label>
         <input
           type="text"
           placeholder="exemple@wcs.com"
-          onChange={(e) => handleChange(e)}
+          onChange={this.handleChange}
           name="email"
-          value={form.mail}
+          value={this.state.email}
         />
         <label htmlFor="objet">Objet:</label>
         <input
           type="text"
           placeholder="your object"
-          onChange={(e) => handleChange(e)}
+          onChange={this.handleChange}
           name="objet"
-          value={form.objet}
+          value={this.state.objet}
         />
         <label htmlFor="texte">Texte:</label>
         <textarea
           className="textesize"
           type="textarea"
           name="textValue"
-          onChange={handleChange}
+          onChange={this.handleChange}
           rows="10"
           cols="30"
         />
-        <button type="button" onClick={handleSubmit}>
+        <button type="button" onClick={this.handleSubmit}>
           Submit
         </button>
       </form>
     </DIV>
   );
 }
-
-export default Formulaire;
+}
+export default Form;
