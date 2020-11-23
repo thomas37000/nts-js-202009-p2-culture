@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Maps from './Maps';
 
 const FIGURE = styled.figure`
   .eventName {
@@ -225,7 +226,7 @@ class DetailEvent extends Component {
                 </p>
               </div>
               <div className="map">
-                <iframe src="https://google/maps/gfpwj2aMgwTsRtEy7" />
+                <Maps {...eventDetails} />
               </div>
             </div>
           </section>
