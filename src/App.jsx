@@ -33,6 +33,12 @@ const CATEGORY = styled.div`
   justify-content: left;
 `;
 
+const SELECTION = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+`;
+
 const SPAN = styled.span`
   display: flex;
   font-size: 0.75rem;
@@ -68,11 +74,13 @@ class App extends Component {
           <Switch>
             <Route exact path="/">
               <Grid />
-              <Filters
-                dateUpdate={this.dateUpdate}
-                priceUpdate={this.priceUpdate}
-              />
-              <EventList date={this.state.date} price={this.state.price} />
+              <SELECTION>
+                <Filters
+                  dateUpdate={this.dateUpdate}
+                  priceUpdate={this.priceUpdate}
+                />
+                <EventList date={this.state.date} price={this.state.price} />
+              </SELECTION>
               <ScrollUpButton
                 style={{
                   backgroundColor: 'none',

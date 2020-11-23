@@ -1,11 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
 import Slider from './Slider';
 import HomeCalendar from './HomeCalendar';
-import styled from 'styled-components';
 
 const Section = styled.section`
   margin: 2rem auto;
-  height: 50vh;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -15,10 +15,10 @@ const Section = styled.section`
     width: 80%;
     margin: auto;
     border-radius: 5px;
-    border: solid #006edc 2px;
+    border: solid #000080 2px;
   }
   .react-calendar__navigation {
-    background: #006edc;
+    background: #c4c4c4;
   }
 
   @media screen and (min-width: 768px) {
