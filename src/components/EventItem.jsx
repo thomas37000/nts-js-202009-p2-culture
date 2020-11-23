@@ -67,7 +67,6 @@ const DIV = styled.div`
     text-align: center;
     align-self: center;
     font-size: 0.8rem;
-    text-align: center;
     margin-top: 0.5rem;
   }
 
@@ -87,7 +86,8 @@ const DIV = styled.div`
 
     .SyntheticTimetable {
       font-size: 12px;
-      width: 7rem;
+      text-align: left;
+      width: 10rem;
     }
     .SyntheticPhoto {
       width: 9rem;
@@ -106,6 +106,7 @@ const DIV = styled.div`
     .SyntheticDetail {
       width: 10rem;
       font-size: 0.8rem;
+      align-self: center;
       text-align: center;
     }
   }
