@@ -16,6 +16,7 @@ import EventItem from './EventItem';
 const EVENTLIST = styled.div`
   ul {
     padding: 0;
+    margin: 2rem auto;
   }
 
   li {
@@ -28,24 +29,6 @@ const EVENTLIST = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-  }
-
-  button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
-    margin: 1rem;
-    width: 5rem;
-  }
-
-  input {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
-    margin: 2rem;
-    width: 10rem;
   }
 `;
 
