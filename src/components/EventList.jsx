@@ -80,8 +80,7 @@ class EventList extends Component {
   render() {
     // eslint-disable-next-line no-shadow
     const { EventList } = this.state;
-    const price = this.props.price;
-    console.log(price);
+    const { price } = this.props;
     const date = this.props.date
       ? this.props.date.toLocaleDateString().split('/').reverse().join('-')
       : null;
