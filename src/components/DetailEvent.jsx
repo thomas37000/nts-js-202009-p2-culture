@@ -169,6 +169,8 @@ class DetailEvent extends Component {
 
   render() {
     const { eventDetails } = this.state;
+    // eslint-disable-next-line react/prop-types
+    const { id } = this.props.match.params;
     return (
       <div>
         <FIGURE className="DetailCard">
@@ -226,7 +228,7 @@ class DetailEvent extends Component {
                 </p>
               </div>
               <div className="map">
-                <Maps {...eventDetails} />
+                <Maps id={id} {...eventDetails} />
               </div>
             </div>
           </section>

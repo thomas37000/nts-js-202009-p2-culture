@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import Burger from './Burger';
 import Logo from './categories/img/NantEvent.png';
 
@@ -29,7 +30,9 @@ const Nav = styled.nav`
 const Navbar = () => {
   return (
     <Nav>
-      <img className="logo" src={Logo} alt="" />
+      <Link to="/">
+        <img className="logo" src={Logo} alt="" />
+      </Link>
       <Burger />
     </Nav>
   );
