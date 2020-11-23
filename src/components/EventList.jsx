@@ -54,12 +54,7 @@ class EventList extends Component {
     super(props);
     this.state = {
       EventList: [],
-      // eslint-disable-next-line react/no-unused-state
-      status: 'all',
     };
-    this.free = this.free.bind(this);
-    this.paying = this.paying.bind(this);
-    this.showAll = this.showAll.bind(this);
   }
 
   componentDidMount() {
@@ -82,56 +77,30 @@ class EventList extends Component {
       });
   }
 
-  free() {
-    this.setState({
-      status: 'free',
-    });
-  }
-
-  paying() {
-    this.setState({
-      status: 'paying',
-    });
-  }
-
-  showAll() {
-    this.setState({
-      status: 'all',
-    });
-  }
-
   render() {
     // eslint-disable-next-line no-shadow
-    const { EventList, status } = this.state;
+    const { EventList } = this.state;
+    const price = this.props.price;
+    console.log(price);
     const date = this.props.date
       ? this.props.date.toLocaleDateString().split('/').reverse().join('-')
       : null;
     return (
       <div className="EventList">
         <EVENTLIST>
-          <div className="button-filter-price">
-            <button type="button" onClick={this.free}>
-              Gratuit
-            </button>
-            <button type="button" onClick={this.paying}>
-              Payant
-            </button>
-            <button type="button" onClick={this.showAll}>
-              Tous
-            </button>
-          </div>
           <ul>
-            {EventList.filter((event) => {
-              // eslint-disable-next-line no-console
-              if (status === 'all') {
+            {EventList.filter((event) =>
+              date ? date === event.fields.date : true
+            )
+              .filter((event) => {
+                if (price === '0') {
+                  return event.fields.gratuit === 'oui';
+                }
+                if (price === '1') {
+                  return event.fields.gratuit === 'non';
+                }
                 return true;
-              }
-              if (status === 'paying') {
-                return event.fields.gratuit === 'non';
-              }
-              return event.fields.gratuit === 'oui';
-            })
-              .filter((event) => (date ? date === event.fields.date : true))
+              })
               .map((event) => {
                 return (
                   <li key={event.fields.recordid}>

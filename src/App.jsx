@@ -21,7 +21,6 @@ import Footer from './components/Footer';
 import Contact from './components/Contact';
 import DetailEvent from './components/DetailEvent';
 
-
 const H1 = styled.h1`
   font-size: 1rem;
   margin: 2rem;
@@ -46,13 +45,19 @@ class App extends Component {
     super(props);
     this.state = {
       date: new Date(),
+      price: 2,
     };
     this.dateUpdate = this.dateUpdate.bind(this);
+    this.priceUpdate = this.priceUpdate.bind(this);
   }
 
   dateUpdate(date) {
     this.setState({ date });
     console.log('app : ', date);
+  }
+
+  priceUpdate(price) {
+    this.setState({ price });
   }
 
   render() {
@@ -63,8 +68,11 @@ class App extends Component {
           <Switch>
             <Route exact path="/">
               <Grid />
-              <Filters dateUpdate={this.dateUpdate} />
-              <EventList date={this.state.date} />
+              <Filters
+                dateUpdate={this.dateUpdate}
+                priceUpdate={this.priceUpdate}
+              />
+              <EventList date={this.state.date} price={this.state.price} />
               <ScrollUpButton
                 style={{
                   backgroundColor: 'none',
