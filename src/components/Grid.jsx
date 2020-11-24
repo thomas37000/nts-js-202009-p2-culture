@@ -29,7 +29,7 @@ const Container = styled.div`
 
   .bg img {
     width: 90vw;
-    height: 30vh;
+    height: 40vh;
     margin: 2px;
     box-shadow: #000 5px 5px 0px;
   }
@@ -42,7 +42,7 @@ const Container = styled.div`
   .bg .overlay h2 {
     font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
-    padding-top: 25%;
+    padding-top: 30%;
   }
 
   .bg .overlay h2 a,
@@ -77,7 +77,7 @@ const Container = styled.div`
 
   @media screen and (min-width: 768px) {
     .container {
-      height: 30vh;
+      height: 37.5vh;
       margin: auto;
       display: flex;
       column-gap: 13px;

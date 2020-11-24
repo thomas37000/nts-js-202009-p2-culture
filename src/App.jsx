@@ -22,15 +22,19 @@ import Contact from './components/Contact';
 import DetailEvent from './components/DetailEvent';
 
 const H1 = styled.h1`
-  font-size: 1rem;
-  margin: 2rem;
+  font-size: 2rem;
+  color: #000080;
+  text-align: center;
+  letter-spacing: 0.3rem;
+  text-shadow: 1px 1px 2px #0e0d0d;
+  width: 100%;
 `;
 
 const CATEGORY = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: left;
+  justify-content: center;
 `;
 
 const SELECTION = styled.div`
@@ -41,8 +45,8 @@ const SELECTION = styled.div`
 
 const SPAN = styled.span`
   display: flex;
-  font-size: 0.75rem;
-  margin: 2rem;
+  font-size: 1rem;
+  margin: 1rem;
   justify-content: left;
 `;
 
@@ -120,8 +124,16 @@ class App extends Component {
                 </Link>
               </CATEGORY>
               <H1>Evènements tout au long de l'année</H1>
-              <Filters dateUpdate={this.dateUpdate} />
-              <EventListAllYear date={this.state.date} />
+              <SELECTION>
+                <Filters
+                  dateUpdate={this.dateUpdate}
+                  priceUpdate={this.priceUpdate}
+                />
+                <EventListAllYear
+                  date={this.state.date}
+                  price={this.state.price}
+                />
+              </SELECTION>
               <ScrollUpButton
                 style={{
                   backgroundColor: 'none',

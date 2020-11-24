@@ -7,18 +7,12 @@ import EventItem from './EventItem';
 const EVENTLIST = styled.div`
   ul {
     padding: 0;
-    margin: 2rem auto;
+    margin-top: 1.75rem;
   }
 
   li {
     display: flex;
     list-style: none;
-    justify-content: center;
-  }
-
-  .button-filter-price {
-    display: flex;
-    flex-direction: row;
     justify-content: center;
   }
 `;
@@ -58,8 +52,8 @@ class EventList extends Component {
     const { price } = this.props;
     // eslint-disable-next-line react/destructuring-assignment
     const date = this.props.date
-      // eslint-disable-next-line react/destructuring-assignment
-      ? this.props.date.toLocaleDateString().split('/').reverse().join('-')
+      ? // eslint-disable-next-line react/destructuring-assignment
+        this.props.date.toLocaleDateString().split('/').reverse().join('-')
       : null;
     return (
       <div className="EventList">

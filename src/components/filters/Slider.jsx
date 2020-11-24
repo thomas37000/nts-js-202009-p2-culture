@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Section = styled.section`
-  border: solid #000080 2px;
+  border: solid #c4c4c4 2px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -16,13 +17,30 @@ const Section = styled.section`
     display: flex;
     justify-content: space-between;
     width: 80%;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: #000000;
   }
   .slider {
     width: 80%;
     margin: 0 auto;
   }
+
   @media screen and (min-width: 768px) {
     width: 40vw;
+  }
+`;
+
+const H1 = styled.h1`
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  @media screen and (min-width: 768px) {
+    font-size: 0.9rem;
+    text-align: left;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -43,21 +61,24 @@ export default class Slider extends React.Component {
 
   render() {
     return (
-      <Section>
-        <div className="label-slider">
-          <div>Gratuit</div>
-          <div>Payant</div>
-          <div>Tous</div>
-        </div>
-        <input
-          type="range"
-          min={0}
-          max={2}
-          value={this.state.price}
-          className="slider"
-          onChange={this.handleOnChange}
-        />
-      </Section>
+      <div>
+        <H1 className="h1-slider">Filtrer par prix :</H1>
+        <Section>
+          <div className="label-slider">
+            <div>Gratuit</div>
+            <div>Payant</div>
+            <div>Tous</div>
+          </div>
+          <input
+            type="range"
+            min={0}
+            max={2}
+            value={this.state.price}
+            className="slider"
+            onChange={this.handleOnChange}
+          />
+        </Section>
+      </div>
     );
   }
 }

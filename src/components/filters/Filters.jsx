@@ -15,10 +15,11 @@ const Section = styled.section`
     width: 80%;
     margin: auto;
     border-radius: 5px;
-    border: solid #000080 2px;
+    border: solid #d8d8d8 2px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
   }
   .react-calendar__navigation {
-    background: #c4c4c4;
+    background: #d8d8d8;
   }
 
   @media screen and (min-width: 768px) {
