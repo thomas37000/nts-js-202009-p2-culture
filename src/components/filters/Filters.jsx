@@ -1,12 +1,11 @@
 import React from 'react';
 import Slider from './Slider';
-import When from './When';
 import HomeCalendar from './HomeCalendar';
 import styled from 'styled-components';
 
 const Section = styled.section`
   margin: 2rem auto;
-  height: 50vh;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -15,25 +14,29 @@ const Section = styled.section`
   .react-calendar {
     width: 80%;
     margin: auto;
-    border-radius: 0px;
-    border: solid #006edc 2px;
+    border-radius: 5px;
+    border: solid #d8d8d8 2px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
   }
   .react-calendar__navigation {
-    background: #006edc;
+    background: #d8d8d8;
+  }
+
+  .price-filter {
+    margin-bottom: 5rem;
   }
 
   @media screen and (min-width: 768px) {
     margin: auto;
-    flex-direction: row;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
 
     .react-calendar {
       width: 40vw;
     }
   }
 `;
-class Filters extends React.Component {
+export default class Filters extends React.Component {
   constructor(props) {
     super(props);
     this.changeDate = this.changeDate.bind(this);
@@ -59,9 +62,10 @@ class Filters extends React.Component {
         <div className="calendar">
           <HomeCalendar changeDate={this.changeDate} />
         </div>
+        <div className="price-filter">
+          <Slider changePrice={this.changePrice} />
+        </div>
       </Section>
     );
   }
 }
-
-export default Filters;

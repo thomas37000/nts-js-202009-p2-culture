@@ -1,83 +1,56 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import logo1 from './linkedin.png';
+import logo2 from './GitHub-Mark.png';
 
 const DIV = styled.div`
+  display: flex;
+  justify-content: center;
+
+  .TeamProfil {
+    margin-top: 20px;
+  }
+
   .gitavatar1 {
     width: 100px;
     clip-path: circle(50% at 50% 50%);
   }
-  .gitavatar2 {
-    width: 100px;
-    clip-path: circle(50% at 50% 50%);
-  }
-  .gitavatar3 {
-    width: 100px;
-    clip-path: circle(50% at 50% 50%);
-  }
-  .gitavatar4 {
-    width: 100px;
-    clip-path: circle(50% at 50% 50%);
-  }
-  .gitavatar5 {
-    width: 100px;
-    clip-path: circle(50% at 50% 50%);
-  }
-  .linkedin {
-    width: 2rem;
-    height: 2rem;
+  p {
+    text-align: center;
+    color: navy;
+    font-weight: bold;
   }
 `;
 
 class GithubProfil extends Component {
   render() {
-    const { login: name, avatar_url: avatar } = this.props;
-
+    const { login, avatar, urlGitHub, urlLinkedin } = this.props;
     return (
       <DIV>
-        <div className="profils1">
-          <img className="gitavatar1" src={avatar} alt="" />
-          <span>{name}</span>
-          <a href="https://www.linkedin.com/in/delourme-francois-25367452">
-            <img className="linkedin" src={logo1} alt="" />
-          </a>
-        </div>
-        <div className="Profils2">
-          <img className="gitavatar2" src={avatar} alt="" />
-          <span>{name}</span>
-          <a href="https://www.linkedin.com/in/delourme-francois-25367452">
-            <img className="linkedin" src={logo1} alt="" />
-          </a>
-        </div>
-        <div className="Profils3">
-          <img className="gitavatar3" src={avatar} alt="" />
-          <span>{name}</span>
-          <a href="https://www.linkedin.com/in/delourme-francois-25367452">
-            <img className="linkedin" src={logo1} alt="" />
-          </a>
-        </div>
-        <div className="Profils4">
-          <img className="gitavatar4" src={avatar} alt="" />
-          <span>{name}</span>
-          <a href="https://www.linkedin.com/in/delourme-francois-25367452">
-            <img className="linkedin" src={logo1} alt="" />
-          </a>
-        </div>
-        <div className="Profils5">
-          <img className="gitavatar5" src={avatar} alt="" />
-          <span>{name}</span>
-          <a href="https://www.linkedin.com/in/delourme-francois-25367452">
-            <img className="linkedin" src={logo1} alt="" />
-          </a>
+        <div className="TeamProfil">
+          <img className="gitavatar1" src={avatar} alt="avatar team dev" />
+          <p>{login}</p>
+          <div className="Linklogo">
+            <Link to={{ pathname: urlLinkedin }} target="_blank">
+              <img src={logo1} alt="lien linkedin" height="50" />
+            </Link>
+            <Link to={{ pathname: urlGitHub }} target="_blank">
+              <img src={logo2} alt="lien github" height="50" />
+            </Link>
+          </div>
         </div>
       </DIV>
     );
   }
 }
+
 GithubProfil.propTypes = {
   login: PropTypes.string.isRequired,
-  avatar_url: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  urlGitHub: PropTypes.string.isRequired,
+  urlLinkedin: PropTypes.string.isRequired,
 };
 
 export default GithubProfil;

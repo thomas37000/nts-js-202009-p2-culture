@@ -7,7 +7,7 @@ import EventItem from './EventItem';
 const EVENTLIST = styled.div`
   ul {
     padding: 0;
-    margin-top: 4rem;
+    margin: 2rem auto;
   }
 
   li {
@@ -17,11 +17,11 @@ const EVENTLIST = styled.div`
   }
 `;
 
-class EventList extends Component {
+class EventListAllYear extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      EventList: [],
+      EventListAllYear: [],
     };
   }
 
@@ -40,42 +40,42 @@ class EventList extends Component {
       })
       .then((response) => {
         this.setState({
-          EventList: response.data.records,
+          EventListAllYear: response.data.records,
         });
       });
   }
 
   render() {
-    const { EventList: eventList } = this.state;
-
-    const { price } = this.props;
-    let { date } = this.props;
-
-    date = date ? new Intl.DateTimeFormat('fr-ca').format(date) : null;
-
-  render() {
     // eslint-disable-next-line no-shadow
-    const { EventList, status } = this.state;
+    const { EventListAllYear } = this.state;
+    // eslint-disable-next-line react/prop-types
+    const { price } = this.props;
+    // eslint-disable-next-line react/destructuring-assignment
     const date = this.props.date
-      ? this.props.date.toLocaleDateString().split('/').reverse().join('-')
+      ? // eslint-disable-next-line react/destructuring-assignment
+        this.props.date.toLocaleDateString().split('/').reverse().join('-')
       : null;
-    console.log(this.props.price);
     return (
-      <div className="EventList">
+      <div className="EventListAllYear">
         <EVENTLIST>
           <ul>
-            {eventList
-              .filter((event) => {
-                return date ? date === event.fields.date : true;
-              })
+            {EventListAllYear.filter((event) =>
+              date ? date === event.fields.date : true
+            )
               .filter((event) => {
                 if (price === '0') {
-                  return event.fields.gratuit === 'oui';
+                  return (
+                    event.fields.gratuit === 'oui' &&
+                    event.fields.libelle_festival === undefined
+                  );
                 }
                 if (price === '1') {
-                  return event.fields.gratuit === 'non';
+                  return (
+                    event.fields.gratuit === 'non' &&
+                    event.fields.libelle_festival === undefined
+                  );
                 }
-                return true;
+                return true && event.fields.libelle_festival === undefined;
               })
               .map((event) => {
                 return (
@@ -95,9 +95,9 @@ class EventList extends Component {
   }
 }
 
-EventList.propTypes = {
+EventListAllYear.propTypes = {
   date: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
 };
 
-export default EventList;
+export default EventListAllYear;
