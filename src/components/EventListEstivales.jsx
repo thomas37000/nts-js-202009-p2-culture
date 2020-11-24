@@ -1,14 +1,5 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-alert */
-/* eslint-disable react/sort-comp */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable no-shadow */
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/no-unused-state */
-/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import axios from 'axios';
 import EventItem from './EventItem';
@@ -16,28 +7,13 @@ import EventItem from './EventItem';
 const EVENTLIST = styled.div`
   ul {
     padding: 0;
+    margin: 2rem auto;
   }
 
   li {
+    display: flex;
     list-style: none;
-  }
-
-  button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
-    margin: 2rem;
-    width: 10rem;
-  }
-
-  input {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
-    margin: 2rem;
-    width: 10rem;
+    justify-content: center;
   }
 `;
 
@@ -46,12 +22,7 @@ class EventListEstivales extends Component {
     super(props);
     this.state = {
       EventListEstivales: [],
-      // eslint-disable-next-line react/no-unused-state
-      status: 'all',
     };
-    this.free = this.free.bind(this);
-    this.paying = this.paying.bind(this);
-    this.showAll = this.showAll.bind(this);
   }
 
   componentDidMount() {
@@ -74,76 +45,54 @@ class EventListEstivales extends Component {
       });
   }
 
-  free() {
-    this.setState({
-      status: 'free',
-    });
-  }
-
-  paying() {
-    this.setState({
-      status: 'paying',
-    });
-  }
-
-  showAll() {
-    this.setState({
-      status: 'all',
-    });
-  }
-
   render() {
-    // eslint-disable-next-line no-shadow
-    const { EventListEstivales, status } = this.state;
-    const date = this.props.date
-      ? this.props.date.toLocaleDateString().split('/').reverse().join('-')
-      : null;
+    const { EventListEstivales: eventList } = this.state;
+
+    const { price } = this.props;
+    let { date } = this.props;
+
+    date = date ? new Intl.DateTimeFormat('fr-ca').format(date) : null;
     return (
-      <div className="EventList">
+      <div className="EventListEstivales">
         <EVENTLIST>
-          <button type="button" onClick={this.free}>
-            Gratuit
-          </button>
-          <button type="button" onClick={this.paying}>
-            Payant
-          </button>
-          <button type="button" onClick={this.showAll}>
-            Tous
-          </button>
           <ul>
-            {EventListEstivales.filter((event) => {
-              // eslint-disable-next-line no-console
-              if (status === 'all') {
-                return (
-                  event.fields.libelle_festival !==
-                    'Journées du Patrimoine (19 et 20 septembre 2020)' &&
-                  event.fields.libelle_festival !== undefined &&
-                  event.fields.libelle_festival !== 'Voyage à Nantes'
-                );
-              }
-              if (status === 'paying') {
-                return (
-                  event.fields.gratuit === 'non' &&
-                  event.fields.libelle_festival !==
-                    'Journées du Patrimoine (19 et 20 septembre 2020)' &&
-                  event.fields.libelle_festival !== undefined &&
-                  event.fields.libelle_festival !== 'Voyage à Nantes'
-                );
-              }
-              return (
-                event.fields.gratuit === 'oui' &&
-                event.fields.libelle_festival !==
-                  'Journées du Patrimoine (19 et 20 septembre 2020)' &&
-                event.fields.libelle_festival !== undefined &&
-                event.fields.libelle_festival !== 'Voyage à Nantes'
-              );
-            })
+            {eventList
               .filter((event) => (date ? date === event.fields.date : true))
+              .filter((event) => {
+                if (price === '0') {
+                  return (
+                    event.fields.gratuit === 'oui' &&
+                    event.fields.libelle_festival !==
+                      'Journées du Patrimoine (19 et 20 septembre 2020)' &&
+                    event.fields.libelle_festival !== undefined &&
+                    event.fields.libelle_festival !== 'Voyage à Nantes'
+                  );
+                }
+                if (price === '1') {
+                  return (
+                    event.fields.gratuit === 'non' &&
+                    event.fields.libelle_festival !==
+                      'Journées du Patrimoine (19 et 20 septembre 2020)' &&
+                    event.fields.libelle_festival !== undefined &&
+                    event.fields.libelle_festival !== 'Voyage à Nantes'
+                  );
+                }
+                return (
+                  true &&
+                  event.fields.libelle_festival !==
+                    'Journées du Patrimoine (19 et 20 septembre 2020)' &&
+                  event.fields.libelle_festival !== undefined &&
+                  event.fields.libelle_festival !== 'Voyage à Nantes'
+                );
+              })
               .map((event) => {
                 return (
-                  <li key={event.fields.recordid}>
-                    {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-                    <EventItem {...event.fields} recordid={event.recordid} />
+                  <li>
+                    <EventItem
+                      key={event.fields.recordid}
+                      {...event.fields}
+                      recordid={event.recordid}
+                    />
                   </li>
                 );
               })}
@@ -153,5 +102,10 @@ class EventListEstivales extends Component {
     );
   }
 }
+
+EventListEstivales.propTypes = {
+  date: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+};
 
 export default EventListEstivales;
