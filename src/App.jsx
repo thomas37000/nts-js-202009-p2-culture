@@ -40,9 +40,11 @@ const CATEGORY = styled.div`
 
 const SELECTION = styled.div`
   display: flex;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
+  flex-direction: column;
   margin-bottom: 3rem;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row-reverse;
 `;
 
 const SPAN = styled.span`

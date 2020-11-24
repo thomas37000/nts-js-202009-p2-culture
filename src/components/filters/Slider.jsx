@@ -24,7 +24,7 @@ const Section = styled.section`
   }
   .slider {
     width: 80%;
-    margin: 0 auto;
+    margin: 0;
   }
 
   @media screen and (min-width: 768px) {
