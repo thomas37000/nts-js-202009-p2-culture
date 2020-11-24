@@ -99,4 +99,3 @@ EventListVoyageNantes.propTypes = {
 };
 
 export default EventListVoyageNantes;
-

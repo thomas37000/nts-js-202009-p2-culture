@@ -226,8 +226,16 @@ class App extends Component {
                 </Link>
               </CATEGORY>
               <H1>Journées du Patrimoine</H1>
-              <Filters dateUpdate={this.dateUpdate} />
-              <EventListPatrimoine date={this.state.date} />
+              <SELECTION>
+                <Filters
+                  dateUpdate={this.dateUpdate}
+                  priceUpdate={this.priceUpdate}
+                />
+                <EventListPatrimoine
+                  date={this.state.date}
+                  price={this.state.price}
+                />
+              </SELECTION>
               <ScrollUpButton
                 style={{
                   backgroundColor: 'none',
