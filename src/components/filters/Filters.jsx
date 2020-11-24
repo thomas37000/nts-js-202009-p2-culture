@@ -29,7 +29,7 @@ const Section = styled.section`
   @media screen and (min-width: 768px) {
     margin: auto;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
 
     .react-calendar {
       width: 40vw;

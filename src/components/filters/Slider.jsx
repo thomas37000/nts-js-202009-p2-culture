@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Section = styled.section`
@@ -31,19 +32,6 @@ const Section = styled.section`
   }
 `;
 
-const H1 = styled.h1`
-  font-size: 0.9rem;
-  text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-
-  @media screen and (min-width: 768px) {
-    font-size: 0.9rem;
-    text-align: left;
-    margin-bottom: 1rem;
-  }
-`;
-
 export default class Slider extends React.Component {
   constructor(props) {
     super(props);
@@ -60,25 +48,27 @@ export default class Slider extends React.Component {
   }
 
   render() {
+    const { price } = this.state;
     return (
-      <div>
-        <H1 className="h1-slider">Filtrer par prix :</H1>
-        <Section>
-          <div className="label-slider">
-            <div>Gratuit</div>
-            <div>Payant</div>
-            <div>Tous</div>
-          </div>
-          <input
-            type="range"
-            min={0}
-            max={2}
-            value={this.state.price}
-            className="slider"
-            onChange={this.handleOnChange}
-          />
-        </Section>
-      </div>
+      <Section>
+        <div className="label-slider">
+          <div>Gratuit</div>
+          <div>Payant</div>
+          <div>Tous</div>
+        </div>
+        <input
+          type="range"
+          min={0}
+          max={2}
+          value={price}
+          className="slider"
+          onChange={this.handleOnChange}
+        />
+      </Section>
     );
   }
 }
+
+Slider.propTypes = {
+  changePrice: PropTypes.func.isRequired,
+};
