@@ -58,8 +58,8 @@ class EventList extends Component {
     const { price } = this.props;
     // eslint-disable-next-line react/destructuring-assignment
     const date = this.props.date
-      // eslint-disable-next-line react/destructuring-assignment
-      ? this.props.date.toLocaleDateString().split('/').reverse().join('-')
+      ? // eslint-disable-next-line react/destructuring-assignment
+        this.props.date.toLocaleDateString().split('/').reverse().join('-')
       : null;
     return (
       <div className="EventList">
@@ -79,12 +79,8 @@ class EventList extends Component {
               })
               .map((event) => {
                 return (
-                  <li>
-                    <EventItem
-                      key={event.fields.recordid}
-                      {...event.fields}
-                      recordid={event.recordid}
-                    />
+                  <li key={event.fields.recordid}>
+                    <EventItem {...event.fields} recordid={event.recordid} />
                   </li>
                 );
               })}
@@ -96,8 +92,8 @@ class EventList extends Component {
 }
 
 EventList.propTypes = {
-  date: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  date: PropTypes.instanceOf(Date).isRequired,
+  price: PropTypes.number.isRequired,
 };
 
 export default EventList;
