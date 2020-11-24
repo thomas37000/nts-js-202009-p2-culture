@@ -10,11 +10,7 @@ padding: 20px;
 }
 
 @media and (min-width: 765px) {
-text-shadow: 2px 2px 2px white;
-color: #000080;
-font-size: xx-large;
-padding: 20px;
-}
+animation: none;
 `;
 
 class Scrolltxt extends Component {
