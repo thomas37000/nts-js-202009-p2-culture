@@ -7,18 +7,12 @@ import EventItem from './EventItem';
 const EVENTLIST = styled.div`
   ul {
     padding: 0;
-    margin: 2rem auto;
+    margin-top: 4rem;
   }
 
   li {
     display: flex;
     list-style: none;
-    justify-content: center;
-  }
-
-  .button-filter-price {
-    display: flex;
-    flex-direction: row;
     justify-content: center;
   }
 `;

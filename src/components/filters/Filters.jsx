@@ -15,16 +15,21 @@ const Section = styled.section`
     width: 80%;
     margin: auto;
     border-radius: 5px;
-    border: solid #000080 2px;
+    border: solid #d8d8d8 2px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
   }
   .react-calendar__navigation {
-    background: #c4c4c4;
+    background: #d8d8d8;
+  }
+
+  .price-filter {
+    margin-bottom: 5rem;
   }
 
   @media screen and (min-width: 768px) {
     margin: auto;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
 
     .react-calendar {
       width: 40vw;
@@ -51,10 +56,10 @@ export default class Filters extends React.Component {
   render() {
     return (
       <Section>
-        <div className="calendar">
+        <div className="calendar-filter">
           <HomeCalendar changeDate={this.changeDate} />
         </div>
-        <div className="price">
+        <div className="price-filter">
           <Slider changePrice={this.changePrice} />
         </div>
       </Section>

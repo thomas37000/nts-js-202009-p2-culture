@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Section = styled.section`
-  border: solid #000080 2px;
+  border: solid #c4c4c4 2px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -16,11 +18,15 @@ const Section = styled.section`
     display: flex;
     justify-content: space-between;
     width: 80%;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: #000000;
   }
   .slider {
     width: 80%;
     margin: 0 auto;
   }
+
   @media screen and (min-width: 768px) {
     width: 40vw;
   }
@@ -42,6 +48,7 @@ export default class Slider extends React.Component {
   }
 
   render() {
+    const { price } = this.state;
     return (
       <Section>
         <div className="label-slider">
@@ -53,7 +60,7 @@ export default class Slider extends React.Component {
           type="range"
           min={0}
           max={2}
-          value={this.state.price}
+          value={price}
           className="slider"
           onChange={this.handleOnChange}
         />
@@ -61,3 +68,7 @@ export default class Slider extends React.Component {
     );
   }
 }
+
+Slider.propTypes = {
+  changePrice: PropTypes.func.isRequired,
+};
