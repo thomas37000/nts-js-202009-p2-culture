@@ -160,8 +160,16 @@ class App extends Component {
                 </Link>
               </CATEGORY>
               <H1>Evènements du Voyage à Nantes</H1>
-              <Filters dateUpdate={this.dateUpdate} />
-              <EventListVoyageNantes date={this.state.date} />
+              <SELECTION>
+                <Filters
+                  dateUpdate={this.dateUpdate}
+                  priceUpdate={this.priceUpdate}
+                />
+                <EventListVoyageNantes
+                  date={this.state.date}
+                  price={this.state.price}
+                />
+              </SELECTION>
               <ScrollUpButton
                 style={{
                   backgroundColor: 'none',
