@@ -1,14 +1,5 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-alert */
-/* eslint-disable react/sort-comp */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable no-shadow */
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/no-unused-state */
-/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import axios from 'axios';
 import EventItem from './EventItem';
@@ -16,28 +7,19 @@ import EventItem from './EventItem';
 const EVENTLIST = styled.div`
   ul {
     padding: 0;
+    margin: 2rem auto;
   }
 
   li {
-    list-style: none;
-  }
-
-  button {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
-    margin: 2rem;
-    width: 10rem;
+    list-style: none;
+    justify-content: center;
   }
 
-  input {
+  .button-filter-price {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    text-align: center;
-    margin: 2rem;
-    width: 10rem;
+    justify-content: center;
   }
 `;
 
@@ -46,12 +28,7 @@ class EventListAllYear extends Component {
     super(props);
     this.state = {
       EventListAllYear: [],
-      // eslint-disable-next-line react/no-unused-state
-      status: 'all',
     };
-    this.free = this.free.bind(this);
-    this.paying = this.paying.bind(this);
-    this.showAll = this.showAll.bind(this);
   }
 
   componentDidMount() {
@@ -74,65 +51,46 @@ class EventListAllYear extends Component {
       });
   }
 
-  free() {
-    this.setState({
-      status: 'free',
-    });
-  }
-
-  paying() {
-    this.setState({
-      status: 'paying',
-    });
-  }
-
-  showAll() {
-    this.setState({
-      status: 'all',
-    });
-  }
-
   render() {
     // eslint-disable-next-line no-shadow
-    const { EventListAllYear, status } = this.state;
+    const { EventListAllYear } = this.state;
+    // eslint-disable-next-line react/prop-types
+    const { price } = this.props;
+    // eslint-disable-next-line react/destructuring-assignment
     const date = this.props.date
+      // eslint-disable-next-line react/destructuring-assignment
       ? this.props.date.toLocaleDateString().split('/').reverse().join('-')
       : null;
     return (
-      <div className="EventList">
+      <div className="EventListAllYear">
         <EVENTLIST>
-          <button type="button" onClick={this.free}>
-            Gratuit
-          </button>
-          <button type="button" onClick={this.paying}>
-            Payant
-          </button>
-          <button type="button" onClick={this.showAll}>
-            Tous
-          </button>
           <ul>
-            {EventListAllYear.filter((event) => {
-              // eslint-disable-next-line no-console
-              if (status === 'all') {
-                return event.fields.libelle_festival === undefined;
-              }
-              if (status === 'paying') {
-                return (
-                  event.fields.gratuit === 'non' &&
-                  event.fields.libelle_festival === undefined
-                );
-              }
-              return (
-                event.fields.gratuit === 'oui' &&
-                event.fields.libelle_festival === undefined
-              );
-            })
-              .filter((event) => (date ? date === event.fields.date : true))
+            {EventListAllYear.filter((event) =>
+              date ? date === event.fields.date : true
+            )
+              .filter((event) => {
+                if (price === '0') {
+                  return (
+                    event.fields.gratuit === 'oui' &&
+                    event.fields.libelle_festival === undefined
+                  );
+                }
+                if (price === '1') {
+                  return (
+                    event.fields.gratuit === 'non' &&
+                    event.fields.libelle_festival === undefined
+                  );
+                }
+                return true;
+              })
               .map((event) => {
                 return (
-                  <li key={event.fields.recordid}>
-                    {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-                    <EventItem {...event.fields} recordid={event.recordid} />
+                  <li>
+                    <EventItem
+                      key={event.fields.recordid}
+                      {...event.fields}
+                      recordid={event.recordid}
+                    />
                   </li>
                 );
               })}
@@ -142,5 +100,10 @@ class EventListAllYear extends Component {
     );
   }
 }
+
+EventListAllYear.propTypes = {
+  date: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+};
 
 export default EventListAllYear;
