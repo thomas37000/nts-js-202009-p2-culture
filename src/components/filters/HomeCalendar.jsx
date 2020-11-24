@@ -7,6 +7,19 @@ const Section = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  .h1-filter {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    @media screen and (min-width: 768px) {
+      font-size: 0.9rem;
+      text-align: left;
+      margin-bottom: 1rem;
+    }
+  }
 `;
 
 class HomeCalendar extends Component {
@@ -27,6 +40,7 @@ class HomeCalendar extends Component {
   render() {
     return (
       <Section>
+        <h1 className="h1-filter">Filtrer par date :</h1>
         <Calendar onChange={this.onChange} value={this.state.date} />
       </Section>
     );

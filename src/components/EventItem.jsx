@@ -14,13 +14,13 @@ const DIV = styled.div`
   flex-direction: column;
   text-align: left;
   margin: 2rem;
-  padding: 1em;
+  padding: 1rem;
   width: auto;
   height: auto;
   font-family: Roboto, sans-serif;
   background-color: #c4c4c4;
-  border-radius: 10px;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
   font-size: 0.75em;
 
   .SyntheticTimetable {
@@ -80,8 +80,7 @@ const DIV = styled.div`
     max-width: 65rem;
     height: auto;
     background-color: #c4c4c4;
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
     font-size: 0.75em;
 
     .SyntheticTimetable {

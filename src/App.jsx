@@ -22,15 +22,19 @@ import Contact from './components/Contact';
 import DetailEvent from './components/DetailEvent';
 
 const H1 = styled.h1`
-  font-size: 1rem;
+  font-size: 2.5rem;
+  text-align: center;
   margin: 2rem;
+  color: #000080;
+  text-shadow: 0 -1px 4px #fff, 0 -2px 10px #ff0, 0 -10px 20px #49ff18,
+    0 -18px 40px #f00;
 `;
 
 const CATEGORY = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: left;
+  justify-content: center;
 `;
 
 const SELECTION = styled.div`
@@ -41,8 +45,8 @@ const SELECTION = styled.div`
 
 const SPAN = styled.span`
   display: flex;
-  font-size: 0.75rem;
-  margin: 2rem;
+  font-size: 1rem;
+  margin: 1rem;
   justify-content: left;
 `;
 

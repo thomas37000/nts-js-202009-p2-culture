@@ -15,12 +15,6 @@ const EVENTLIST = styled.div`
     list-style: none;
     justify-content: center;
   }
-
-  .button-filter-price {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
 `;
 
 class EventListAllYear extends Component {
