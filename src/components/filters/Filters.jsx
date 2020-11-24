@@ -58,7 +58,6 @@ const Section = styled.section`
       width: 40vw;
     }
 
-
   .filter-title {
     font-size: 0.9rem;
     text-align: center;
