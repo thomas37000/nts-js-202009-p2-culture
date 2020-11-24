@@ -75,7 +75,7 @@ const DIV = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: left;
     text-align: left;
     padding: 1rem;
     width: 50vw;
@@ -87,7 +87,7 @@ const DIV = styled.div`
     .SyntheticTimetable {
       font-size: 12px;
       text-align: left;
-      width: 7.5rem;
+      width: 9rem;
     }
     .SyntheticPhoto {
       width: 9rem;
