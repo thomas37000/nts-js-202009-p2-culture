@@ -79,9 +79,12 @@ class EventList extends Component {
               })
               .map((event) => {
                 return (
-                  <li key={event.fields.recordid}>
-                    {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-                    <EventItem {...event.fields} recordid={event.recordid} />
+                  <li>
+                    <EventItem
+                      key={event.fields.recordid}
+                      {...event.fields}
+                      recordid={event.recordid}
+                    />
                   </li>
                 );
               })}
@@ -93,9 +96,8 @@ class EventList extends Component {
 }
 
 EventList.propTypes = {
-  id_manif: PropTypes.string.isRequired,
-  libelle_festival: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
 };
 
 export default EventList;
