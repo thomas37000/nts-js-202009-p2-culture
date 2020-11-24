@@ -120,14 +120,16 @@ class App extends Component {
                 </Link>
               </CATEGORY>
               <H1>Evènements tout au long de l'année</H1>
-              <Filters
-                dateUpdate={this.dateUpdate}
-                priceUpdate={this.priceUpdate}
-              />
-              <EventListAllYear
-                date={this.state.date}
-                price={this.state.price}
-              />
+              <SELECTION>
+                <Filters
+                  dateUpdate={this.dateUpdate}
+                  priceUpdate={this.priceUpdate}
+                />
+                <EventListAllYear
+                  date={this.state.date}
+                  price={this.state.price}
+                />
+              </SELECTION>
               <ScrollUpButton
                 style={{
                   backgroundColor: 'none',

@@ -58,8 +58,8 @@ class EventListAllYear extends Component {
     const { price } = this.props;
     // eslint-disable-next-line react/destructuring-assignment
     const date = this.props.date
-      // eslint-disable-next-line react/destructuring-assignment
-      ? this.props.date.toLocaleDateString().split('/').reverse().join('-')
+      ? // eslint-disable-next-line react/destructuring-assignment
+        this.props.date.toLocaleDateString().split('/').reverse().join('-')
       : null;
     return (
       <div className="EventListAllYear">
@@ -81,7 +81,7 @@ class EventListAllYear extends Component {
                     event.fields.libelle_festival === undefined
                   );
                 }
-                return true;
+                return true && event.fields.libelle_festival === undefined;
               })
               .map((event) => {
                 return (
