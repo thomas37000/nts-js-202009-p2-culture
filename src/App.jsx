@@ -41,6 +41,7 @@ const SELECTION = styled.div`
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap;
+  margin-bottom: 3rem;
 `;
 
 const SPAN = styled.span`

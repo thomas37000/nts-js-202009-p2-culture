@@ -7,7 +7,7 @@ import EventItem from './EventItem';
 const EVENTLIST = styled.div`
   ul {
     padding: 0;
-    margin-top: 1.75rem;
+    margin-top: 4rem;
   }
 
   li {

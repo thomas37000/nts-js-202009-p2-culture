@@ -13,7 +13,7 @@ const DIV = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin: 2rem;
+  margin: 1rem;
   padding: 1rem;
   width: auto;
   height: auto;
