@@ -47,6 +47,9 @@ const Section = styled.section`
     .react-calendar {
       width: 40vw;
     }
+
+  .calendar-filter {
+    margin-top : 6rem;
   }
 `;
 export default class Filters extends React.Component {
