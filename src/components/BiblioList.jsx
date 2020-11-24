@@ -9,7 +9,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import BiblioItem from './BiblioItem';
-import Clock from './Clock';
 
 const BIBLIOLIST = styled.div`
   h1 {
@@ -228,7 +227,6 @@ class BiblioList extends Component {
           </div>
           <ul>
             {BiblioList.filter((event) => {
-              console.log(event, category);
               // eslint-disable-next-line react/destructuring-assignment
               return (
                 event.fields.categorie_1 === this.state.category &&

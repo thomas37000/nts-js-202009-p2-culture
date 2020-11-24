@@ -87,7 +87,7 @@ const DIV = styled.div`
     .SyntheticTimetable {
       font-size: 12px;
       text-align: left;
-      width: 10rem;
+      width: 7.5rem;
     }
     .SyntheticPhoto {
       width: 9rem;
@@ -133,7 +133,6 @@ class EventItem extends Component {
       ville: city,
       precisions_tarifs: price,
     } = this.props;
-    console.log(this.props);
     return (
       <div>
         <DIV>
