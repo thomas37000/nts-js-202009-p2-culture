@@ -34,11 +34,18 @@ const Section = styled.section`
   }
 
     .react-calendar__tile--active {
-    background: navy;
+    background: #000080;
   }
+
   .react-calendar__tile--now {
-    background: tomato;
+    background: #000080;
+    color: #FFF;
+    opacity: 0.75;
   }
+
+  .react-calendar__tile--active:enabled:hover, .react-calendar__tile--active:enabled:focus {
+    background: #000080;
+}
 
   @media screen and (min-width: 768px) {
     margin: 5rem auto;
