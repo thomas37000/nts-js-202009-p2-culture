@@ -84,11 +84,11 @@ export default class Filters extends React.Component {
   render() {
     return (
       <Section>
-        <h2 className="filter-title">filtrer par date :</h2>
+        <h2>filtrer par date :</h2>
         <div className="calendar-filter">
           <HomeCalendar changeDate={this.changeDate} />
         </div>
-        <h2 className="filter-title">filtrer par prix :</h2>
+        <h2>filtrer par prix :</h2>
         <div className="price-filter">
           <Slider changePrice={this.changePrice} />
         </div>
