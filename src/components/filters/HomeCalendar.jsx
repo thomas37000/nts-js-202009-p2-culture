@@ -45,10 +45,11 @@ class HomeCalendar extends Component {
   }
 
   render() {
+    const { date } = this.state;
     return (
       <Section>
         <h1 className="h1-filter">Filtrer par date :</h1>
-        <Calendar onChange={this.onChange} value={this.state.date} />
+        <Calendar onChange={this.onChange} value={date} />
       </Section>
     );
   }

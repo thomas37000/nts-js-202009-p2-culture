@@ -183,4 +183,10 @@ EventItem.propTypes = {
   heure_fin: PropTypes.string,
 };
 
+EventItem.defaultProps = {
+  precisions_tarifs: '',
+  libelle_festival: '',
+  heure_debut: '',
+  heure_fin: '',
+};
 export default EventItem;

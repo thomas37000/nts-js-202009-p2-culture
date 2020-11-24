@@ -72,7 +72,7 @@ class EventList extends Component {
               })
               .map((event) => {
                 return (
-                  <li key={event.fields.recordid}>
+                  <li key={event.recordid}>
                     <EventItem {...event.fields} recordid={event.recordid} />
                   </li>
                 );
