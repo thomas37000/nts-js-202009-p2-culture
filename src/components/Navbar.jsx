@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Burger from './Burger';
 import Logo from './categories/img/NantEvent.png';
+import { Link } from 'react-router-dom'
 
 const Nav = styled.nav`
   width: 100%;
@@ -29,7 +30,9 @@ const Nav = styled.nav`
 const Navbar = () => {
   return (
     <Nav>
-      <img className="logo" src={Logo} alt="" />
+      <Link to="/">
+        <img className="logo" src={Logo} alt="" />
+      </Link>
       <Burger />
     </Nav>
   );
