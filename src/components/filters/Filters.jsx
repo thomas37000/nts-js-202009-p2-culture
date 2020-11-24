@@ -24,7 +24,6 @@ const Section = styled.section`
     }
   }
 
-
   .react-calendar {
     width: 80%;
     margin: auto;
