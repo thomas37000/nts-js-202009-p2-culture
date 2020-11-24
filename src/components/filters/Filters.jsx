@@ -11,6 +11,20 @@ const Section = styled.section`
   justify-content: space-between;
   align-items: center;
 
+  h2 {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    @media screen and (min-width: 768px) {
+      font-size: 0.9rem;
+      text-align: left;
+      margin-bottom: 1rem;
+    }
+  }
+
+
   .react-calendar {
     width: 80%;
     margin: auto;
@@ -57,9 +71,11 @@ export default class Filters extends React.Component {
     return (
       <Section>
         <div className="calendar-filter">
+          <h2>Filtre par date :</h2>
           <HomeCalendar changeDate={this.changeDate} />
         </div>
         <div className="price-filter">
+          <h2>Filtre par prix :</h2>
           <Slider changePrice={this.changePrice} />
         </div>
       </Section>
