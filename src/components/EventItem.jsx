@@ -20,7 +20,8 @@ const DIV = styled.div`
   font-family: Roboto, sans-serif;
   background-color: #c4c4c4;
   border-radius: 5px;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
   font-size: 0.75em;
 
   .SyntheticTimetable {
@@ -79,8 +80,8 @@ const DIV = styled.div`
     padding: 1rem;
     max-width: 65rem;
     height: auto;
-    background-color: #c4c4c4;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
     font-size: 0.75em;
 
     .SyntheticTimetable {

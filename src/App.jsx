@@ -22,12 +22,12 @@ import Contact from './components/Contact';
 import DetailEvent from './components/DetailEvent';
 
 const H1 = styled.h1`
-  font-size: 2.5rem;
-  text-align: center;
-  margin: 2rem;
+  font-size: 2rem;
   color: #000080;
-  text-shadow: 0 -1px 4px #fff, 0 -2px 10px #ff0, 0 -10px 20px #49ff18,
-    0 -18px 40px #f00;
+  text-align: center;
+  letter-spacing: 0.3rem;
+  text-shadow: 1px 1px 2px #0e0d0d;
+  width: 100%;
 `;
 
 const CATEGORY = styled.div`
