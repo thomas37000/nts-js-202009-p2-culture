@@ -4,7 +4,7 @@ import Slider from './Slider';
 import HomeCalendar from './HomeCalendar';
 
 const Section = styled.section`
-  margin: 0 auto;
+  margin:  0 0;
   height: 60vh;
   display: flex;
   flex-direction: column;
@@ -12,7 +12,7 @@ const Section = styled.section`
   align-items: center;
 
   .price-filter {
-    margin-bottom: 5rem;
+    margin-bottom: 0;
   }
 
   .filter-title {
@@ -48,9 +48,11 @@ const Section = styled.section`
 }
 
   @media screen and (min-width: 768px) {
-    margin: 5rem auto;
+    margin: 5rem 1rem;
     justify-content: space-around;
     align-items: flex-start;
+    height: 80vh;
+    width: 40vw;
 
     .react-calendar {
       width: 40vw;
@@ -84,11 +86,11 @@ export default class Filters extends React.Component {
   render() {
     return (
       <Section>
-        <h2>filtrer par date :</h2>
+        <h4>filtrer par date :</h4>
         <div className="calendar-filter">
           <HomeCalendar changeDate={this.changeDate} />
         </div>
-        <h2>filtrer par prix :</h2>
+        <h4>filtrer par prix :</h4>
         <div className="price-filter">
           <Slider changePrice={this.changePrice} />
         </div>

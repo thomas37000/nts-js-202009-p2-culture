@@ -15,7 +15,7 @@ const DIV = styled.div`
   text-align: left;
   margin: 1rem;
   padding: 1rem;
-  width: auto;
+  width: 90vw;
   height: auto;
   font-family: Roboto, sans-serif;
   background-color: #c4c4c4;
