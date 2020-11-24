@@ -1,14 +1,5 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-alert */
-/* eslint-disable react/sort-comp */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable no-shadow */
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/no-unused-state */
-/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import axios from 'axios';
 import EventItem from './EventItem';
@@ -16,6 +7,7 @@ import EventItem from './EventItem';
 const EVENTLIST = styled.div`
   ul {
     padding: 0;
+    margin: 2rem auto;
   }
 
   li {
@@ -28,24 +20,6 @@ const EVENTLIST = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-  }
-
-  button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
-    margin: 1rem;
-    width: 5rem;
-  }
-
-  input {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
-    margin: 2rem;
-    width: 10rem;
   }
 `;
 
@@ -80,9 +54,11 @@ class EventList extends Component {
   render() {
     // eslint-disable-next-line no-shadow
     const { EventList } = this.state;
-    const price = this.props.price;
-    console.log(price);
+    // eslint-disable-next-line react/prop-types
+    const { price } = this.props;
+    // eslint-disable-next-line react/destructuring-assignment
     const date = this.props.date
+      // eslint-disable-next-line react/destructuring-assignment
       ? this.props.date.toLocaleDateString().split('/').reverse().join('-')
       : null;
     return (
@@ -115,5 +91,11 @@ class EventList extends Component {
     );
   }
 }
+
+EventList.propTypes = {
+  id_manif: PropTypes.string.isRequired,
+  libelle_festival: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+};
 
 export default EventList;

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Section = styled.section`
-  border: solid #006edc 2px;
+  border: solid #000080 2px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
