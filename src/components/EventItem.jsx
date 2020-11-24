@@ -78,7 +78,7 @@ const DIV = styled.div`
     align-items: center;
     text-align: left;
     padding: 1rem;
-    max-width: 65rem;
+    width: 50vw;
     height: auto;
     background-color: #fff;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
