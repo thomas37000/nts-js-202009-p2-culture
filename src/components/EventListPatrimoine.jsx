@@ -5,6 +5,7 @@ import axios from 'axios';
 import EventItem from './EventItem';
 
 const EVENTLIST = styled.div`
+  width: 100%;
   ul {
     padding: 0;
     margin: 2rem auto;
