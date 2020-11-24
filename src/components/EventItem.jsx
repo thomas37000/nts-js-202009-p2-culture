@@ -75,7 +75,7 @@ const DIV = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: left;
+    align-items: center;
     text-align: left;
     padding: 1rem;
     width: 50vw;
@@ -90,7 +90,7 @@ const DIV = styled.div`
       width: 9rem;
     }
     .SyntheticPhoto {
-      width: 9rem;
+      max-width: 15rem;
       height: auto;
     }
     .SyntheticInformation {
