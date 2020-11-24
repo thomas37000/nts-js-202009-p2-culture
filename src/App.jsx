@@ -59,7 +59,6 @@ class App extends Component {
 
   dateUpdate(date) {
     this.setState({ date });
-    console.log('app : ', date);
   }
 
   priceUpdate(price) {
