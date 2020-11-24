@@ -20,6 +20,13 @@ const Section = styled.section`
       margin-bottom: 1rem;
     }
   }
+
+  .react-calendar__tile--active {
+    background: navy;
+  }
+  .react-calendar__tile--now {
+    background: tomato;
+  }
 `;
 
 class HomeCalendar extends Component {

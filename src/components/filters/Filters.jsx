@@ -22,6 +22,10 @@ const Section = styled.section`
     background: #d8d8d8;
   }
 
+  .price-filter {
+    margin-bottom: 5rem;
+  }
+
   @media screen and (min-width: 768px) {
     margin: auto;
     justify-content: space-around;
@@ -52,10 +56,10 @@ export default class Filters extends React.Component {
   render() {
     return (
       <Section>
-        <div className="calendar">
+        <div className="calendar-filter">
           <HomeCalendar changeDate={this.changeDate} />
         </div>
-        <div className="price">
+        <div className="price-filter">
           <Slider changePrice={this.changePrice} />
         </div>
       </Section>
