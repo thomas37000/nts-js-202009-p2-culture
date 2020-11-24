@@ -7,19 +7,23 @@ text-shadow: 2px 2px 2px white;
 color: #000080;
 font-size: xx-large;
 padding: 20px;
+
+h1 {
+  display: none;
 }
 
-@media and (min-width: 765px) {
-animation: none;
 `;
 
 class Scrolltxt extends Component {
   render () {
     return (
       <DIV>
-      <ScrollText speed={100}>
+      <ScrollText className="scroll" speed={100}>
         Bienvenue sur Nant'Events, un événement pour chacune de vos envies !
       </ScrollText>
+      <div className="scrolldesktop">
+        <h1>Bienvenue sur Nant'Events, un événement pour chacune de vos envies !</h1>
+      </div>
      </DIV> 
     )
   }
