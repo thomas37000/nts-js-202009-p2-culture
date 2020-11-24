@@ -20,6 +20,7 @@ import BiblioList from './components/BiblioList';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
 import DetailEvent from './components/DetailEvent';
+import Scrolltxt from './components/Scrolltxt';
 
 
 const H1 = styled.h1`
@@ -62,6 +63,7 @@ class App extends Component {
           <Navbar />
           <Switch>
             <Route exact path="/">
+              <Scrolltxt />
               <Grid />
               <Filters dateUpdate={this.dateUpdate} />
               <EventList date={this.state.date} />
