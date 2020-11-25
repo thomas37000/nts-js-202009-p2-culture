@@ -1,9 +1,6 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable no-template-curly-in-string */
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const FIGURE = styled.figure`
@@ -39,16 +36,10 @@ const FIGURE = styled.figure`
     line-height: 1.6;
     width: 100%;
     height: auto;
-    background-color: #c4c4c4;
+    background-color: #eaeaea;
     box-shadow: none;
     border-radius: none;
     font-size: 0.75rem;
-  }
-
-  iframe {
-    max-width: 90%;
-    max-height: 90%;
-    margin: 1rem;
   }
 
   .horaire {
@@ -77,12 +68,11 @@ const FIGURE = styled.figure`
     width: auto;
   }
 
-  .location,
-  .map {
+  .location {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: auto;
+    width: 100vw;
   }
 
   @media screen and (min-width: 800px) {
@@ -123,7 +113,7 @@ const FIGURE = styled.figure`
       line-height: 1.6;
       width: 100%;
       height: auto;
-      background-color: #c4c4c4;
+      background-color: #eaeaea;
       box-shadow: none;
       border-radius: none;
       font-size: 1rem;
@@ -152,14 +142,12 @@ class DetailEvent extends Component {
   }
 
   componentDidMount() {
-    // eslint-disable-next-line react/prop-types
     const { id } = this.props.match.params;
     axios
       .get(
         `https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_agenda-evenements-nantes-nantes-metropole&refine.recordid=${id}`
       )
       .then((response) => {
-        console.log(response);
         this.setState({
           eventDetails: response.data.records[0].fields,
         });
@@ -224,9 +212,6 @@ class DetailEvent extends Component {
                     : 'non précisé'}
                 </p>
               </div>
-              <div className="map">
-                <iframe src="https://google/maps/gfpwj2aMgwTsRtEy7" />
-              </div>
             </div>
           </section>
         </FIGURE>
@@ -234,5 +219,13 @@ class DetailEvent extends Component {
     );
   }
 }
+
+DetailEvent.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string,
+    }),
+  }).isRequired,
+};
 
 export default DetailEvent;
