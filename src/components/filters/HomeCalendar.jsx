@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import 'react-calendar/dist/Calendar.css';
 
 const Section = styled.section`
   display: flex;
@@ -16,7 +17,7 @@ const Section = styled.section`
   }
 `;
 
-class HomeCalendar extends Component {
+export default class HomeCalendar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -35,10 +36,12 @@ class HomeCalendar extends Component {
     const { date } = this.state;
     return (
       <Section>
-        <Calendar onChange={this.onChange} value={this.state.date} />
+        <Calendar onChange={this.onChange} value={date} />
       </Section>
     );
   }
 }
 
-export default HomeCalendar;
+HomeCalendar.propTypes = {
+  changeDate: PropTypes.func.isRequired,
+};

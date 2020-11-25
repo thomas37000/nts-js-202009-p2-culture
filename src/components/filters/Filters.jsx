@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import Slider from './Slider';
 import HomeCalendar from './HomeCalendar';
 
@@ -98,3 +99,8 @@ export default class Filters extends React.Component {
     );
   }
 }
+
+Filters.propTypes = {
+  dateUpdate: PropTypes.func.isRequired,
+  priceUpdate: PropTypes.func.isRequired,
+};
