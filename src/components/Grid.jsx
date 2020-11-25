@@ -76,7 +76,7 @@ const Container = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    width: 100vw;
+    width: 100%;
 
     .container {
       height: 37.5vh;
