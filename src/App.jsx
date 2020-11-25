@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable import/no-named-as-default */
 /* eslint-disable import/no-named-as-default-member */
 /* eslint-disable react/jsx-indent */
@@ -40,9 +41,12 @@ const CATEGORY = styled.div`
 
 const SELECTION = styled.div`
   display: flex;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
+  flex-direction: column;
   margin-bottom: 3rem;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row-reverse;
+  }
 `;
 
 const SPAN = styled.span`
@@ -50,6 +54,11 @@ const SPAN = styled.span`
   font-size: 1rem;
   margin: 1rem;
   justify-content: left;
+  border: 3px solid #000080;
+  background-color: #000080;
+  color: #f5f5f5;
+  border-radius: 4px;
+  text-decoration: none;
 `;
 
 class App extends Component {
@@ -160,8 +169,16 @@ class App extends Component {
                 </Link>
               </CATEGORY>
               <H1>Evènements du Voyage à Nantes</H1>
-              <Filters dateUpdate={this.dateUpdate} />
-              <EventListVoyageNantes date={this.state.date} />
+              <SELECTION>
+                <Filters
+                  dateUpdate={this.dateUpdate}
+                  priceUpdate={this.priceUpdate}
+                />
+                <EventListVoyageNantes
+                  date={this.state.date}
+                  price={this.state.price}
+                />
+              </SELECTION>
               <ScrollUpButton
                 style={{
                   backgroundColor: 'none',
@@ -185,8 +202,16 @@ class App extends Component {
                 </Link>
               </CATEGORY>
               <H1>Animations estivales</H1>
-              <Filters dateUpdate={this.dateUpdate} />
-              <EventListEstivales date={this.state.date} />
+              <SELECTION>
+                <Filters
+                  dateUpdate={this.dateUpdate}
+                  priceUpdate={this.priceUpdate}
+                />
+                <EventListEstivales
+                  date={this.state.date}
+                  price={this.state.price}
+                />
+              </SELECTION>
               <ScrollUpButton
                 style={{
                   backgroundColor: 'none',
@@ -210,8 +235,16 @@ class App extends Component {
                 </Link>
               </CATEGORY>
               <H1>Journées du Patrimoine</H1>
-              <Filters dateUpdate={this.dateUpdate} />
-              <EventListPatrimoine date={this.state.date} />
+              <SELECTION>
+                <Filters
+                  dateUpdate={this.dateUpdate}
+                  priceUpdate={this.priceUpdate}
+                />
+                <EventListPatrimoine
+                  date={this.state.date}
+                  price={this.state.price}
+                />
+              </SELECTION>
               <ScrollUpButton
                 style={{
                   backgroundColor: 'none',

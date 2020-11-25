@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Section = styled.section`
-  border: solid #c4c4c4 2px;
+  border: solid navy 2px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   display: flex;
@@ -24,7 +24,7 @@ const Section = styled.section`
   }
   .slider {
     width: 80%;
-    margin: 0 auto;
+    margin: 0;
   }
 
   @media screen and (min-width: 768px) {

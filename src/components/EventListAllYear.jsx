@@ -5,6 +5,7 @@ import axios from 'axios';
 import EventItem from './EventItem';
 
 const EVENTLIST = styled.div`
+  width: 100%;
   ul {
     padding: 0;
     margin: 2rem auto;
@@ -46,22 +47,18 @@ class EventListAllYear extends Component {
   }
 
   render() {
-    // eslint-disable-next-line no-shadow
-    const { EventListAllYear } = this.state;
-    // eslint-disable-next-line react/prop-types
+    const { EventListAllYear: eventList } = this.state;
+
     const { price } = this.props;
-    // eslint-disable-next-line react/destructuring-assignment
-    const date = this.props.date
-      ? // eslint-disable-next-line react/destructuring-assignment
-        this.props.date.toLocaleDateString().split('/').reverse().join('-')
-      : null;
+    let { date } = this.props;
+
+    date = date ? new Intl.DateTimeFormat('fr-ca').format(date) : null;
     return (
       <div className="EventListAllYear">
         <EVENTLIST>
           <ul>
-            {EventListAllYear.filter((event) =>
-              date ? date === event.fields.date : true
-            )
+            {eventList
+              .filter((event) => (date ? date === event.fields.date : true))
               .filter((event) => {
                 if (price === '0') {
                   return (

@@ -15,7 +15,7 @@ const DIV = styled.div`
   text-align: left;
   margin: 1rem;
   padding: 1rem;
-  width: auto;
+  width: 90vw;
   height: auto;
   font-family: Roboto, sans-serif;
   background-color: #c4c4c4;
@@ -87,10 +87,10 @@ const DIV = styled.div`
     .SyntheticTimetable {
       font-size: 12px;
       text-align: left;
-      width: 7.5rem;
+      width: 9rem;
     }
     .SyntheticPhoto {
-      width: 9rem;
+      max-width: 15rem;
       height: auto;
     }
     .SyntheticInformation {

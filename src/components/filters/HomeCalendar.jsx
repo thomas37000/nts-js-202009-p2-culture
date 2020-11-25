@@ -8,24 +8,11 @@ const Section = styled.section`
   flex-direction: column;
   justify-content: center;
 
-  .h1-filter {
-    font-size: 0.9rem;
-    text-align: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-
     @media screen and (min-width: 768px) {
       font-size: 0.9rem;
       text-align: left;
       margin-bottom: 1rem;
     }
-  }
-
-  .react-calendar__tile--active {
-    background: navy;
-  }
-  .react-calendar__tile--now {
-    background: tomato;
   }
 `;
 
@@ -48,8 +35,7 @@ class HomeCalendar extends Component {
     const { date } = this.state;
     return (
       <Section>
-        <h1 className="h1-filter">Filtrer par date :</h1>
-        <Calendar onChange={this.onChange} value={date} />
+        <Calendar onChange={this.onChange} value={this.state.date} />
       </Section>
     );
   }
