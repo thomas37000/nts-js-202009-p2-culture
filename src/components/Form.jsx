@@ -19,7 +19,9 @@ const DIV = styled.div`
     width: 300px;
     border: 2px solid navy;
     margin-bottom: 20px;
+    resize: none;
   }
+
   input {
     height: 40px;
     width: 300px;
@@ -106,6 +108,7 @@ class Form extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // eslint-disable-next-line class-methods-use-this
   handleSubmit(e) {
     e.preventDefault();
   }
@@ -119,7 +122,7 @@ class Form extends Component {
     return (
       <DIV className="formContact">
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name">Nom:</label>
           <input
             type="text"
             name="name"
@@ -127,7 +130,7 @@ class Form extends Component {
             value={name}
             onChange={this.handleChange}
           />
-          <label htmlFor="Email">Email:</label>
+          <label htmlFor="Email">E-mail:</label>
           <input
             type="text"
             placeholder="exemple@wcs.com"
@@ -138,7 +141,7 @@ class Form extends Component {
           <label htmlFor="objet">Objet:</label>
           <input
             type="text"
-            placeholder="your object"
+            placeholder="votre objet"
             onChange={this.handleChange}
             name="objet"
             value={objet}
@@ -153,7 +156,7 @@ class Form extends Component {
             cols="30"
           />
           <button type="button" onClick={this.handleSubmit}>
-            Submit
+            Envoyer
           </button>
         </form>
       </DIV>
