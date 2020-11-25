@@ -87,10 +87,10 @@ const DIV = styled.div`
     .SyntheticTimetable {
       font-size: 12px;
       text-align: left;
-      width: 7.5rem;
+      width: 9rem;
     }
     .SyntheticPhoto {
-      width: 9rem;
+      max-width: 15rem;
       height: auto;
     }
     .SyntheticInformation {
