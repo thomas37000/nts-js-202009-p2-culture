@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+// import Maps from './Maps';
 
 const FIGURE = styled.figure`
   .eventName {
@@ -168,6 +169,8 @@ class DetailEvent extends Component {
 
   render() {
     const { eventDetails } = this.state;
+    // eslint-disable-next-line react/prop-types
+    const { id } = this.props.match.params;
     return (
       <div>
         <FIGURE className="DetailCard">
@@ -225,7 +228,7 @@ class DetailEvent extends Component {
                 </p>
               </div>
               <div className="map">
-                <iframe src="https://google/maps/gfpwj2aMgwTsRtEy7" />
+                {/* <Maps id={id} {...eventDetails} /> */}
               </div>
             </div>
           </section>

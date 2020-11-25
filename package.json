@@ -9,12 +9,14 @@
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
     "dom": "0.0.3",
+    "leaflet": "^1.7.1",
     "material-design-icons": "^3.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-bootstrap": "^1.4.0",
     "react-calendar": "^3.2.0",
     "react-dom": "^16.14.0",
+    "react-leaflet": "^3.0.2",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.3",
@@ -44,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "@types/leaflet": "^1.5.19",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.2.0",
