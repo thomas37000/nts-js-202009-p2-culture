@@ -176,12 +176,6 @@ class BiblioList extends Component {
     return (
       <div className="EventList">
         <BIBLIOLIST>
-          <div className="title">
-            <h1>
-              Agenda des animations culturelles des bibliothèques et
-              médiathèques de la ville de Nantes
-            </h1>
-          </div>
           <div className="today">
             <button type="button" onClick={this.todayDate}>
               Aujourd'hui
