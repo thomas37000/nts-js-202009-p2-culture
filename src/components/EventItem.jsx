@@ -69,6 +69,17 @@ const DIV = styled.div`
     align-self: center;
     font-size: 0.8rem;
     margin-top: 0.5rem;
+    font-weight: bold;
+    align-self: center;
+    text-align: center;
+    color: #000080;
+    text-decoration: 'none';
+  }
+
+  a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: none;
   }
 
   @media screen and (min-width: 768px) {
@@ -106,8 +117,17 @@ const DIV = styled.div`
     .SyntheticDetail {
       width: 10rem;
       font-size: 0.8rem;
+      font-weight: bold;
       align-self: center;
       text-align: center;
+      color: #000080;
+      text-decoration: 'none';
+    }
+
+    a:-webkit-any-link {
+      color: -webkit-link;
+      cursor: pointer;
+      text-decoration: none;
     }
   }
 `;

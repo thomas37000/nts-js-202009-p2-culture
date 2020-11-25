@@ -8,7 +8,7 @@ const EVENTLIST = styled.div`
   width: 100%;
   ul {
     padding: 0;
-    margin: 2rem auto;
+    margin: 4rem;
   }
 
   li {
