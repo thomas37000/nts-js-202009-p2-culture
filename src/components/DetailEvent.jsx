@@ -5,13 +5,17 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const FIGURE = styled.figure`
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+
   .eventName {
     display: flex;
     flex-direction: column;
     text-align: center;
     margin: 0;
+    width: 100%;
   }
-
   .eventName h1 {
     margin: 0.5rem;
     color: #000080;
@@ -25,7 +29,7 @@ const FIGURE = styled.figure`
   h2,
   h3,
   h4 {
-    margin: 0.75rem;
+    margin: 0.5rem;
   }
 
   .Card {
@@ -48,7 +52,7 @@ const FIGURE = styled.figure`
   }
 
   .photo {
-    width: 100%;
+    width: 95%;
     height: auto;
     background-position: center;
     background-size: cover;
@@ -56,9 +60,9 @@ const FIGURE = styled.figure`
     margin: 0rem;
   }
 
-  .information,
-  .location {
+  .information {
     padding: 1rem;
+    width: 95vw;
   }
 
   .description {
@@ -73,12 +77,13 @@ const FIGURE = styled.figure`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100vw;
+    width: 95vw;
+    padding: 1rem;
   }
 
   @media screen and (min-width: 800px) {
     .photo {
-      width: 30%;
+      width: 25%;
       height: auto;
       position: relative;
       box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.15);
@@ -126,10 +131,15 @@ const FIGURE = styled.figure`
     }
     .information {
       margin: 2rem;
+      width: 50%;
     }
-
+    .location {
+      width: 25%;
+      margin: 2rem;
+      margin-bottom: auto;
+    }
     .price {
-      width: 60rem;
+      width: 100%;
     }
   }
 `;
@@ -158,70 +168,64 @@ class DetailEvent extends Component {
   render() {
     const { eventDetails } = this.state;
     return (
-      <div>
-        <FIGURE className="DetailCard">
-          <section className="eventName">
-            <h1>{eventDetails.libelle_festival}</h1>
-            <h2>{eventDetails.nom}</h2>
-          </section>
-          <section className="Card">
-            <img
-              className="photo"
-              src={eventDetails.media_1}
-              alt={eventDetails.nom}
-            />
-            <div className="information">
-              <h1 className="date">{eventDetails.date}</h1>
-              <h4 className="description">
-                Description : {eventDetails.description}
-              </h4>
-              <h4 className="accessibilité">
-                Public :{' '}
-                {eventDetails.precisions_public !== undefined
-                  ? eventDetails.precisions_public
+      <FIGURE className="DetailCard">
+        <section className="eventName">
+          <h1>{eventDetails.libelle_festival}</h1>
+          <h2>{eventDetails.nom}</h2>
+        </section>
+        <section className="Card">
+          <img
+            className="photo"
+            src={eventDetails.media_1}
+            alt={eventDetails.nom}
+          />
+          <div className="information">
+            <h1 className="date">{eventDetails.date}</h1>
+            <h4 className="description">
+              Description : {eventDetails.description}
+            </h4>
+            <h4 className="accessibilité">
+              Public :{' '}
+              {eventDetails.precisions_public !== undefined
+                ? eventDetails.precisions_public
+                : 'non précisé'}
+            </h4>
+            <h4 className="lieu">Lieu : {eventDetails.lieu}</h4>
+            <h4>
+              Horaire : {eventDetails.heure_debut} - {eventDetails.heure_fin}
+            </h4>
+            <h4 className="gratuité">Gratuité : {eventDetails.gratuit}</h4>
+            <h4 className="price">Tarif : {eventDetails.precisions_tarifs}</h4>
+          </div>
+          <div className="location">
+            <h3>Coordonnées :</h3>
+            <p>
+              Adresse :{' '}
+              {eventDetails.adresse !== undefined
+                ? eventDetails.adresse
+                : 'non précisé'}
+            </p>
+            <p>Ville : {eventDetails.ville}</p>
+            <p>
+              Tél. :{' '}
+              {eventDetails.lieu_tel !== undefined
+                ? eventDetails.lieu_tel
+                : 'non précisé'}
+            </p>
+            <p>
+              site web :{' '}
+              <Link
+                to={{ pathname: eventDetails.lieu_siteweb }}
+                target="_blank"
+              >
+                {eventDetails.lieu_siteweb !== undefined
+                  ? eventDetails.lieu_siteweb
                   : 'non précisé'}
-              </h4>
-              <h4 className="lieu">Lieu : {eventDetails.lieu}</h4>
-              <h4>
-                Horaire : {eventDetails.heure_debut} - {eventDetails.heure_fin}
-              </h4>
-              <h4 className="gratuité">Gratuité : {eventDetails.gratuit}</h4>
-              <h4 className="price">
-                Tarif : {eventDetails.precisions_tarifs}
-              </h4>
-            </div>
-            <div className="location">
-              <div className="contact">
-                <h3>Coordonnées :</h3>
-                <p>
-                  Adresse :{' '}
-                  {eventDetails.adresse !== undefined
-                    ? eventDetails.adresse
-                    : 'non précisé'}
-                </p>
-                <p>Ville : {eventDetails.ville}</p>
-                <p>
-                  Tél. :{' '}
-                  {eventDetails.lieu_tel !== undefined
-                    ? eventDetails.lieu_tel
-                    : 'non précisé'}
-                </p>
-                <p>
-                  site web :{' '}
-                  <Link
-                    to={{ pathname: eventDetails.lieu_siteweb }}
-                    target="_blank"
-                  >
-                    {eventDetails.lieu_siteweb !== undefined
-                      ? eventDetails.lieu_siteweb
-                      : 'non précisé'}
-                  </Link>
-                </p>
-              </div>
-            </div>
-          </section>
-        </FIGURE>
-      </div>
+              </Link>
+            </p>
+          </div>
+        </section>
+      </FIGURE>
     );
   }
 }
