@@ -12,7 +12,7 @@ const CLOCK = styled.div`
   }
 `;
 
-class Clock extends React.Component {
+export default class Clock extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,14 +26,13 @@ class Clock extends React.Component {
     });
   }
   render() {
+    const { date } = this.state;
     return (
       <div>
         <CLOCK>
-          <p className="App-clock">Aujourd'hui : {this.state.date}</p>
+          <p className="App-clock">Aujourd'hui : {date}</p>
         </CLOCK>
       </div>
     );
   }
 }
-
-export default Clock;

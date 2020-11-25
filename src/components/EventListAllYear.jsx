@@ -8,7 +8,7 @@ const EVENTLIST = styled.div`
   width: 100%;
   ul {
     padding: 0;
-    margin: 2rem auto;
+    margin: 4rem;
   }
 
   li {
@@ -18,7 +18,7 @@ const EVENTLIST = styled.div`
   }
 `;
 
-class EventListAllYear extends Component {
+export default class EventListAllYear extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -56,7 +56,7 @@ class EventListAllYear extends Component {
     return (
       <div className="EventListAllYear">
         <EVENTLIST>
-          <ul>
+          <ul className>
             {eventList
               .filter((event) => (date ? date === event.fields.date : true))
               .filter((event) => {
@@ -76,12 +76,8 @@ class EventListAllYear extends Component {
               })
               .map((event) => {
                 return (
-                  <li>
-                    <EventItem
-                      key={event.fields.recordid}
-                      {...event.fields}
-                      recordid={event.recordid}
-                    />
+                  <li key={event.recordid}>
+                    <EventItem {...event.fields} recordid={event.recordid} />
                   </li>
                 );
               })}
@@ -93,8 +89,6 @@ class EventListAllYear extends Component {
 }
 
 EventListAllYear.propTypes = {
-  date: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  date: PropTypes.instanceOf(Date).isRequired,
+  price: PropTypes.number.isRequired,
 };
-
-export default EventListAllYear;

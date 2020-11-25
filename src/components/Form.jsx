@@ -97,67 +97,67 @@ const DIV = styled.div`
 
 class Form extends Component {
   constructor(props) {
-  super(props)
-  this.state = {
-    name: '',
-  };
+    super(props);
+    this.state = {
+      name: '',
+    };
 
-  this.handleChange = this.handleChange.bind(this);
-  this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit (e) {
+  handleSubmit(e) {
     e.preventDefault();
-  };
-  
-  handleChange (e) {
-    this.setState({[e.target.name] : e.target.value})
-  };
+  }
 
+  handleChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
 
   render() {
-  return (
-    <DIV className="formContact">
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          name="name"
-          placeholder=""
-          value={this.state.name}
-          onChange={this.handleChange}
-        />
-        <label htmlFor="Email">Email:</label>
-        <input
-          type="text"
-          placeholder="exemple@wcs.com"
-          onChange={this.handleChange}
-          name="email"
-          value={this.state.email}
-        />
-        <label htmlFor="objet">Objet:</label>
-        <input
-          type="text"
-          placeholder="your object"
-          onChange={this.handleChange}
-          name="objet"
-          value={this.state.objet}
-        />
-        <label htmlFor="texte">Texte:</label>
-        <textarea
-          className="textesize"
-          type="textarea"
-          name="textValue"
-          onChange={this.handleChange}
-          rows="10"
-          cols="30"
-        />
-        <button type="button" onClick={this.handleSubmit}>
-          Submit
-        </button>
-      </form>
-    </DIV>
-  );
-}
+    const { name, email, objet } = this.state;
+    return (
+      <DIV className="formContact">
+        <form onSubmit={this.handleSubmit}>
+          <label htmlFor="name">Name:</label>
+          <input
+            type="text"
+            name="name"
+            placeholder=""
+            value={name}
+            onChange={this.handleChange}
+          />
+          <label htmlFor="Email">Email:</label>
+          <input
+            type="text"
+            placeholder="exemple@wcs.com"
+            onChange={this.handleChange}
+            name="email"
+            value={email}
+          />
+          <label htmlFor="objet">Objet:</label>
+          <input
+            type="text"
+            placeholder="your object"
+            onChange={this.handleChange}
+            name="objet"
+            value={objet}
+          />
+          <label htmlFor="texte">Texte:</label>
+          <textarea
+            className="textesize"
+            type="textarea"
+            name="textValue"
+            onChange={this.handleChange}
+            rows="10"
+            cols="30"
+          />
+          <button type="button" onClick={this.handleSubmit}>
+            Submit
+          </button>
+        </form>
+      </DIV>
+    );
+  }
 }
 export default Form;

@@ -18,7 +18,7 @@ const EVENTLIST = styled.div`
   }
 `;
 
-class EventListVoyagePatrimoine extends Component {
+export default class EventListVoyagePatrimoine extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -82,12 +82,8 @@ class EventListVoyagePatrimoine extends Component {
               })
               .map((event) => {
                 return (
-                  <li>
-                    <EventItem
-                      key={event.fields.recordid}
-                      {...event.fields}
-                      recordid={event.recordid}
-                    />
+                  <li key={event.recordid}>
+                    <EventItem {...event.fields} recordid={event.recordid} />
                   </li>
                 );
               })}
@@ -99,8 +95,6 @@ class EventListVoyagePatrimoine extends Component {
 }
 
 EventListVoyagePatrimoine.propTypes = {
-  date: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  date: PropTypes.instanceOf(Date).isRequired,
+  price: PropTypes.number.isRequired,
 };
-
-export default EventListVoyagePatrimoine;

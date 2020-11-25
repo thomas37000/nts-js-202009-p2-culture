@@ -3,7 +3,7 @@ import React from 'react';
 import GitApi from './GitApi';
 import Form from './Form';
 
-function Contact() {
+export default function Contact() {
   return (
     <div>
       <GitApi />
@@ -11,5 +11,3 @@ function Contact() {
     </div>
   );
 }
-
-export default Contact;
