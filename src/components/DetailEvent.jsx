@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const FIGURE = styled.figure`
   .eventName {
@@ -120,7 +121,7 @@ const FIGURE = styled.figure`
     }
 
     .description {
-      width: 60rem;
+      width: 50vw;
       text-align: justify;
     }
     .information {
@@ -207,9 +208,11 @@ class DetailEvent extends Component {
                 </p>
                 <p>
                   site web :{' '}
+                  <Link to={{ pathname: eventDetails.lieu_siteweb }} target="_blank">
                   {eventDetails.lieu_siteweb !== undefined
                     ? eventDetails.lieu_siteweb
                     : 'non précisé'}
+                  </Link>
                 </p>
               </div>
             </div>
