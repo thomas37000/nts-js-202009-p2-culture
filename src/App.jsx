@@ -1,13 +1,7 @@
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable import/no-named-as-default */
-/* eslint-disable import/no-named-as-default-member */
-/* eslint-disable react/jsx-indent */
 /* eslint-disable react/destructuring-assignment */
-/* eslint-disable object-shorthand */
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import styled from 'styled-components';
-// eslint-disable-next-line import/no-unresolved
 import { TinyButton as ScrollUpButton } from 'react-scroll-up-button';
 import Navbar from './components/Navbar';
 import Grid from './components/Grid';
@@ -137,7 +131,7 @@ class App extends Component {
                   <SPAN>Journées du patrimoine</SPAN>
                 </Link>
               </CATEGORY>
-              <H1>Evènements tout au long de l'année</H1>
+              <H1>Evènements tout au long de l&apos;année</H1>
               <SELECTION>
                 <Filters
                   dateUpdate={this.dateUpdate}
@@ -161,7 +155,7 @@ class App extends Component {
             <Route exact path="/voyage">
               <CATEGORY>
                 <Link to="/diversite">
-                  <SPAN>Toute l'année</SPAN>
+                  <SPAN>Toute l&apos;année</SPAN>
                 </Link>
                 <Link to="/animations">
                   <SPAN>Animations estivales</SPAN>
@@ -194,7 +188,7 @@ class App extends Component {
             <Route exact path="/animations">
               <CATEGORY>
                 <Link to="/diversite">
-                  <SPAN>Toute l'année</SPAN>
+                  <SPAN>Toute l&apos;année</SPAN>
                 </Link>
                 <Link to="/voyage">
                   <SPAN>Voyage à Nantes</SPAN>
@@ -233,7 +227,7 @@ class App extends Component {
                   <SPAN>Animations estivales</SPAN>
                 </Link>
                 <Link to="/diversite">
-                  <SPAN>Toute l'année</SPAN>
+                  <SPAN>Toute l&apos;année</SPAN>
                 </Link>
               </CATEGORY>
               <H1>Journées du Patrimoine</H1>
