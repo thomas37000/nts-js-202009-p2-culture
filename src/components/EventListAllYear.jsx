@@ -8,7 +8,7 @@ const EVENTLIST = styled.div`
   width: 100%;
   ul {
     padding: 0;
-    margin: 2rem auto;
+    margin: 4rem;
   }
 
   li {
@@ -56,7 +56,7 @@ class EventListAllYear extends Component {
     return (
       <div className="EventListAllYear">
         <EVENTLIST>
-          <ul>
+          <ul className>
             {eventList
               .filter((event) => (date ? date === event.fields.date : true))
               .filter((event) => {

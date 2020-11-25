@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -98,8 +99,6 @@ const FIGURE = styled.figure`
     .eventName h2 {
       font-size: 2rem;
       color: #000080;
-      padding-bottom: 40px;
-      padding-top: 20px;
       text-align: center;
       letter-spacing: 0.3rem;
       text-shadow: 1px 1px 2px #0e0d0d;
@@ -209,9 +208,14 @@ class DetailEvent extends Component {
                 </p>
                 <p>
                   site web :{' '}
-                  {eventDetails.lieu_siteweb !== undefined
-                    ? eventDetails.lieu_siteweb
-                    : 'non précisé'}
+                  <Link
+                    to={{ pathname: eventDetails.lieu_siteweb }}
+                    target="_blank"
+                  >
+                    {eventDetails.lieu_siteweb !== undefined
+                      ? eventDetails.lieu_siteweb
+                      : 'non précisé'}
+                  </Link>
                 </p>
               </div>
             </div>
