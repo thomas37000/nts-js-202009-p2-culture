@@ -56,7 +56,6 @@ const Section = styled.section`
     margin: 5rem 1rem;
     justify-content: space-around;
     align-items: flex-start;
-    height: 80vh;
     width: 40vw;
 
     .react-calendar {
