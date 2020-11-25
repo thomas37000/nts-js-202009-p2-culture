@@ -121,7 +121,7 @@ const FIGURE = styled.figure`
     }
 
     .description {
-      width: 60rem;
+      width: 50vw;
       text-align: justify;
     }
     .information {
