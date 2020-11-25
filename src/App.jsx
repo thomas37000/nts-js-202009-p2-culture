@@ -50,6 +50,11 @@ const SPAN = styled.span`
   font-size: 1rem;
   margin: 1rem;
   justify-content: left;
+  border: 3px solid #000080;
+  background-color: #000080;
+  color: #f5f5f5;
+  border-radius: 4px;
+  text-decoration: none;
 `;
 
 class App extends Component {
