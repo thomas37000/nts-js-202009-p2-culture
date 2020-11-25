@@ -36,7 +36,7 @@ const FIGURE = styled.figure`
     line-height: 1.6;
     width: 100%;
     height: auto;
-    background-color: #c4c4c4;
+    background-color: #eaeaea;
     box-shadow: none;
     border-radius: none;
     font-size: 0.75rem;
@@ -113,7 +113,7 @@ const FIGURE = styled.figure`
       line-height: 1.6;
       width: 100%;
       height: auto;
-      background-color: #c4c4c4;
+      background-color: #eaeaea;
       box-shadow: none;
       border-radius: none;
       font-size: 1rem;
