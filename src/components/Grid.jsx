@@ -76,12 +76,14 @@ const Container = styled.div`
   }
 
   @media screen and (min-width: 768px) {
+    width: 100%;
+
     .container {
       height: 37.5vh;
       margin: auto;
       display: flex;
       column-gap: 13px;
-      width: 100vw;
+      width: 97%;
     }
     .bg {
       height: 100%;

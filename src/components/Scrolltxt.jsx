@@ -1,31 +1,33 @@
-import React, {Component} from 'react';
-import ScrollText from 'react-scroll-text';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const DIV = styled.div`
-text-shadow: 2px 2px 2px white;
-color: #000080;
-font-size: xx-large;
-padding: 20px;
+  text-shadow: 2px 2px 2px white;
+  color: #000080;
+  padding: 20px;
+  text-align: center;
+  font-size: smaller;
 
-h1 {
-  display: none;
-}
-
+  @media screen and (min-width: 765px) {
+    h1 {
+      text-align: center;
+      font-size: xx-larger;
+    }
+  }
 `;
 
 class Scrolltxt extends Component {
-  render () {
+  render() {
     return (
       <DIV>
-      <ScrollText className="scroll" speed={100}>
-        Bienvenue sur Nant'Events, un événement pour chacune de vos envies !
-      </ScrollText>
-      <div className="scrolldesktop">
-        <h1>Bienvenue sur Nant'Events, un événement pour chacune de vos envies !</h1>
-      </div>
-     </DIV> 
-    )
+        <div className="scrolldesktop">
+          <h1>
+            Bienvenue sur Nant&apos;Events, un événement pour chacune de vos
+            envies !
+          </h1>
+        </div>
+      </DIV>
+    );
   }
 }
 

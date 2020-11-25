@@ -4,12 +4,12 @@ import GithubProfil from './GithubProfil';
 import styled from 'styled-components';
 
 const DIV = styled.div`
-h1 {
-  display: flex;
-  justify-content: center;
-  margin: 50px;
-  color: #000080;
-}
+  h1 {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+    color: #000080;
+  }
   @media (min-width: 1224px) {
     .Team {
       display: flex;
@@ -19,13 +19,13 @@ h1 {
       padding: 40px;
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
     }
+
     h1 {
       display: flex;
       justify-content: center;
       margin: 50px;
       color: #000080;
     }
-
   }
 `;
 
@@ -46,7 +46,6 @@ class GitApi extends Component {
     axios
       .get(`https://raw.githubusercontent.com/Francois2344/demo/master/db.json`)
       .then((response) => {
-        console.log(response);
         this.setState({
           profile: response.data,
         });

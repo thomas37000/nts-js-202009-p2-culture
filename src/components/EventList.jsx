@@ -4,7 +4,8 @@ import styled from 'styled-components';
 import axios from 'axios';
 import EventItem from './EventItem';
 
-const EVENTLIST = styled.div`
+const Section = styled.div`
+  width: 100%;
   ul {
     padding: 0;
     margin-top: 4rem;
@@ -17,7 +18,7 @@ const EVENTLIST = styled.div`
   }
 `;
 
-class EventList extends Component {
+export default class EventList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -54,43 +55,35 @@ class EventList extends Component {
     date = date ? new Intl.DateTimeFormat('fr-ca').format(date) : null;
 
     return (
-      <div className="EventList">
-        <EVENTLIST>
-          <ul>
-            {eventList
-              .filter((event) => {
-                return date ? date === event.fields.date : true;
-              })
-              .filter((event) => {
-                if (price === '0') {
-                  return event.fields.gratuit === 'oui';
-                }
-                if (price === '1') {
-                  return event.fields.gratuit === 'non';
-                }
-                return true;
-              })
-              .map((event) => {
-                return (
-                  <li>
-                    <EventItem
-                      key={event.fields.recordid}
-                      {...event.fields}
-                      recordid={event.recordid}
-                    />
-                  </li>
-                );
-              })}
-          </ul>
-        </EVENTLIST>
-      </div>
+      <Section>
+        <ul>
+          {eventList
+            .filter((event) => {
+              return date ? date === event.fields.date : true;
+            })
+            .filter((event) => {
+              if (price === '0') {
+                return event.fields.gratuit === 'oui';
+              }
+              if (price === '1') {
+                return event.fields.gratuit === 'non';
+              }
+              return true;
+            })
+            .map((event) => {
+              return (
+                <li key={event.recordid}>
+                  <EventItem {...event.fields} recordid={event.recordid} />
+                </li>
+              );
+            })}
+        </ul>
+      </Section>
     );
   }
 }
 
 EventList.propTypes = {
-  date: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  date: PropTypes.instanceOf(Date).isRequired,
+  price: PropTypes.number.isRequired,
 };
-
-export default EventList;

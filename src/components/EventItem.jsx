@@ -15,7 +15,7 @@ const DIV = styled.div`
   text-align: left;
   margin: 1rem;
   padding: 1rem;
-  width: auto;
+  width: 90vw;
   height: auto;
   font-family: Roboto, sans-serif;
   background-color: #c4c4c4;
@@ -69,6 +69,17 @@ const DIV = styled.div`
     align-self: center;
     font-size: 0.8rem;
     margin-top: 0.5rem;
+    font-weight: bold;
+    align-self: center;
+    text-align: center;
+    color: #000080;
+    text-decoration: 'none';
+  }
+
+  a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: none;
   }
 
   @media screen and (min-width: 768px) {
@@ -78,7 +89,7 @@ const DIV = styled.div`
     align-items: center;
     text-align: left;
     padding: 1rem;
-    max-width: 65rem;
+    width: 50vw;
     height: auto;
     background-color: #fff;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
@@ -87,10 +98,10 @@ const DIV = styled.div`
     .SyntheticTimetable {
       font-size: 12px;
       text-align: left;
-      width: 7.5rem;
+      width: 10rem;
     }
     .SyntheticPhoto {
-      width: 9rem;
+      max-width: 15rem;
       height: auto;
     }
     .SyntheticInformation {
@@ -106,8 +117,17 @@ const DIV = styled.div`
     .SyntheticDetail {
       width: 10rem;
       font-size: 0.8rem;
+      font-weight: bold;
       align-self: center;
       text-align: center;
+      color: #000080;
+      text-decoration: 'none';
+    }
+
+    a:-webkit-any-link {
+      color: -webkit-link;
+      cursor: pointer;
+      text-decoration: none;
     }
   }
 `;
@@ -171,16 +191,22 @@ class EventItem extends Component {
 
 EventItem.propTypes = {
   id_manif: PropTypes.string.isRequired,
-  libelle_festival: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   nom: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   media_1: PropTypes.string.isRequired,
-  heure_debut: PropTypes.string.isRequired,
-  heure_fin: PropTypes.string.isRequired,
   lieu: PropTypes.string.isRequired,
   ville: PropTypes.string.isRequired,
-  precisions_tarifs: PropTypes.string.isRequired,
+  precisions_tarifs: PropTypes.string,
+  libelle_festival: PropTypes.string,
+  heure_debut: PropTypes.string,
+  heure_fin: PropTypes.string,
 };
 
+EventItem.defaultProps = {
+  precisions_tarifs: '',
+  libelle_festival: '',
+  heure_debut: '',
+  heure_fin: '',
+};
 export default EventItem;

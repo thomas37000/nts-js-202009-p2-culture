@@ -5,9 +5,10 @@ import axios from 'axios';
 import EventItem from './EventItem';
 
 const EVENTLIST = styled.div`
+  width: 100%;
   ul {
     padding: 0;
-    margin: 2rem auto;
+    margin: 4rem;
   }
 
   li {
@@ -17,7 +18,7 @@ const EVENTLIST = styled.div`
   }
 `;
 
-class EventListAllYear extends Component {
+export default class EventListAllYear extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -46,22 +47,18 @@ class EventListAllYear extends Component {
   }
 
   render() {
-    // eslint-disable-next-line no-shadow
-    const { EventListAllYear } = this.state;
-    // eslint-disable-next-line react/prop-types
+    const { EventListAllYear: eventList } = this.state;
+
     const { price } = this.props;
-    // eslint-disable-next-line react/destructuring-assignment
-    const date = this.props.date
-      ? // eslint-disable-next-line react/destructuring-assignment
-        this.props.date.toLocaleDateString().split('/').reverse().join('-')
-      : null;
+    let { date } = this.props;
+
+    date = date ? new Intl.DateTimeFormat('fr-ca').format(date) : null;
     return (
       <div className="EventListAllYear">
         <EVENTLIST>
-          <ul>
-            {EventListAllYear.filter((event) =>
-              date ? date === event.fields.date : true
-            )
+          <ul className>
+            {eventList
+              .filter((event) => (date ? date === event.fields.date : true))
               .filter((event) => {
                 if (price === '0') {
                   return (
@@ -79,12 +76,8 @@ class EventListAllYear extends Component {
               })
               .map((event) => {
                 return (
-                  <li>
-                    <EventItem
-                      key={event.fields.recordid}
-                      {...event.fields}
-                      recordid={event.recordid}
-                    />
+                  <li key={event.recordid}>
+                    <EventItem {...event.fields} recordid={event.recordid} />
                   </li>
                 );
               })}
@@ -96,8 +89,6 @@ class EventListAllYear extends Component {
 }
 
 EventListAllYear.propTypes = {
-  date: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  date: PropTypes.instanceOf(Date).isRequired,
+  price: PropTypes.number.isRequired,
 };
-
-export default EventListAllYear;
