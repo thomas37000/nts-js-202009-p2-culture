@@ -67,9 +67,15 @@ const Footer = () => {
             <a href="https://www.wildcodeschool.com/">Partenaires</a>
           </div>
           <div className="footer-logo">
-            <img src={facebook} alt="facebook" />
-            <img src={instagram} alt="instagram" />
-            <img src={twitter} alt="twitter" />
+            <a href="https://www.facebook.com/">
+              <img src={facebook} alt="facebook" />
+            </a>
+            <a href="https://www.instagram.com/">
+              <img src={instagram} alt="instagram" />
+            </a>
+            <a href="https://twitter.com/">
+              <img src={twitter} alt="twitter" />
+            </a>
           </div>
         </footer>
       </FOOTER>

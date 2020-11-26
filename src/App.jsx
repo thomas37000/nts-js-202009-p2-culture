@@ -104,6 +104,10 @@ class App extends Component {
               />
             </Route>
             <Route exact path="/bibliotheques">
+              <H1>
+                Animations culturelles des bibliothèques et médiathèques de
+                Nantes
+              </H1>
               <BiblioList />
               <ScrollUpButton
                 style={{

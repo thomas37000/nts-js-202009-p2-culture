@@ -200,7 +200,7 @@ class DetailEvent extends Component {
                 : 'non précisé'}
             </p>
             <p>
-              site web :{' '}
+              Site Web :{' '}
               <Link
                 to={{ pathname: eventDetails.lieu_siteweb }}
                 target="_blank"
