@@ -49,7 +49,7 @@ const DIV = styled.div`
 
   .SyntheticPhoto {
     margin: auto;
-    max-width: 15rem;
+    width: 10rem;
     height: auto;
   }
 
