@@ -6,7 +6,6 @@ import HomeCalendar from './HomeCalendar';
 
 const Section = styled.section`
   margin: 0 0;
-  height: 65vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -53,6 +52,7 @@ const Section = styled.section`
   }
 
   @media screen and (min-width: 768px) {
+    height: 75vh;
     margin: 5rem 1rem;
     justify-content: space-around;
     align-items: flex-start;
