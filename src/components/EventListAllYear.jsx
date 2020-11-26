@@ -90,5 +90,5 @@ export default class EventListAllYear extends Component {
 
 EventListAllYear.propTypes = {
   date: PropTypes.instanceOf(Date).isRequired,
-  price: PropTypes.number.isRequired,
+  price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
