@@ -172,7 +172,7 @@ class BiblioList extends Component {
   }
 
   render() {
-    const { BiblioList, category } = this.state;
+    const { BiblioList } = this.state;
     return (
       <div className="EventList">
         <BIBLIOLIST>
