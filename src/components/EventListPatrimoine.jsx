@@ -96,5 +96,5 @@ export default class EventListVoyagePatrimoine extends Component {
 
 EventListVoyagePatrimoine.propTypes = {
   date: PropTypes.instanceOf(Date).isRequired,
-  price: PropTypes.number.isRequired,
+  price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };

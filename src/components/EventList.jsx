@@ -85,5 +85,5 @@ export default class EventList extends Component {
 
 EventList.propTypes = {
   date: PropTypes.instanceOf(Date).isRequired,
-  price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };

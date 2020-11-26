@@ -102,5 +102,5 @@ export default class EventListEstivales extends Component {
 
 EventListEstivales.propTypes = {
   date: PropTypes.instanceOf(Date).isRequired,
-  price: PropTypes.number.isRequired,
+  price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
