@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Logo from './categories/img/NantEvent.png';
+import Logo from './img/NantEvent.png';
 
 const DIV = styled.div`
   background-color: navy;
@@ -23,7 +23,7 @@ const HeaderContact = () => {
   return (
     <DIV>
       <div className="title">
-        <img className="logo" src={Logo} alt="" />
+        <img className="logo" src={Logo} alt="acceuil" />
       </div>
     </DIV>
   );

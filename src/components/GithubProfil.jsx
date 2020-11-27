@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import logo1 from './linkedin.png';
-import logo2 from './GitHub-Mark.png';
+import logo1 from './img/linkedin.png';
+import logo2 from './img/GitHub-Mark.png';
 
 const DIV = styled.div`
   display: flex;

@@ -37,7 +37,7 @@ const Section = styled.section`
   }
 
   .react-calendar__tile--active {
-    background: #000080;
+    background: linear-gradient(23deg, rgb(13, 135, 255), rgb(0, 249, 255));
   }
 
   .react-calendar__tile--now {
@@ -48,7 +48,7 @@ const Section = styled.section`
 
   .react-calendar__tile--active:enabled:hover,
   .react-calendar__tile--active:enabled:focus {
-    background: #000080;
+    background: linear-gradient(23deg, rgb(13, 135, 255), rgb(0, 249, 255));
   }
 
   @media screen and (min-width: 768px) {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Logo from './img/NantEvent.png';
 
 const Slideburger = styled.ul`
   list-style: none;
@@ -10,34 +11,47 @@ const Slideburger = styled.ul`
 
   li {
     padding: 18px 10px;
-    background-color: #000080;
+    /* background-color: #000080; */
     color: #f5f5f5;
     padding: 20px;
   }
 
   a {
-    color: #ffffff;
+    color: blue;
+    text-decoration: none;
+    font-size: larger;
+  }
+
+  .logoBurger {
+    display: none;
   }
 
   @media (max-width: 768px) {
     flex-flow: column nowrap;
-    background-color: #000080;
+    background: linear-gradient(0deg, rgb(0, 135, 255), rgb(133, 249, 255));
     position: fixed;
     transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
     top: 0;
     right: 0;
     height: 40vh;
-    width: 300px;
+    width: 75%;
     padding-top: 5.5rem;
     transition: transform 0.3s ease-in-out;
 
     li {
       color: black;
       text-align: center;
-      border-bottom: 2px solid;
+      /* border-bottom: 2px solid; */
     }
     a {
       color: #ffffff;
+    }
+
+    .logoBurger {
+      display: block;
+      width: 100px;
+      height: 95px;
+      margin: auto;
     }
   } ;
 `;
@@ -46,12 +60,12 @@ const Slideburger = styled.ul`
 const RightNav = ({ open }) => {
   return (
     <Slideburger open={open}>
-      <li>
-        <Link to="/">Accueil</Link>
-      </li>
-      <li>
+      <Link to="/">
+        <img className="logoBurger" src={Logo} alt="acceuil" />
+      </Link>
+      {/* <li>
         <Link to="/bibliotheques">Bibliothèques / Médiathèques</Link>
-      </li>
+      </li> */}
       <li>
         <Link to="/contact">Contact</Link>
       </li>

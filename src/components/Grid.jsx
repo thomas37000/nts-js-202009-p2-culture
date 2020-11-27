@@ -4,9 +4,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import ligne from './imgGrid/ligne-verte-nantes.jpg';
-import chateau from './imgGrid/chateau.jpg';
-import animation from './imgGrid/animation.jpg';
-import cinema from './imgGrid/cinema.jpg';
+import chateau from './img/chateau.jpg';
+import animation from './img/animation.jpg';
+import cinema from './img/cinema.jpg';
 
 const Container = styled.div`
   @import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i');
@@ -49,9 +49,10 @@ const Container = styled.div`
   .bg .overlay p > a {
     text-decoration: none;
     color: #fff;
-    background: #000080;
-    padding: 2px;
+    background: linear-gradient(23deg, rgb(13, 135, 255), rgb(0, 249, 255));
+    padding: 5px;
     box-shadow: #ffffff 3px 3px 5px;
+    border-radius: 5px;
   }
 
   .bg .overlay p > a {

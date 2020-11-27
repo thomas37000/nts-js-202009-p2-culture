@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import twitter from './twitter.png';
-import instagram from './instagram.png';
-import facebook from './facebook.png';
+import twitter from './img/twitter.png';
+import instagram from './img/instagram.png';
+import facebook from './img/facebook.png';
 
 const FOOTER = styled.div`
   .Footer {
-    background-color: #000080;
+    background: linear-gradient(44deg, rgb(0, 135, 255), rgb(133, 249, 255));
     color: #f5f5f5;
     height: 11vh;
     display: flex;
@@ -29,7 +29,8 @@ const FOOTER = styled.div`
   }
 
   a {
-    color: #ffffff;
+    color: blue;
+    text-decoration: none;
   }
 
   @media screen and (min-width: 768px) {

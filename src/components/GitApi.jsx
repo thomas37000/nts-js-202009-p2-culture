@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import GithubProfil from './GithubProfil';
 import styled from 'styled-components';
+import GithubProfil from './GithubProfil';
 
 const DIV = styled.div`
   h1 {
