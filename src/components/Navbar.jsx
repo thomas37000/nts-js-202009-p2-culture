@@ -15,9 +15,10 @@ const Nav = styled.nav`
 
   .logo {
     display: flex;
-    width: 70px;
-    height: 65px;
+    width: 55px;
+    height: 55px;
     margin-left: 30px;
+    border-radius: 50%;
   }
 
   @media (max-width: 765px) {

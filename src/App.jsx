@@ -92,17 +92,6 @@ class App extends Component {
                 />
                 <EventList date={this.state.date} price={this.state.price} />
               </SELECTION>
-              <ScrollUpButton
-                style={{
-                  backgroundColor: 'none',
-                  width: '40px',
-                  height: '40px',
-                  outline: 'none',
-                  transform: 'translateY(-3rem) translateX(1.5rem)',
-                  borderRadius: '5px',
-                  boxShadow: '#ffffff 3px 3px 5px',
-                }}
-              />
             </Route>
             <Route exact path="/bibliotheques">
               <H1>
@@ -110,15 +99,6 @@ class App extends Component {
                 Nantes
               </H1>
               <BiblioList />
-              <ScrollUpButton
-                style={{
-                  backgroundColor: 'none',
-                  width: '40px',
-                  height: '40px',
-                  outline: 'none',
-                  transform: 'translateY(-3rem) translateX(1.5rem)',
-                }}
-              />
             </Route>
             <Route exact path="/contact">
               <Contact />
@@ -146,15 +126,6 @@ class App extends Component {
                   price={this.state.price}
                 />
               </SELECTION>
-              <ScrollUpButton
-                style={{
-                  backgroundColor: 'none',
-                  width: '40px',
-                  height: '40px',
-                  outline: 'none',
-                  transform: 'translateY(-3rem) translateX(1.5rem)',
-                }}
-              />
             </Route>
             <Route exact path="/voyage">
               <CATEGORY>
@@ -179,15 +150,6 @@ class App extends Component {
                   price={this.state.price}
                 />
               </SELECTION>
-              <ScrollUpButton
-                style={{
-                  backgroundColor: 'none',
-                  width: '40px',
-                  height: '40px',
-                  outline: 'none',
-                  transform: 'translateY(-3rem) translateX(1.5rem)',
-                }}
-              />
             </Route>
             <Route exact path="/animations">
               <CATEGORY>
@@ -212,15 +174,6 @@ class App extends Component {
                   price={this.state.price}
                 />
               </SELECTION>
-              <ScrollUpButton
-                style={{
-                  backgroundColor: 'none',
-                  width: '40px',
-                  height: '40px',
-                  outline: 'none',
-                  transform: 'translateY(-3rem) translateX(1.5rem)',
-                }}
-              />
             </Route>
             <Route exact path="/patrimoine">
               <CATEGORY>
@@ -245,19 +198,19 @@ class App extends Component {
                   price={this.state.price}
                 />
               </SELECTION>
-              <ScrollUpButton
-                style={{
-                  backgroundColor: 'none',
-                  width: '40px',
-                  height: '40px',
-                  outline: 'none',
-                  transform: 'translateY(-3rem) translateX(1.5rem)',
-                }}
-              />
             </Route>
             <Route exact path="/event/:id" component={DetailEvent} />
           </Switch>
           <Footer />
+          <ScrollUpButton
+            style={{
+              backgroundColor: 'none',
+              width: '40px',
+              height: '40px',
+              outline: 'none',
+              transform: 'translateY(-3rem) translateX(1.5rem)',
+            }}
+          />
         </Router>
       </>
     );

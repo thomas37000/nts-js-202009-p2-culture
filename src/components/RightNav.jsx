@@ -49,9 +49,10 @@ const Slideburger = styled.ul`
 
     .logoBurger {
       display: block;
-      width: 100px;
-      height: 95px;
+      width: 75px;
+      height: 75px;
       margin: auto;
+      border-radius: 50%;
     }
   } ;
 `;

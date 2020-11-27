@@ -18,10 +18,9 @@ const DIV = styled.div`
   width: 90vw;
   height: auto;
   font-family: Roboto, sans-serif;
-  background-color: #c4c4c4;
+  background-color: #eaeaea;
   border-radius: 5px;
-  background-color: #fff;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4); */
   font-size: 0.75em;
 
   .SyntheticTimetable {
@@ -91,8 +90,8 @@ const DIV = styled.div`
     padding: 1rem;
     width: 50vw;
     height: auto;
-    background-color: #fff;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+    background-color: #eaeaea;
+    /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); */
     font-size: 0.75em;
 
     .SyntheticTimetable {

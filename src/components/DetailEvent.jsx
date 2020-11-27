@@ -84,7 +84,7 @@ const FIGURE = styled.figure`
 
   @media screen and (min-width: 800px) {
     .photo {
-      width: 25%;
+      width: auto;
       height: auto;
       position: relative;
       box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.15);
