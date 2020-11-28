@@ -7,26 +7,31 @@ const DIV = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    width: 100%;
     height: 40%;
     margin: auto;
     margin-top: 20px;
     font-weight: bold;
     color: navy;
+    background: lightgrey;
+    padding: 2em;
   }
   .textesize {
     height: 100px;
     width: 300px;
-    border: 2px solid navy;
+
     margin-bottom: 20px;
     resize: none;
+    border-radius: 5px;
   }
 
   input {
     height: 40px;
     width: 300px;
-    border: 2px solid navy;
+
+    border-radius: 5px;
   }
+
   button {
     -moz-box-shadow: inset 0px 1px 0px 0px #97c4fe;
     -webkit-box-shadow: inset 0px 1px 0px 0px #97c4fe;
@@ -68,7 +73,8 @@ const DIV = styled.div`
     text-shadow: 0px 1px 0px #1570cd;
     margin-bottom: 10%;
   }
-  .classname:hover {
+
+  /* .className:hover {
     background: -webkit-gradient(
       linear,
       left top,
@@ -80,10 +86,13 @@ const DIV = styled.div`
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#000080');
     background-color: #1e62d0;
   }
-  .classname:active {
+
+  .className:active {
     position: relative;
     top: 1px;
-  }
+    background:red;
+  } */
+
   @media (min-width: 1224px) {
     input {
       width: 800px;
@@ -126,14 +135,14 @@ class Form extends Component {
           <input
             type="text"
             name="name"
-            placeholder=""
+            placeholder="Barack Obama"
             value={name}
             onChange={this.handleChange}
           />
           <label htmlFor="Email">E-mail:</label>
           <input
             type="text"
-            placeholder="exemple@wcs.com"
+            placeholder="Barack-Obama@wcs.com"
             onChange={this.handleChange}
             name="email"
             value={email}

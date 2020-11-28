@@ -34,7 +34,7 @@ const Slideburger = styled.ul`
     top: 0;
     right: 0;
     height: 40vh;
-    width: 75%;
+    width: 85%;
     padding-top: 5.5rem;
     transition: transform 0.3s ease-in-out;
 
