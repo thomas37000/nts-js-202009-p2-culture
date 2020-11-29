@@ -14,10 +14,6 @@ const DIV = styled.div`
     .Team {
       display: flex;
       justify-content: space-evenly;
-      margin-bottom: 150px;
-      margin-top: 100px;
-      padding: 40px;
-      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
     }
 
     h1 {

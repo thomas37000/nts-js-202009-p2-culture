@@ -7,7 +7,14 @@ import facebook from './img/facebook.png';
 
 const FOOTER = styled.div`
   .Footer {
-    background: linear-gradient(44deg, rgb(0, 135, 255), rgb(133, 249, 255));
+    background-image: linear-gradient(
+      to right,
+      #f2eb4a,
+      #d9f04e,
+      #bdf458,
+      #9ff765,
+      #7bf976
+    );
     color: #f5f5f5;
     height: 11vh;
     display: flex;
@@ -29,7 +36,7 @@ const FOOTER = styled.div`
   }
 
   a {
-    color: blue;
+    color: #fff;
     text-decoration: none;
   }
 

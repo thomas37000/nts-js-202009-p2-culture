@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import ligne from './imgGrid/ligne-verte-nantes.jpg';
+import ligne from './img/ligne-verte-nantes.jpg';
 import chateau from './img/chateau.jpg';
 import animation from './img/animation.jpg';
 import cinema from './img/cinema.jpg';
@@ -49,15 +49,13 @@ const Container = styled.div`
   .bg .overlay p > a {
     text-decoration: none;
     color: #fff;
-    background: linear-gradient(23deg, rgb(13, 135, 255), rgb(0, 249, 255));
+    background: tomato;
     padding: 5px;
-    box-shadow: #ffffff 3px 3px 5px;
     border-radius: 5px;
   }
 
   .bg .overlay p > a {
     font-family: 'Roboto', sans-serif;
-    box-shadow: #ffffff 3px 3px 5px;
     font-size: 1rem;
   }
 
@@ -89,7 +87,6 @@ const Container = styled.div`
     .bg {
       height: 100%;
       width: inherit;
-      box-shadow: #ffffff 2px 2px 3px;
     }
 
     .bg .overlay {
@@ -101,12 +98,11 @@ const Container = styled.div`
       padding-top: 30%;
       font-size: 2rem;
       margin: auto;
-      color: #000080;
     }
 
     .bg .overlay p > a {
       color: #fff;
-      background: #000080;
+      background: none;
       display: flex 80%;
       font-size: 1.25rem;
       justify-content: center;

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Section = styled.section`
-  border: solid navy 2px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   display: flex;

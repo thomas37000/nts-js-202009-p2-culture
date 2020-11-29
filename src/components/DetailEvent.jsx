@@ -101,14 +101,11 @@ const FIGURE = styled.figure`
       background-size: cover;
     }
 
-    .eventName h1,
     .eventName h2 {
       font-size: 2rem;
-      color: #000080;
+      color: #7bf976;
       text-align: center;
       letter-spacing: 0.3rem;
-      text-shadow: 1px 1px 2px #0e0d0d;
-      width: 100%;
     }
 
     .Card {
@@ -171,7 +168,7 @@ class DetailEvent extends Component {
     return (
       <FIGURE className="DetailCard">
         <section className="eventName">
-          <h1>{eventDetails.libelle_festival}</h1>
+          <h2>{eventDetails.libelle_festival}</h2>
           <h2>{eventDetails.nom}</h2>
         </section>
         <section className="Card">

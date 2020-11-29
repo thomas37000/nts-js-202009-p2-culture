@@ -29,7 +29,6 @@ const Section = styled.section`
     width: 80%;
     margin: auto;
     border-radius: 5px;
-    border: solid navy 2px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
   }
   .react-calendar__navigation {
@@ -37,18 +36,18 @@ const Section = styled.section`
   }
 
   .react-calendar__tile--active {
-    background: linear-gradient(23deg, rgb(13, 135, 255), rgb(0, 249, 255));
+    background: tomato;
   }
 
   .react-calendar__tile--now {
-    background: #000080;
+    background: tomato;
     color: #fff;
     opacity: 0.75;
   }
 
   .react-calendar__tile--active:enabled:hover,
   .react-calendar__tile--active:enabled:focus {
-    background: linear-gradient(23deg, rgb(13, 135, 255), rgb(0, 249, 255));
+    background: #7bf976;
   }
 
   @media screen and (min-width: 768px) {

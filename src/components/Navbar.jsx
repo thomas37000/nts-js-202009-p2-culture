@@ -2,14 +2,23 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Burger from './Burger';
-import Logo from './img/NantEvent.png';
+// import Logo from './img/NantEvent.png';
+import Logo from './img/logo-nantes-event.png';
+
 
 const Nav = styled.nav`
   width: 100%;
-  height: 70px;
+  height: 7vh;
   border-bottom: 2px solid #f5f5f5;
   display: flex;
-  background: linear-gradient(44deg, rgb(0, 135, 255), rgb(133, 249, 255));
+  /* background: linear-gradient(
+    to right,
+    #f2eb4a,
+    #d9f04e,
+    #bdf458,
+    #9ff765,
+    #7bf976
+  ); */
   justify-content: space-between;
   align-items: center;
 
@@ -89,7 +98,6 @@ const Navbar = () => {
       <Link to="/">
         <img className="logo" src={Logo} alt="" />
       </Link>
-
       <Burger />
     </Nav>
   );

@@ -19,13 +19,11 @@ import Scrolltxt from './components/Scrolltxt';
 
 const H1 = styled.h1`
   font-size: 2rem;
-  color: #000080;
+  color: #7bf976;
   padding-bottom: 40px;
   padding-top: 20px;
   text-align: center;
   letter-spacing: 0.3rem;
-  text-shadow: 1px 1px 2px #0e0d0d;
-  width: 100%;
 `;
 
 const CATEGORY = styled.div`
