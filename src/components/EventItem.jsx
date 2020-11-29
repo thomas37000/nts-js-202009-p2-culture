@@ -81,6 +81,10 @@ const DIV = styled.div`
     text-decoration: none;
   }
 
+  .TitleColor {
+    color: tomato;
+  }
+
   @media screen and (min-width: 768px) {
     display: flex;
     flex-direction: row;
@@ -93,6 +97,10 @@ const DIV = styled.div`
     background-color: #eaeaea;
     /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); */
     font-size: 0.75em;
+
+    .TitleColor {
+      color: tomato;
+    }
 
     .SyntheticTimetable {
       font-size: 12px;
@@ -170,14 +178,20 @@ class EventItem extends Component {
               <h3 className="name">{name}</h3>
             </div>
             <div className="SyntheticLocation">
-              <h4 className="location">Lieu : {location}</h4>
+              <h4 className="location">
+                <span className="TitleColor">Lieu :</span> {location}
+              </h4>
             </div>
             <div className="SyntheticCity">
-              <h4 className="city">Ville : {city}</h4>
+              <h4 className="city">
+                <span className="TitleColor">Ville :</span> {city}
+              </h4>
             </div>
           </div>
           <div className="SyntheticPrice">
-            <h4 className="price">Tarif : {price}</h4>
+            <h4 className="price">
+              <span className="TitleColor">Tarif :</span> {price}
+            </h4>
           </div>
           <div className="SyntheticDetail">
             <Link to={`/event/${id}`}>Voir plus</Link>

@@ -17,20 +17,21 @@ const FIGURE = styled.figure`
     margin: 0;
     width: 100%;
   }
-  .eventName h1 {
-    margin: 0.5rem;
-    color: #000080;
-  }
+  .eventName h1,
   .eventName h2 {
     margin: 0.5rem;
-    color: #000080;
+    color: tomato;
   }
 
   p,
   h2,
   h3,
-  h4 {
+  p {
     margin: 0.5rem;
+  }
+
+  .colorTitle {
+    color: tomato;
   }
 
   .Card {
@@ -83,6 +84,9 @@ const FIGURE = styled.figure`
   }
 
   @media screen and (min-width: 800px) {
+    .colorTitle {
+      color: tomato;
+    }
     .photo {
       width: auto;
       height: auto;
@@ -103,9 +107,9 @@ const FIGURE = styled.figure`
 
     .eventName h2 {
       font-size: 2rem;
-      color: #7bf976;
       text-align: center;
       letter-spacing: 0.3rem;
+      color: tomato;
     }
 
     .Card {
@@ -179,39 +183,53 @@ class DetailEvent extends Component {
           />
           <div className="information">
             <h1 className="date">{eventDetails.date}</h1>
-            <h4 className="description">
-              Description : {eventDetails.description}
-            </h4>
-            <h4 className="accessibilité">
-              Public :{' '}
+            <p className="description">
+              <span className="colorTitle">Description :</span>{' '}
+              {eventDetails.description}
+            </p>
+            <p className="accessibilité">
+              <span className="colorTitle">Public :</span>{' '}
               {eventDetails.precisions_public !== undefined
                 ? eventDetails.precisions_public
                 : 'non précisé'}
-            </h4>
-            <h4 className="lieu">Lieu : {eventDetails.lieu}</h4>
-            <h4>
-              Horaire : {eventDetails.heure_debut} - {eventDetails.heure_fin}
-            </h4>
-            <h4 className="gratuité">Gratuité : {eventDetails.gratuit}</h4>
-            <h4 className="price">Tarif : {eventDetails.precisions_tarifs}</h4>
+            </p>
+            <p className="lieu">
+              <span className="colorTitle">Lieu :</span> {eventDetails.lieu}
+            </p>
+            <p>
+              <span className="colorTitle">Horaire :</span>{' '}
+              {eventDetails.heure_debut} - {eventDetails.heure_fin}
+            </p>
+            <p className="gratuité">
+              <span className="colorTitle">Gratuité :</span>{' '}
+              {eventDetails.gratuit}
+            </p>
+            <p className="price">
+              <span className="colorTitle">Tarif :</span>{' '}
+              {eventDetails.precisions_tarifs}
+            </p>
           </div>
           <div className="location">
-            <h3>Coordonnées :</h3>
+            <h3>
+              <span className="colorTitle">Coordonnées :</span>
+            </h3>
             <p>
-              Adresse :{' '}
+              <span className="colorTitle">Adresse :</span>{' '}
               {eventDetails.adresse !== undefined
                 ? eventDetails.adresse
                 : 'non précisé'}
             </p>
-            <p>Ville : {eventDetails.ville}</p>
             <p>
-              Tél. :{' '}
+              <span className="colorTitle">Ville :</span> {eventDetails.ville}
+            </p>
+            <p>
+              <span className="colorTitle">Tél. :</span>{' '}
               {eventDetails.lieu_tel !== undefined
                 ? eventDetails.lieu_tel
                 : 'non précisé'}
             </p>
             <p>
-              Site Web :{' '}
+              <span className="colorTitle">Site Web :</span>{' '}
               <Link
                 to={{ pathname: eventDetails.lieu_siteweb }}
                 target="_blank"

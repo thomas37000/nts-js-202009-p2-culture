@@ -48,15 +48,16 @@ const Container = styled.div`
   .bg .overlay h2 a,
   .bg .overlay p > a {
     text-decoration: none;
-    color: #fff;
-    background: tomato;
     padding: 5px;
     border-radius: 5px;
+    background: #fff;
+    color: #262a2d;
   }
 
   .bg .overlay p > a {
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
+    color: tomato;
   }
 
   .bg .overlay {
@@ -101,11 +102,15 @@ const Container = styled.div`
     }
 
     .bg .overlay p > a {
-      color: #fff;
-      background: none;
+      color: tomato;
       display: flex 80%;
       font-size: 1.25rem;
       justify-content: center;
+    }
+
+    .bg .overlay h2 a,
+    .bg .overlay p > a {
+      background: #fff;
     }
 
     .bg:hover .overlay {

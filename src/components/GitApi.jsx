@@ -4,11 +4,11 @@ import styled from 'styled-components';
 import GithubProfil from './GithubProfil';
 
 const DIV = styled.div`
-  h1 {
+  h2 {
     display: flex;
     justify-content: center;
     margin: 50px;
-    color: #000080;
+    color: tomato;
   }
   @media (min-width: 1224px) {
     .Team {
@@ -16,11 +16,11 @@ const DIV = styled.div`
       justify-content: space-evenly;
     }
 
-    h1 {
+    h2 {
       display: flex;
       justify-content: center;
       margin: 50px;
-      color: #000080;
+      color: tomato;
     }
   }
 `;
@@ -52,7 +52,7 @@ class GitApi extends Component {
     const { profile } = this.state;
     return (
       <DIV>
-        <h1> Event Team ! </h1>
+        <h2> Event Team ! </h2>
         <div className="Team">
           {profile.map((profil) => (
             <GithubProfil key={profil.id} {...profil} />

@@ -19,8 +19,7 @@ const DIV = styled.div`
   }
   p {
     text-align: center;
-    color: navy;
-    font-weight: bold;
+    color: #262a2d;
   }
 `;
 
