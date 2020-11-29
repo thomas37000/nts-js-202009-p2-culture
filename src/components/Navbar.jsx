@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom';
 import Burger from './Burger';
 // import Logo from './img/NantEvent.png';
 import Logo from './img/logo-nantes-event.png';
-
+// import Header from './img/machines.jpg';
 
 const Nav = styled.nav`
   width: 100%;
   height: 7vh;
   border-bottom: 2px solid #f5f5f5;
   display: flex;
+  background-image: "url(" + { Header } + ")";
   /* background: linear-gradient(
     to right,
     #f2eb4a,
