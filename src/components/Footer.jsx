@@ -1,67 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import twitter from './img/twitter.png';
 import instagram from './img/instagram.png';
 import facebook from './img/facebook.png';
-
-const FOOTER = styled.div`
-  .Footer {
-    background-image: linear-gradient(
-      to right,
-      #f2eb4a,
-      #d9f04e,
-      #bdf458,
-      #9ff765,
-      #7bf976
-    );
-    color: #f5f5f5;
-    /* height: 11vh; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-  .Footer img {
-    width: 25px;
-    margin: 0 1rem;
-  }
-  .footer-link {
-    display: flex;
-    justify-content: space-around;
-    margin: 0 1rem;
-  }
-  .footer-logo {
-    display: flex;
-    justify-content: space-around;
-  }
-
-  a {
-    color: #fff;
-    text-decoration: none;
-  }
-
-  @media screen and (min-width: 768px) {
-    .Footer {
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: flex-end;
-    }
-    .footer-link {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      width: 85%;
-    }
-    .footer-logo {
-      margin: 10px;
-      align-items: center;
-    }
-    .Footer img {
-      margin-right: 10px;
-      width: 35px;
-    }
-  }
-`;
+import FOOTER from './styledComponents/FooterStyle';
 
 const Footer = () => {
   return (
@@ -70,9 +13,20 @@ const Footer = () => {
         <footer className="Footer">
           <div className="footer-link">
             <span>
+              <Link to="/diversite">Toute l&apos;année</Link>
+            </span>
+            <span>
+              <Link to="/voyage">Voyage à Nantes</Link>
+            </span>
+            <span>
+              <Link to="/animations">Animations estivales</Link>
+            </span>
+            <span>
               <Link to="/contact">Contact</Link>
             </span>
-            <a href="https://www.wildcodeschool.com/">Partenaires</a>
+            <span>
+              <a href="https://www.wildcodeschool.com/">Partenaires</a>
+            </span>
           </div>
           <div className="footer-logo">
             <a href="https://www.facebook.com/">

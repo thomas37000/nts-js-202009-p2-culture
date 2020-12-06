@@ -1,26 +1,15 @@
-/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import styled from 'styled-components';
 import { TinyButton as ScrollUpButton } from 'react-scroll-up-button';
+import styled from 'styled-components';
 import Navbar from './components/BurgerMenu/Navbar';
 import Scrolltxt from './components/Scrolltxt';
-import Grid from './components/Grid';
+// import Grid from './components/Grid';
 import Filters from './components/filters/Filters';
-import EventList from './components/Event/EventList';
-import RouteEventList from './components/Event/RouterEventList';
-import DetailEvent from './components/Event/DetailEvent';
+import EventList from './components/event/EventList';
+import RouteEventList from './components/event/RouterEventList';
+import DetailEvent from './components/event/DetailEvent';
 import Footer from './components/Footer';
-
-const SELECTION = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 3rem;
-
-  @media screen and (min-width: 768px) {
-    flex-direction: row-reverse;
-  }
-`;
 
 class App extends Component {
   constructor(props) {
@@ -42,6 +31,7 @@ class App extends Component {
   }
 
   render() {
+    const { date, price } = this.state;
     return (
       <>
         <Router>
@@ -49,17 +39,17 @@ class App extends Component {
           <Switch>
             <Route exact path="/">
               <Scrolltxt />
-              <Grid />
               <SELECTION>
                 <Filters
                   dateUpdate={this.dateUpdate}
                   priceUpdate={this.priceUpdate}
                 />
-                <EventList date={this.state.date} price={this.state.price} />
+                <EventList date={date} price={price} />
+                {/* <Grid /> */}
               </SELECTION>
             </Route>
-            <RouteEventList />
             <Route exact path="/event/:id" component={DetailEvent} />
+            <RouteEventList />
           </Switch>
           <Footer />
           <ScrollUpButton
@@ -78,3 +68,13 @@ class App extends Component {
 }
 
 export default App;
+
+const SELECTION = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row-reverse;
+  }
+`;

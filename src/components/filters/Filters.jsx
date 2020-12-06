@@ -23,6 +23,7 @@ const Section = styled.section`
     font-size: 0.9rem;
     text-align: center;
     margin-top: 1rem;
+    color: tomato;
   }
 
   .react-calendar {
@@ -54,8 +55,6 @@ const Section = styled.section`
     height: 75vh;
     margin: 5rem 1rem;
     justify-content: space-around;
-    align-items: flex-start;
-    width: 40vw;
 
     .react-calendar {
       width: 40vw;

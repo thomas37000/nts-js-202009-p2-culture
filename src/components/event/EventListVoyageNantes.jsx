@@ -1,22 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import axios from 'axios';
 import EventItem from './EventItem';
-
-const EVENTLIST = styled.div`
-  width: 100%;
-  ul {
-    padding: 0;
-    margin: 4rem;
-  }
-
-  li {
-    display: flex;
-    list-style: none;
-    justify-content: center;
-  }
-`;
+import EVENTLIST from '../styledComponents/EventListStyle';
 
 export default class EventListVoyageNantes extends Component {
   constructor(props) {

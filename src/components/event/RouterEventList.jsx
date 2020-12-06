@@ -1,48 +1,12 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
-// import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import { Route } from 'react-router-dom';
 import Filters from '../filters/Filters';
 import EventListAllYear from './EventListAllYear';
 import EventListVoyageNantes from './EventListVoyageNantes';
 import EventListEstivales from './EventListEstivales';
 import BiblioList from './BiblioList';
 import Contact from '../contact/Contact';
-
-const H1 = styled.h1`
-  font-size: 2rem;
-  color: #7bf976;
-  padding-bottom: 40px;
-  padding-top: 20px;
-  text-align: center;
-  letter-spacing: 0.3rem;
-`;
-
-const CATEGORY = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-`;
-
-const SELECTION = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 3rem;
-
-  @media screen and (min-width: 768px) {
-    flex-direction: row-reverse;
-  }
-`;
-
-const SPAN = styled.span`
-  display: flex;
-  font-size: 1rem;
-  margin: 1rem;
-  justify-content: left;
-  border-radius: 4px;
-  text-decoration: none;
-`;
+import DIV from '../styledComponents/RouterEventListStyle';
 
 class RouteEventList extends Component {
   constructor(props) {
@@ -66,71 +30,73 @@ class RouteEventList extends Component {
   render() {
     const { date, price } = this.state;
     return (
-      <>
+      <DIV>
         <Route exact path="/bibliotheques">
-          <H1>
+          <h2 className="titleRouter">
             Animations culturelles des bibliothèques et médiathèques de Nantes
-          </H1>
+          </h2>
           <BiblioList />
         </Route>
         <Route exact path="/contact">
           <Contact />
         </Route>
         <Route exact path="/diversite">
-          <CATEGORY>
+          {/* <div className="category">
             <Link to="/voyage">
-              <SPAN>Voyage à Nantes</SPAN>
+              <span className="spanRouter">Voyage à Nantes</span>
             </Link>
             <Link to="/animations">
-              <SPAN>Animations estivales</SPAN>
+              <span className="spanRouter">Animations estivales</span>
             </Link>
-          </CATEGORY>
-          <H1>Evènements tout au long de l&apos;année</H1>
-          <SELECTION>
+          </div> */}
+          <h2 className="titleRouter">
+            Evènements tout au long de l&apos;année
+          </h2>
+          <div className="selection">
             <Filters
               dateUpdate={this.dateUpdate}
               priceUpdate={this.priceUpdate}
             />
             <EventListAllYear date={date} price={price} />
-          </SELECTION>
+          </div>
         </Route>
         <Route exact path="/voyage">
-          <CATEGORY>
+          {/* <div className="category">
             <Link to="/diversite">
-              <SPAN>Toute l&apos;année</SPAN>
+              <span className="spanRouter">Toute l&apos;année</span>
             </Link>
             <Link to="/animations">
-              <SPAN>Animations estivales</SPAN>
+              <span className="spanRouter">Animations estivales</span>
             </Link>
-          </CATEGORY>
-          <H1>Evènements du Voyage à Nantes</H1>
-          <SELECTION>
+          </div> */}
+          <h2 className="titleRouter">Evènements du Voyage à Nantes</h2>
+          <div className="selection">
             <Filters
               dateUpdate={this.dateUpdate}
               priceUpdate={this.priceUpdate}
             />
             <EventListVoyageNantes date={date} price={price} />
-          </SELECTION>
+          </div>
         </Route>
         <Route exact path="/animations">
-          <CATEGORY>
+          {/* <div className="category">
             <Link to="/diversite">
-              <SPAN>Toute l&apos;année</SPAN>
+              <span className="spanRouter">Toute l&apos;année</span>
             </Link>
             <Link to="/voyage">
-              <SPAN>Voyage à Nantes</SPAN>
+              <span className="spanRouter">Voyage à Nantes</span>
             </Link>
-          </CATEGORY>
-          <H1>Animations estivales</H1>
-          <SELECTION>
+          </div> */}
+          <h2 className="titleRouter">Animations estivales</h2>
+          <div className="selection">
             <Filters
               dateUpdate={this.dateUpdate}
               priceUpdate={this.priceUpdate}
             />
             <EventListEstivales date={date} price={price} />
-          </SELECTION>
+          </div>
         </Route>
-      </>
+      </DIV>
     );
   }
 }
