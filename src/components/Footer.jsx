@@ -16,7 +16,7 @@ const FOOTER = styled.div`
       #7bf976
     );
     color: #f5f5f5;
-    height: 11vh;
+    /* height: 11vh; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;

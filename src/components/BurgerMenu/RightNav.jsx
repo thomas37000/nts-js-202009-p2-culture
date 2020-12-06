@@ -3,29 +3,29 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 // import Logo from './img/NantEvent.png';
 
-const Nav = styled.nav`
-  width: 100%;
-  height: 70px;
-  border-bottom: 2px solid #f5f5f5;
-  display: flex;
-  background: linear-gradient(44deg, rgb(0, 135, 255), rgb(133, 249, 255));
-  justify-content: space-between;
-  align-items: center;
+// const Nav = styled.nav`
+//   width: 100%;
+//   height: 70px;
+//   border-bottom: 2px solid #f5f5f5;
+//   display: flex;
+//   background: linear-gradient(44deg, rgb(0, 135, 255), rgb(133, 249, 255));
+//   justify-content: space-between;
+//   align-items: center;
 
-  .logo {
-    display: flex;
-    width: 55px;
-    height: 55px;
-    margin-left: 30px;
-    border-radius: 50%;
-  }
+//   .logo {
+//     display: flex;
+//     width: 55px;
+//     height: 55px;
+//     margin-left: 30px;
+//     border-radius: 50%;
+//   }
 
-  @media (max-width: 765px) {
-    .logo {
-      display: flex;
-    }
-  }
-`;
+//   @media (max-width: 765px) {
+//     .logo {
+//       display: flex;
+//     }
+//   }
+// `;
 
 const Slideburger = styled.ul`
   list-style: none;
@@ -94,9 +94,9 @@ const RightNav = ({ open }) => {
       <li>
         <Link to="/">Accueil</Link>
       </li>
-      <li>
+      {/* <li>
         <Link to="/bibliotheques">Bibliothèques / Médiathèques</Link>
-      </li>
+      </li> */}
       <li>
         <Link to="/contact">Contact</Link>
       </li>

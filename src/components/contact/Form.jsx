@@ -58,7 +58,6 @@ const DIV = styled.div`
     padding: 15px;
     background: #9ff765;
     width: 140px;
-   
   } */
 
   #button {
@@ -83,7 +82,7 @@ const DIV = styled.div`
   }
 
   .submit:hover {
-    color: tomato ;
+    color: tomato;
   }
 
   .ease {
@@ -131,6 +130,7 @@ class Form extends Component {
 
   // eslint-disable-next-line class-methods-use-this
   handleSubmit(e) {
+    // eslint-disable-next-line no-alert
     alert('Votre requête a était soumise aux administrateurs');
     e.preventDefault();
   }
@@ -190,7 +190,7 @@ class Form extends Component {
 
             <div className="submit">
               <input type="submit" value="SEND" id="button" />
-              <div className="ease"></div>
+              <div className="ease"> </div>
             </div>
 
             {/* <section>

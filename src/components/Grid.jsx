@@ -4,7 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import ligne from './img/ligne-verte-nantes.jpg';
-import chateau from './img/chateau.jpg';
+// import chateau from './img/chateau.jpg';
 import animation from './img/animation.jpg';
 import cinema from './img/cinema.jpg';
 
@@ -167,7 +167,7 @@ const Grid = () => {
             </p>
           </div>
         </div>
-        <div className="bg">
+        {/* <div className="bg">
           <img src={chateau} alt="Chateau_des_Ducs" />
           <div className="overlay">
             <h2>
@@ -177,7 +177,7 @@ const Grid = () => {
               <Link to="/patrimoine/">Les monuments nantais...</Link>
             </p>
           </div>
-        </div>
+        </div> */}
       </section>
     </Container>
   );
