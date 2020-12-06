@@ -16,9 +16,14 @@ class DetailEvent extends Component {
   componentDidMount() {
     const { id } = this.props.match.params;
     getEventById(id, (result) => {
-      this.setState({
-        eventDetails: result,
-      });
+      this.setState(
+        {
+          eventDetails: result,
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
     });
   }
 

@@ -18,9 +18,14 @@ export default class EventList extends Component {
 
   fetchDatas() {
     getApi((result) => {
-      this.setState({
-        EventList: result,
-      });
+      this.setState(
+        {
+          EventList: result,
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
     });
   }
 
