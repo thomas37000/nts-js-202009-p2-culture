@@ -1,9 +1,9 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import FIGURE from '../styledComponents/DetailEventStyle';
+import getEventById from '../../api/apiById';
 
 class DetailEvent extends Component {
   constructor(props) {
@@ -15,16 +15,11 @@ class DetailEvent extends Component {
 
   componentDidMount() {
     const { id } = this.props.match.params;
-    axios
-      .get(
-        `https://data.nantesmetropole.fr/api/records/1.0/search/?dataset=244400404_agenda-evenements-nantes-nantes-metropole&refine.recordid=${id}`
-      )
-      .then((response) => {
-        this.setState({
-          eventDetails: response.data.records[0].fields,
-        });
-        console.log(response);
+    getEventById(id, (result) => {
+      this.setState({
+        eventDetails: result,
       });
+    });
   }
 
   render() {
