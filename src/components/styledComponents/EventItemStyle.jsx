@@ -11,7 +11,6 @@ const DIV = styled.div`
   font-family: Roboto, sans-serif;
   background-color: #eaeaea;
   border-radius: 5px;
-  /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4); */
   font-size: 0.75em;
 
   .SyntheticTimetable {
@@ -86,7 +85,6 @@ const DIV = styled.div`
     width: 50vw;
     height: auto;
     background-color: #eaeaea;
-    /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); */
     font-size: 0.75em;
 
     .TitleColor {

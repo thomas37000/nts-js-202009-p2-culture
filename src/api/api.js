@@ -8,11 +8,13 @@ const params = {
   rows: 2000,
 };
 
-export default function getApi(onSuccess, onError) {
-  axios.get(`${API_URL}`, { params }).then(
+const getApi = async (onSuccess, onError) => {
+  await axios.get(`${API_URL}`, { params }).then(
     (response) => {
       onSuccess(response.data.records);
     },
     (error) => onError(error)
   );
-}
+};
+
+export default getApi;

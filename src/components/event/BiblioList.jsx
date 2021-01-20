@@ -38,8 +38,8 @@ class BiblioList extends Component {
     this.fetchDatas();
   }
 
-  fetchDatas() {
-    axios
+  async fetchDatas() {
+    await axios
       .get('https://data.nantesmetropole.fr/api/records/1.0/search/', {
         params: {
           dataset:

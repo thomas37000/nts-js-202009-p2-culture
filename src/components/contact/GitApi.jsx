@@ -38,8 +38,8 @@ class GitApi extends Component {
     this.fetchDatas();
   }
 
-  fetchDatas() {
-    axios
+  async fetchDatas() {
+    await axios
       .get(`https://raw.githubusercontent.com/Francois2344/demo/master/db.json`)
       .then((response) => {
         this.setState({

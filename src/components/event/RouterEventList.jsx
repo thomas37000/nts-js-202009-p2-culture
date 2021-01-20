@@ -41,14 +41,6 @@ class RouteEventList extends Component {
           <Contact />
         </Route>
         <Route exact path="/diversite">
-          {/* <div className="category">
-            <Link to="/voyage">
-              <span className="spanRouter">Voyage à Nantes</span>
-            </Link>
-            <Link to="/animations">
-              <span className="spanRouter">Animations estivales</span>
-            </Link>
-          </div> */}
           <h2 className="titleRouter">
             Evènements tout au long de l&apos;année
           </h2>
@@ -61,14 +53,6 @@ class RouteEventList extends Component {
           </div>
         </Route>
         <Route exact path="/voyage">
-          {/* <div className="category">
-            <Link to="/diversite">
-              <span className="spanRouter">Toute l&apos;année</span>
-            </Link>
-            <Link to="/animations">
-              <span className="spanRouter">Animations estivales</span>
-            </Link>
-          </div> */}
           <h2 className="titleRouter">Evènements du Voyage à Nantes</h2>
           <div className="selection">
             <Filters
@@ -79,14 +63,6 @@ class RouteEventList extends Component {
           </div>
         </Route>
         <Route exact path="/animations">
-          {/* <div className="category">
-            <Link to="/diversite">
-              <span className="spanRouter">Toute l&apos;année</span>
-            </Link>
-            <Link to="/voyage">
-              <span className="spanRouter">Voyage à Nantes</span>
-            </Link>
-          </div> */}
           <h2 className="titleRouter">Animations estivales</h2>
           <div className="selection">
             <Filters

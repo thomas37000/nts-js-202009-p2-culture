@@ -16,13 +16,14 @@ export default class EventList extends Component {
     this.fetchDatas();
   }
 
-  fetchDatas() {
-    getApi((result) => {
+  async fetchDatas() {
+    await getApi((result) => {
       this.setState(
         {
           EventList: result,
         },
         (error) => {
+          // eslint-disable-next-line no-console
           console.error(error);
         }
       );

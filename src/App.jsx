@@ -4,7 +4,6 @@ import { TinyButton as ScrollUpButton } from 'react-scroll-up-button';
 import styled from 'styled-components';
 import Navbar from './components/BurgerMenu/Navbar';
 import Scrolltxt from './components/Scrolltxt';
-// import Grid from './components/Grid';
 import Filters from './components/filters/Filters';
 import EventList from './components/event/EventList';
 import RouteEventList from './components/event/RouterEventList';
@@ -45,7 +44,6 @@ class App extends Component {
                   priceUpdate={this.priceUpdate}
                 />
                 <EventList date={date} price={price} />
-                {/* <Grid /> */}
               </SELECTION>
             </Route>
             <Route exact path="/event/:id" component={DetailEvent} />

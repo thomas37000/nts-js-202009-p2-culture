@@ -39,25 +39,6 @@ const DIV = styled.div`
     padding: 15px;
   }
 
-  /* .message {
-    width: 17rem;
-    height: 4rem;
-    border-radius: 0.5rem;
-    display: flex;
-    align-items: center;
-    padding-left: 1rem;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0.5rem;
-  } */
-
-  /* button {
-    border-radius: 10px;
-    padding: 15px;
-    background: #9ff765;
-    width: 140px;
-  } */
-
   #button {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     float: left;

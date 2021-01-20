@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { Component } from 'react';
 import DIV from '../styledComponents/FormStyle';
 
@@ -68,21 +67,11 @@ class Form extends Component {
               cols="30"
               required="required"
             />
-            {/* 
-            <button type="button" onClick={this.handleSubmit}>
-              Envoyer
-            </button> */}
 
             <div className="submit">
               <input type="submit" value="SEND" id="button" />
               <div className="ease"> </div>
             </div>
-
-            {/* <section>
-              <h2>Merci!</h2>
-              <p> </p>
-              <h3>Votre compte a été créé avec succès.</h3>
-            </section> */}
           </form>
         </DIV>
       </>

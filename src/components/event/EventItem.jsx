@@ -1,9 +1,6 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable react/prop-types */
-/* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/no-unused-prop-types */
-/* eslint-disable react/jsx-no-comment-textnodes */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';

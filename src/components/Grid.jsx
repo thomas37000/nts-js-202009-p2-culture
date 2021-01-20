@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ligne from './img/ligne-verte-nantes.jpg';
-// import chateau from './img/chateau.jpg';
 import animation from './img/animation.jpg';
 import cinema from './img/cinema.jpg';
 import Container from './styledComponents/GridStyle';
@@ -43,17 +42,6 @@ const Grid = () => {
             </p>
           </div>
         </div>
-        {/* <div className="bg">
-          <img src={chateau} alt="Chateau_des_Ducs" />
-          <div className="overlay">
-            <h2>
-              <Link to="/patrimoine/">Journées du patrimoine</Link>
-            </h2>
-            <p>
-              <Link to="/patrimoine/">Les monuments nantais...</Link>
-            </p>
-          </div>
-        </div> */}
       </section>
     </Container>
   );

@@ -2,14 +2,6 @@ import styled from 'styled-components';
 
 const FOOTER = styled.div`
   .Footer {
-    /* background-image: linear-gradient(
-      to right,
-      #f2eb4a,
-      #d9f04e,
-      #bdf458,
-      #9ff765,
-      #7bf976
-    ); */
     background: tomato;
     color: #f5f5f5;
     display: flex;
@@ -36,7 +28,6 @@ const FOOTER = styled.div`
   a {
     color: #fff;
     text-decoration: none;
-    
   }
 
   @media screen and (min-width: 768px) {

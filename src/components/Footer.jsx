@@ -1,5 +1,4 @@
 import React from 'react';
-// import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import twitter from './img/twitter.png';
 import instagram from './img/instagram.png';

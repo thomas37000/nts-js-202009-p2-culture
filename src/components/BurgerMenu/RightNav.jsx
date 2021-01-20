@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Slideburger from '../styledComponents/RightNavStyle';
-// import Logo from './img/NantEvent.png';
 
 // eslint-disable-next-line react/prop-types
 const RightNav = ({ open }) => {

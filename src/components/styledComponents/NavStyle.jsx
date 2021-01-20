@@ -5,14 +5,6 @@ const Nav = styled.nav`
   height: 7vh;
   border-bottom: 2px solid #f5f5f5;
   display: flex;
-  /* background: linear-gradient(
-    to right,
-    #f2eb4a,
-    #d9f04e,
-    #bdf458,
-    #9ff765,
-    #7bf976
-  ); */
   justify-content: space-between;
   align-items: center;
 
