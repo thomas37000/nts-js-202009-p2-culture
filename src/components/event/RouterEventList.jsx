@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Filters from '../filters/Filters';
 import EventListAllYear from './EventListAllYear';
-import EventListVoyageNantes from './EventListVoyageNantes';
-import EventListEstivales from './EventListEstivales';
+// import EventListVoyageNantes from './EventListVoyageNantes';
+// import EventListEstivales from './EventListEstivales';
 import BiblioList from './BiblioList';
 import Contact from '../contact/Contact';
 import DIV from '../styledComponents/RouterEventListStyle';
@@ -52,7 +52,7 @@ class RouteEventList extends Component {
             <EventListAllYear date={date} price={price} />
           </div>
         </Route>
-        <Route exact path="/voyage">
+        {/* <Route exact path="/voyage">
           <h2 className="titleRouter">Evènements du Voyage à Nantes</h2>
           <div className="selection">
             <Filters
@@ -71,7 +71,7 @@ class RouteEventList extends Component {
             />
             <EventListEstivales date={date} price={price} />
           </div>
-        </Route>
+        </Route> */}
       </DIV>
     );
   }
