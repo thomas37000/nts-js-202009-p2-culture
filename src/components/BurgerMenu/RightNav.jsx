@@ -9,12 +9,6 @@ const RightNav = ({ open }) => {
       <li>
         <Link to="/diversite/">Toute l&apos;année</Link>
       </li>
-      {/* <li>
-        <Link to="/voyage/">Voyage à Nantes</Link>
-      </li>
-      <li>
-        <Link to="/animations/">Animations estivales</Link>
-      </li> */}
       <li>
         <Link to="/contact">Contact</Link>
       </li>

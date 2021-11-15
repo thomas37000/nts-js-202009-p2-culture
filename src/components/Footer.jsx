@@ -15,12 +15,6 @@ const Footer = () => {
               <Link to="/diversite">Toute l&apos;année</Link>
             </span>
             <span>
-              <Link to="/voyage">Voyage à Nantes</Link>
-            </span>
-            <span>
-              <Link to="/animations">Animations estivales</Link>
-            </span>
-            <span>
               <Link to="/contact">Contact</Link>
             </span>
             <span>

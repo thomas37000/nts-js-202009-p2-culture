@@ -52,26 +52,6 @@ class RouteEventList extends Component {
             <EventListAllYear date={date} price={price} />
           </div>
         </Route>
-        {/* <Route exact path="/voyage">
-          <h2 className="titleRouter">Evènements du Voyage à Nantes</h2>
-          <div className="selection">
-            <Filters
-              dateUpdate={this.dateUpdate}
-              priceUpdate={this.priceUpdate}
-            />
-            <EventListVoyageNantes date={date} price={price} />
-          </div>
-        </Route>
-        <Route exact path="/animations">
-          <h2 className="titleRouter">Animations estivales</h2>
-          <div className="selection">
-            <Filters
-              dateUpdate={this.dateUpdate}
-              priceUpdate={this.priceUpdate}
-            />
-            <EventListEstivales date={date} price={price} />
-          </div>
-        </Route> */}
       </DIV>
     );
   }
