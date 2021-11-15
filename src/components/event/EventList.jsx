@@ -22,6 +22,7 @@ export default class EventList extends Component {
         {
           EventList: result,
         },
+        console.log(result),
         (error) => {
           // eslint-disable-next-line no-console
           console.error(error);

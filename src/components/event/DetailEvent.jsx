@@ -39,7 +39,7 @@ class DetailEvent extends Component {
         <section className="Card">
           <img
             className="photo"
-            src={eventDetails.media_1}
+            src={eventDetails.media_url}
             alt={eventDetails.nom}
           />
           <div className="information">
